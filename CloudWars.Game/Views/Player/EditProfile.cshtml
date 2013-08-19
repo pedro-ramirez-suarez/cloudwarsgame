@@ -1,0 +1,71 @@
+﻿@model CloudWars.Entities.Player.Player
+@{
+    //Layout = "~/Views/Shared/_GameMaster.cshtml";
+}
+
+
+@using (Html.BeginForm()) {
+<div id="profile">
+    <h2>My Profile</h2>
+    
+    @Html.HiddenFor(m=>m.Id)
+
+    <label for="DisplayName">Nick</label>
+    <input type="text" id="displayName"  name="displayName" value="@Model.DisplayName"  maxlength="50"/>
+
+    <div id="myAvatar">
+        @if (!string.IsNullOrWhiteSpace(Model.Avatar))
+        {
+            <img alt="avatarIcon" src ="@string.Format("{0}{1}", Url.Content("~/img/Icons/"),Model.Avatar)" class="m5" />
+        }
+        
+    </div>
+    @Html.HiddenFor(m=>m.Avatar)
+    <p>
+        <input type="submit" value="Guardar" onclick="return validateProfile()" class="btn btn-primary btn-large" />
+    </p>
+</div>
+}
+
+<div id="aAvatars">
+
+    @for (var x = 1; x < 64; x++)
+    { 
+        <div class="icon">    
+            <img alt="avatarIcon" class="imgIcon m5" src ="@string.Format("{0}/icon{1}.jpg", Url.Content("~/img/Icons"),x)" icon="@string.Format("icon{0}.jpg",x)" onclick="chooseAvatar(this)" />
+        </div>
+    }
+
+</div>
+
+
+<script type="text/javascript" language="javascript">
+
+    function chooseAvatar(element) {
+        var img = $(element).attr('src');
+        var icon = $(element).attr('icon');
+        $('#Avatar').val(icon);
+        var avatar = '<img alt="avatarIcon" src="' + img + '" icon="' + icon + '" class="m5">';
+        $('#myAvatar').html(avatar);
+    }
+
+    function validateProfile() {
+        
+        if ($('#displayName').val() == '' || $('#Avatar').val() == '') {
+            alert('Please enter a Nick and select an avatar');
+            return false;
+        }
+
+        $.post(
+            '@Url.Action("EditProfile","Player")',
+            {
+                id: $('#Id').val(),
+                displayName: $('#displayName').val(),
+                avatar: $('#Avatar').val()
+            },
+            function (data) { $('#mainContainer').html(data); }
+        );
+
+        return false;
+    }
+</script>

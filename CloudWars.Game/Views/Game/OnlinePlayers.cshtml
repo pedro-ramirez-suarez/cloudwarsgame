@@ -1,0 +1,39 @@
+﻿@model IEnumerable<CloudWars.Entities.Player.Player>
+
+@{
+    ViewBag.Title = "Online players";
+    //Layout = "~/Views/Shared/_GameMaster.cshtml";
+}
+
+<a class="btn btn-info btn-large" href="javascript:void(0);" onclick="getAll()">All</a>
+<a class="btn btn-info btn-large" href="javascript:void(0);" onclick="getNear()">Near players</a>
+
+<div id="playersList" class="mt10">
+
+    @Html.Partial("GetAllPlayers", Model)
+
+</div>
+
+
+<script language="javascript" type="text/javascript">
+
+    function getAll() {
+        $.get('@Url.Action("GetAllPlayers","Game")',
+        {},
+        function (data){
+            $('#playersList').html(data);
+        }
+        );
+    }
+    
+    
+    function getNear() {
+        $.get('@Url.Action("GetNearByPlayers","Game")',
+            {},
+            function (data){
+                $('#playersList').html(data);
+            }
+            );
+    }
+
+</script>

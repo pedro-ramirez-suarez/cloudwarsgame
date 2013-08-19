@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CloudWars.Entities.Player.Player>
+@{
+    //Layout = "~/Views/Shared/_GameMaster.cshtml";
+}
+<table id="players" class="mt20">
+    <tr>
+        <th>
+            <h1>Player</h1>
+        </th>
+        
+        <th>
+            <h1>Info</h1>
+        </th>
+        
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr class="gridRow">
+        <td class="mt10 mb10">
+            <div class="row show-grid">    
+            <div class="span1">
+                <h3>@Html.DisplayFor(modelItem => item.DisplayName)</h3>
+                <img alt="avatarIcon" src ="@string.Format("{0}{1}", Url.Content("~/img/Icons/"),item.Avatar)" class="mt10" />
+            </div>
+            </div>
+            
+        </td>
+        <td>
+
+        <p>
+            <h2>Won</h2>
+            @Html.Raw(item.Wins.ToString())
+            <h2 class="mt10">Lost</h2>
+            <p class="inline red">@Html.Raw(item.Losses.ToString())</p>
+        </p>
+        <p class="mt10">
+            <a href="javascript:void(0)" onclick="challenge('@item.Id')" class="btn btn-primary">Challenge</a>
+        </p>
+        </td>
+        
+    </tr>
+}
+
+</table>
+
+
+<script language="javascript" type="text/javascript">
+    function challenge(id) {
+        game.challengePlayer(id);
+    }
+
+</script>

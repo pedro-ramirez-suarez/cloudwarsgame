@@ -1,0 +1,96 @@
+﻿
+@* this div is hidden until all the components are loaded *@
+<div class="row show-grid hidden" id="gameDiv">
+    @* Game board *@
+    <div class="col-lg-8">
+        <h2>
+            My Units</h2>
+        <div id="myBoard">
+            @for (int y = 1; y < 5; y++)
+            {
+                <div>
+                @for (int x = 1; x < 8; x++)
+                 { 
+                    <div class="unitCell droppable" id="@string.Format("{0}_{1}",y,x)" row="@y" col="@x">
+                    </div>
+                 }
+                 </div>
+            }
+        </div>
+    </div>
+    @* Positions *@
+    <div class="col-lg-4">
+        <h3 id="rightLabel">
+            Setup your units</h3>
+            <div class="alert alert-info" id="helpMessage1">
+                    Drag the units to the board and click "Start" when you are done.
+            </div>
+        <div id="units" class="wp100">
+        </div>
+        <a class="btn btn-info mt10" href="javascript:void(0);" onclick="IamReady(this)" >
+            Start</a>
+        <div class="wp100 hidden" id="attackBoard">
+            
+            <div style="float:right;">
+                <div class="alert alert-info">
+                    Click on any cell to attack those coordinates
+                </div>
+            </div>
+
+            @for (int y = 1; y < 5; y++)
+            {
+                <div class="mt10">
+                @for (int x = 1; x < 8; x++)
+                 { 
+                    <div class="attackCell" id="@string.Format("attack_{0}_{1}",y,x)" row="@y" col="@x" onclick="attackCell(this)">
+                    </div>
+                 }
+                 </div>
+            }
+            
+        <div id="gameMessages" class="wp100"></div>
+        </div>
+        <div class="row show-grid" id="chatDiv">
+        <div class="col-lg-4">
+            <div>
+                <a class="btn btn-warning mb10" href="javascript:void(0);" onclick="inviteToJoin()" id="inviteToJoin">
+                    Invite to join</a>
+                <input type="text" id="myMessage" class="w200"  maxlength="200"/>
+                <a class="btn btn-success mt10" href="javascript:void(0);" onclick="SendChat()">
+                    Chat</a>
+                
+            </div>            
+            <div id="chatConversation" class="block">
+            </div>
+        </div>
+</div>
+
+</div>
+    
+</div>
+<div id="sounds" class="hidden">
+</div>
+
+
+    <script language="javascript" type="text/javascript">
+
+        unitsUrl = '@Url.Content("~/img/")';
+        soundUrl = '@Url.Content("/content/sounds/")';
+        
+        //load the match
+        game.playMatch('@ViewBag.MatchId');
+
+        $(document).ready(function () {
+            $('#gameDiv, #chat').removeClass('hidden');
+        });
+
+        $("#myMessage").keypress(function (e) {
+            if (e.keyCode == 13) {
+                SendChat();
+                return false;
+            }
+
+        });
+
+        
+    </script>

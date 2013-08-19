@@ -1,0 +1,9 @@
+﻿@model IEnumerable<CloudWars.Entities.Player.Player>
+@{
+    //Layout = "~/Views/Shared/_GameMaster.cshtml";
+}
+
+<h2>All players</h2>
+
+@Html.Partial("PlayersGrid", Model)
+

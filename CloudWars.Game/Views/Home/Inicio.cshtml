@@ -1,0 +1,59 @@
+﻿      <div class="hero-unit">
+        <h1>Cloud Wars</h1>
+
+        <div class="row show-grid " >
+        <div class="col-lg-6">
+            <p>
+                This is a game inspired in the classic board game "battleship" but in the Star Wars univers, it was originaly developed on 2012 in a total of 30 hours
+                for a Microsoft contest in México, so, some variables, classes and method names are in Spanish, then in 2013 it was refactored to use Needletail.MVC instead of signalR and open sourced.
+            </p>
+            <p>Some of the technologies used are:</p>
+            <ul>
+                <li>Asp.Net MVC 4</li>
+                <li>C#</li>
+                <li>Html5</li>
+                <li>Javascript</li>
+                <li>JQuery</li>                                
+                <li>Bootstrap 3 RC2</li>
+                <li>Needletail DataAccess</li>
+                <li>Needletail DataAccess Migrations</li>
+                <li>Needletail MVC</li>
+            </ul>
+        </div>
+            
+        <div class="col-lg-4">
+        <img alt="playing" src="@Url.Content("~/img/playing.jpg")"  />
+        </div>
+        </div>
+<div class="alert"><strong>Important!</strong> the game is not compatible with old browsers or any version of Internet Explorer but support modern versions of Chrome mobile</div>
+        
+        @if (User.Identity.IsAuthenticated)
+        {
+            <p><a class="btn btn-primary btn-large mt10" onclick="loadUrlPost('@Url.Action("MyMatches", "Game")')"  href="javascript:void(0);" >Play &raquo;</a></p>
+        }
+        else
+        {
+            <p>@Html.ActionLink("login to play", "Login", "Account", routeValues: null, htmlAttributes: new {  @class ="btn btn-info btn-large mt10" })</p>
+            
+        }
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-lg-4">
+          <h2>How to play</h2>
+           <p>Intro to the game, how to play, how to challenge other players and how to accept other playrer's challenges.</p>
+          <p><a class="btn btn-default"  href="javascript:void(0)" onclick="loadUrlPost('@Url.Action("ComoJugar","Home")')">Go &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Technology</h2>
+           <p>Brief description of the architecture, the tools and why some technical decisions were made.</p>
+          <p><a class="btn  btn-default" href="javascript:void(0)" onclick="loadUrlPost('@Url.Action("Tecnologia","Home")')">Go &raquo;</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>About the project</h2>
+          <p>A brief history of the game, Why open source?, how to contribute?, how to contact the author.</p>
+          <p><a class="btn btn-default"  href="javascript:void(0)" onclick="loadUrlPost('@Url.Action("Bitacora","Home")')">Go &raquo;</a></p>
+        </div>
+      </div>
+

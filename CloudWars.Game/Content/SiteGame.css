@@ -1,0 +1,228 @@
+﻿body {
+      }
+      
+.icon 
+{
+    border:1px solid #BBBBBB;
+    margin:10px;    
+    height:173px;
+    display: inline-block;
+}
+
+#profile
+{
+    float:left;
+    position: fixed;
+    top:40px;
+}
+
+#myAvatar
+{
+    display:block;
+    /*border:1px solid #BBBBBB;*/
+    margin: 10px 0px 10px 0px;
+    height:173px;
+    width:auto;
+}
+
+#aAvatars
+{
+    margin-left:300px;
+    border:1px solid #BBBBBB;
+    width: 780px;
+    padding:5px;
+    
+}
+
+.m5
+{
+    margin:5px;
+}
+
+.ml10
+{
+    margin-left:10px;
+}
+
+.mr10
+{
+    margin-right:10px;
+}
+
+.imgIcon
+{
+    cursor:pointer;
+    
+}
+
+.block
+{
+    display:block;
+}
+
+.mb10
+{
+    margin-bottom:10px;
+}
+
+.mt10
+{
+    margin-top:10px;
+}
+
+.wp100
+{
+    width:100%;
+}
+
+.wp90
+{
+    width:90%;
+}
+    
+.mb10
+{
+    margin-bottom:10px;
+}
+
+.inline
+{
+    display:inline;
+}
+
+.red
+{
+    color:Red;
+}
+#players
+{
+    width:400px;
+    text-align:center;   
+}
+
+.hidden
+{
+    display:none;
+}
+.w300
+{
+    width:300px;
+}
+
+.bold
+{
+    font-weight:bold;
+}
+
+#chatConversation
+{
+    height:100px;
+    overflow:auto;
+    width:400px;
+}
+
+.message
+{
+    margin:5px 0px 5px 5px;
+}
+
+#units, #myBoard
+{
+    background:black;
+}
+
+
+.unitCell:hover
+{
+    border: 1px solid #AAA;
+}
+    
+.unitCell
+{
+    height:100px;
+    width:90px;
+    border: 1px solid #222;
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left:13px;
+    display: inline-block;
+}
+
+#chatDiv
+{
+    position:relative;
+    top:10px!important;
+}
+
+
+.draggable
+{
+    width:86px;
+    cursor:pointer;
+    display:inline-block;
+}
+
+.attackCell
+{
+    display:inline-block;
+    height:16px;
+    width:16px;
+    border:1px solid #AAA;
+    margin:0px 5px 5px 0px;
+    cursor:pointer;
+}
+
+.attackCell:hover
+{
+    border:1px solid #000;
+}
+
+#gameMessages
+{
+    height:100px;
+}
+
+.made
+{
+    background:#468847;
+}
+
+.missed
+{
+    background:#B94A48;
+}
+
+.health
+{
+    color:White;
+    font-size:8px;
+}
+
+
+#windowText ul
+{
+    list-style: none;
+}
+#windowText ul li
+{
+        margin: 10px;
+        padding: 10px
+}
+
+
+
+.gridRow
+{
+    margin-top:10px;
+    margin-bottom:20px;
+    padding-bottom:5px;
+    padding-top:5px;
+    border-bottom:1px solid #ddd;
+    border-top:1px solid #ddd;
+}
+
+.gridRow td
+{
+    margin-top:5px;
+    margin-bottom:5px;
+}

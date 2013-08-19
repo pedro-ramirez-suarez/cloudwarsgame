@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Needletail.DataAccess</id>
+    <version>1.0.0.3</version>
+    <title>Needletail DataAccess</title>
+    <authors>Pedro Ramirez</authors>
+    <owners>Pedro Ramirez</owners>
+    <projectUrl>https://github.com/pedro-ramirez-suarez/needletailtools</projectUrl>
+    <iconUrl>https://raw.github.com/pedro-ramirez-suarez/needletailtools/master/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Different tools that help to build mostly web applications(Asp.Net and Asp.Net MVC), some tools can also be used for windows development.
+For now a Micro ORM and Database migration tool.</description>
+    <releaseNotes>Fixed some bug</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>Data MicroORM ORM</tags>
+    <references>
+      <reference file="Microsoft.SqlServer.Types.dll" />
+      <reference file="Needletail.DataAccess.dll" />
+      <reference file="System.Data.DataSetExtensions.dll" />
+    </references>
+  </metadata>
+</package>

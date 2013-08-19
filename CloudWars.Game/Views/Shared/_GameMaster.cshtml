@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cloud Wars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+      <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/SiteGame.css")" rel="stylesheet" type="text/css" />
+
+      <script src="@Url.Content("~/Scripts/jquery-1.9.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.24.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/Game/game.js")" type="text/javascript"></script>   
+    <script src="@Url.Content("~/Scripts/Game/cloudwars.js")" type="text/javascript"></script> 
+    <script src="@Url.Content("~/Scripts/NeedletailMvc.js")" type="text/javascript"></script>   
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+  </head>
+
+  <body>
+
+
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="javascript:void(0)" onclick="loadUrlPost('@Url.Action("Inicio","Home")')">Cloud Wars</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li class="active"><a href="javascript:void(0)" onclick="loadUrlPost('@Url.Action("Inicio","Home")')">Inicio</a></li>
+              <li><a href="javascript:void(0)" onclick="loadUrlPost('@Url.Action("About","Home")')">Acerca de</a></li>              
+              @if (User.Identity.IsAuthenticated)
+              {
+                <li><a href="javascript:void(0);" onclick="loadUrlPost('@Url.Action("Index","Player")')" class="needInitialization">Mi perfil</a></li>              
+                <li><a href="javascript:void(0);" onclick="loadUrlPost('@Url.Action("OnlinePlayers", "Game")')" class="needInitialization">Jugadores</a></li>              
+                <li><a href="javascript:void(0);" onclick="loadUrlPost('@Url.Action("MyChallenges", "Game")')" class="needInitialization">Mis Retos</a></li>              
+                <li><a href="javascript:void(0);" onclick="loadUrlPost('@Url.Action("MyMatches", "Game")')" class="needInitialization">Mis Juegos</a></li>                              
+              }              
+            </ul>
+            @Html.Partial("_LoginPartial") 
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container" id="mainContainer">
+
+        @RenderBody()
+      
+      <hr>
+
+      <footer>
+        <p>Reto star wars</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <div id="allSounds"> </div>
+
+    <!-- region modals -->
+      <div class="modal hidden" id="retoLanzadoModal">
+          <div class="modal-header">
+              <a class="close" data-dismiss="modal" href="javascript:void(0);" onclick="$('#retoLanzadoModal').addClass('hidden');">×</a>
+              <h3 id="windowHeader">
+                  </h3>
+          </div>
+          <div class="modal-body">
+              <p id= "windowText">
+                  </p>
+          </div>
+          <div class="modal-footer">
+              <a href="javascript:void(0);" class="btn" onclick="$('#retoLanzadoModal').addClass('hidden');">Close</a>
+          </div>
+      </div>
+    <!-- end region modals -->
+    
+    
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    @*<script src="@Url.Content("~/Scripts/jquery-1.6.4.min.js")" type="text/javascript"></script>*@
+    @*<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js" type="text/javascript"></script>    *@
+      
+    @if (User.Identity.IsAuthenticated)
+    {
+        @*<script src="@string.Format("{0}jquery.signalR.min.js", CDNHelper.ScriptsUrl)" type="text/javascript"></script>
+        <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>*@
+        @*<script src="@string.Format("{0}/Game/cloudwars.js", CDNHelper.ScriptsUrl)" type="text/javascript"></script> *@
+    <script type="text/javascript">
+
+            liveId = '@ClourWars.Web.Code.ProfileHelper.GetIdentity';
+            gamesUrl = '@Url.Action("MyMatches", "Game")';
+    
+        </script>
+    }
+      
+    <script  type="text/javascript">
+        var twoway = '@Url.Action("Remote", "Api", new { })';
+        needleTail.initialize(twoway);
+
+        gameControllerUrl = '@Url.Action("Index","Game")' + '/';
+
+        function loadUrl(url) {
+            isPlaying = false;
+            $.get(
+                url,
+                {},
+                function (data) { $('#mainContainer').html(data); }
+            )
+        }
+
+        function loadUrlPost(url) {
+            isPlaying = false;
+            $.post(
+                url,
+                {},
+                function (data) { $('#mainContainer').html(data); }
+            )
+        }
+
+        function loadStaticContent(page) {
+            url = '@CDNHelper.StaticContentUrl' + page;
+            isPlaying = false;
+            $.get(
+                url,
+                {},
+                function (data) { $('#mainContainer').html(data); }
+            )
+        }
+
+        function showConfirmWindow(header, text) {
+            $('#windowHeader').html(header);
+            $('#windowText').html(text);
+            $('#retoLanzadoModal').removeClass('hidden');
+        }
+
+        $("#logon, #hazLogin").click(function () {
+            $('#windowHeader').html('Login');
+            $('#windowText').html('Loading...');
+            $('#retoLanzadoModal').removeClass('hidden');
+            $.ajax({
+                url: '@Html.Raw(Url.Action("IdentityProviders", "Account", new { serviceNamespace = "retostarwarscloudwars", appId = "https://localhost:81/" }))',
+                success: function (data) {
+                    dialogHtml = '<ul>';
+                    for (i = 0; i < data.length; i++) {
+                        dialogHtml += '<li>';
+                        if (data[i].ImageUrl == '') {
+                            dialogHtml += '<a href="' + data[i].LoginUrl + '">' + data[i].Name + '</a>';
+                        } else {
+                            dialogHtml += '<a href="' + data[i].LoginUrl + '"><img style="border: 0px; width: 100px" src="' + data[i].ImageUrl + '" alt="' + data[i].Name + '" /></a>';
+                        }
+
+                        dialogHtml += '</li>';
+                    }
+
+                    dialogHtml += '</ul>';
+
+                    $("#windowText").html(dialogHtml);
+                }
+            })
+        });
+
+
+    </script>
+
+  </body>
+</html>
+
+

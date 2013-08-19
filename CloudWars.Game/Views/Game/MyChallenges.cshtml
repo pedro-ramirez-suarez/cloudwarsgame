@@ -1,0 +1,72 @@
+﻿@model IEnumerable<ClourWars.Web.Models.MyChallenge>
+@{
+    //Layout = "~/Views/Shared/_GameMaster.cshtml";
+}
+
+<h2>Pending Challenges</h2>
+
+<table id="players" class="mt20">
+    <tr>
+        <th>
+            <h1>Challenger</h1>
+        </th>
+        
+        <th>
+            <h1>Info</h1>
+        </th>
+        
+        
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr class="gridRow">
+        <td class="mt10 mb10">
+            <div class="row show-grid">
+                <div class="span1">
+                    @Html.DisplayFor(modelItem => item.FromPlayerName)
+                    <img alt="avatarIcon" src ="@string.Format("{0}/{1}", Url.Content("~/img/Icons/"),item.FromPlayerAvatar)" class="mt10" />
+                </div>
+            </div>
+        </td>
+        <td>
+            <p>
+                <h2>
+                    Won</h2>
+                @Html.Raw(item.FromPlayerWins.ToString())
+                <h2 class="mt10">
+                    Lost</h2>
+                <p class="inline red">@Html.Raw(item.FromPlayerLosses.ToString())</p>
+            </p>
+            <p class="mt10">
+                <a href="javascript:void(0)" onclick="challengeAccepted('@item.ChallengeId',this)" class="btn btn-success">
+                    Accept Challenge</a>
+                 <a href="javascript:void(0)" onclick="challengeRejected('@item.ChallengeId',this)" class="btn btn-danger ml10">
+                        Reject Challenge</a>
+            </p>
+        </td>
+    </tr>
+}
+
+</table>
+
+
+<script type="text/javascript">
+
+    function challengeRejected(challengeId, element) {
+        //reject the challenge
+        game.rejectChallenge(challengeId);
+        //remove the row
+        $(element).parent().parent().parent().remove();
+    }
+
+    function challengeAccepted(challengeId, element) {
+        //accept the challenge
+        game.acceptChallenge(challengeId);
+        //remove the row
+        $(element).parent().parent().parent().remove();
+    }
+
+
+
+</script>

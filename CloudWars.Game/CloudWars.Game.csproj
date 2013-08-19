@@ -1,0 +1,684 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{908378AC-DE81-4B29-8FBF-347FF4EF31CB}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudWars.Game</RootNamespace>
+    <AssemblyName>CloudWars.Game</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXssLibrary">
+      <HintPath>..\packages\AntiXSS.4.2.1\lib\net40\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlSanitizationLibrary">
+      <HintPath>..\packages\AntiXSS.4.2.1\lib\net40\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Needletail.DataAccess.Migrations.1.0.0.2\lib\net40\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Needletail.DataAccess.Migrations.1.0.0.2\lib\net40\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Needletail.DataAccess.Migrations.1.0.0.2\lib\net40\Microsoft.SqlServer.Smo.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Needletail.DataAccess.1.0.0.3\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Needletail.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Needletail.DataAccess.Migrations.1.0.0.2\lib\net40\Needletail.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Needletail.DataAccess.Migrations">
+      <HintPath>..\packages\Needletail.DataAccess.Migrations.1.0.0.2\lib\net40\Needletail.DataAccess.Migrations.dll</HintPath>
+    </Reference>
+    <Reference Include="Needletail.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Needletail.Mvc.1.0.0.1\lib\net40\Needletail.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+      <HintPath>..\packages\Needletail.DataAccess.1.0.0.3\lib\net40\System.Data.DataSetExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.1.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Code\CDNHelper.cs" />
+    <Compile Include="Code\Context.cs" />
+    <Compile Include="Code\GameHelper.cs" />
+    <Compile Include="Code\ProfileHelper.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PlayerController.cs" />
+    <Compile Include="Controllers\RemoteController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\MyChallenge.cs" />
+    <Compile Include="Models\MyMatches.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerClientEntities\Damage.cs" />
+    <Compile Include="ServerClientEntities\MatchInfo.cs" />
+    <Compile Include="ServerClientEntities\UnitInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\SiteGame.css" />
+    <Content Include="Content\sounds\empireAttackMissed.wav" />
+    <Content Include="Content\sounds\empireLost.wav" />
+    <Content Include="Content\sounds\empireShotMade.wav" />
+    <Content Include="Content\sounds\empireShotMissed.wav" />
+    <Content Include="Content\sounds\empireTakeDamage.wav" />
+    <Content Include="Content\sounds\empireWin.WAV" />
+    <Content Include="Content\sounds\rebelAttackMissed.wav" />
+    <Content Include="Content\sounds\rebelLost.wav" />
+    <Content Include="Content\sounds\rebelShotMade.wav" />
+    <Content Include="Content\sounds\rebelShotMissed.wav" />
+    <Content Include="Content\sounds\rebelTakeDamage.wav" />
+    <Content Include="Content\sounds\rebelWin.wav" />
+    <Content Include="Content\static\home.html" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Readme.html" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Images\logo.png" />
+    <Content Include="img\glyphicons-halflings-white.png" />
+    <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\Icons\bmps - copia\icon1.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon10.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon11.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon12.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon13.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon14.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon15.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon16.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon17.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon18.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon19.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon2.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon20.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon21.jpg" />
+    <Content Include="img\Icons\bmps - copia\icon22.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon23.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon24.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon25.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon26.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon27.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon28.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon29.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon3.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon30.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon31.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon32.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon33.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon34.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon35.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon36.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon37.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon38.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon39.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon4.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon40.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon41.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon42.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon43.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon44.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon45.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon46.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon47.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon48.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon49.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon5.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon50.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon51.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon52.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon53.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon54.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon55.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon56.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon57.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon58.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon59.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon6.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon60.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon61.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon62.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon63.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon7.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon8.bmp" />
+    <Content Include="img\Icons\bmps - copia\icon9.bmp" />
+    <Content Include="img\Icons\bmps\icon1.bmp" />
+    <Content Include="img\Icons\bmps\icon10.bmp" />
+    <Content Include="img\Icons\bmps\icon11.bmp" />
+    <Content Include="img\Icons\bmps\icon12.bmp" />
+    <Content Include="img\Icons\bmps\icon13.bmp" />
+    <Content Include="img\Icons\bmps\icon14.bmp" />
+    <Content Include="img\Icons\bmps\icon15.bmp" />
+    <Content Include="img\Icons\bmps\icon16.bmp" />
+    <Content Include="img\Icons\bmps\icon17.bmp" />
+    <Content Include="img\Icons\bmps\icon18.bmp" />
+    <Content Include="img\Icons\bmps\icon19.bmp" />
+    <Content Include="img\Icons\bmps\icon2.bmp" />
+    <Content Include="img\Icons\bmps\icon20.bmp" />
+    <Content Include="img\Icons\bmps\icon21.jpg" />
+    <Content Include="img\Icons\bmps\icon22.bmp" />
+    <Content Include="img\Icons\bmps\icon23.bmp" />
+    <Content Include="img\Icons\bmps\icon24.bmp" />
+    <Content Include="img\Icons\bmps\icon25.bmp" />
+    <Content Include="img\Icons\bmps\icon26.bmp" />
+    <Content Include="img\Icons\bmps\icon27.bmp" />
+    <Content Include="img\Icons\bmps\icon28.bmp" />
+    <Content Include="img\Icons\bmps\icon29.bmp" />
+    <Content Include="img\Icons\bmps\icon3.bmp" />
+    <Content Include="img\Icons\bmps\icon30.bmp" />
+    <Content Include="img\Icons\bmps\icon31.bmp" />
+    <Content Include="img\Icons\bmps\icon32.bmp" />
+    <Content Include="img\Icons\bmps\icon33.bmp" />
+    <Content Include="img\Icons\bmps\icon34.bmp" />
+    <Content Include="img\Icons\bmps\icon35.bmp" />
+    <Content Include="img\Icons\bmps\icon36.bmp" />
+    <Content Include="img\Icons\bmps\icon37.bmp" />
+    <Content Include="img\Icons\bmps\icon38.bmp" />
+    <Content Include="img\Icons\bmps\icon39.bmp" />
+    <Content Include="img\Icons\bmps\icon4.bmp" />
+    <Content Include="img\Icons\bmps\icon40.bmp" />
+    <Content Include="img\Icons\bmps\icon41.bmp" />
+    <Content Include="img\Icons\bmps\icon42.bmp" />
+    <Content Include="img\Icons\bmps\icon43.bmp" />
+    <Content Include="img\Icons\bmps\icon44.bmp" />
+    <Content Include="img\Icons\bmps\icon45.bmp" />
+    <Content Include="img\Icons\bmps\icon46.bmp" />
+    <Content Include="img\Icons\bmps\icon47.bmp" />
+    <Content Include="img\Icons\bmps\icon48.bmp" />
+    <Content Include="img\Icons\bmps\icon49.bmp" />
+    <Content Include="img\Icons\bmps\icon5.bmp" />
+    <Content Include="img\Icons\bmps\icon50.bmp" />
+    <Content Include="img\Icons\bmps\icon51.bmp" />
+    <Content Include="img\Icons\bmps\icon52.bmp" />
+    <Content Include="img\Icons\bmps\icon53.bmp" />
+    <Content Include="img\Icons\bmps\icon54.bmp" />
+    <Content Include="img\Icons\bmps\icon55.bmp" />
+    <Content Include="img\Icons\bmps\icon56.bmp" />
+    <Content Include="img\Icons\bmps\icon57.bmp" />
+    <Content Include="img\Icons\bmps\icon58.bmp" />
+    <Content Include="img\Icons\bmps\icon59.bmp" />
+    <Content Include="img\Icons\bmps\icon6.bmp" />
+    <Content Include="img\Icons\bmps\icon60.bmp" />
+    <Content Include="img\Icons\bmps\icon61.bmp" />
+    <Content Include="img\Icons\bmps\icon62.bmp" />
+    <Content Include="img\Icons\bmps\icon63.bmp" />
+    <Content Include="img\Icons\bmps\icon7.bmp" />
+    <Content Include="img\Icons\bmps\icon8.bmp" />
+    <Content Include="img\Icons\bmps\icon9.bmp" />
+    <Content Include="img\Icons\icon1.jpg" />
+    <Content Include="img\Icons\icon10.jpg" />
+    <Content Include="img\Icons\icon11.jpg" />
+    <Content Include="img\Icons\icon12.jpg" />
+    <Content Include="img\Icons\icon13.jpg" />
+    <Content Include="img\Icons\icon14.jpg" />
+    <Content Include="img\Icons\icon15.jpg" />
+    <Content Include="img\Icons\icon16.jpg" />
+    <Content Include="img\Icons\icon17.jpg" />
+    <Content Include="img\Icons\icon18.jpg" />
+    <Content Include="img\Icons\icon19.jpg" />
+    <Content Include="img\Icons\icon2.jpg" />
+    <Content Include="img\Icons\icon20.jpg" />
+    <Content Include="img\Icons\icon21.jpg" />
+    <Content Include="img\Icons\icon22.jpg" />
+    <Content Include="img\Icons\icon23.jpg" />
+    <Content Include="img\Icons\icon24.jpg" />
+    <Content Include="img\Icons\icon25.jpg" />
+    <Content Include="img\Icons\icon26.jpg" />
+    <Content Include="img\Icons\icon27.jpg" />
+    <Content Include="img\Icons\icon28.jpg" />
+    <Content Include="img\Icons\icon29.jpg" />
+    <Content Include="img\Icons\icon3.jpg" />
+    <Content Include="img\Icons\icon30.jpg" />
+    <Content Include="img\Icons\icon31.jpg" />
+    <Content Include="img\Icons\icon32.jpg" />
+    <Content Include="img\Icons\icon33.jpg" />
+    <Content Include="img\Icons\icon34.jpg" />
+    <Content Include="img\Icons\icon35.jpg" />
+    <Content Include="img\Icons\icon36.jpg" />
+    <Content Include="img\Icons\icon37.jpg" />
+    <Content Include="img\Icons\icon38.jpg" />
+    <Content Include="img\Icons\icon39.jpg" />
+    <Content Include="img\Icons\icon4.jpg" />
+    <Content Include="img\Icons\icon40.jpg" />
+    <Content Include="img\Icons\icon41.jpg" />
+    <Content Include="img\Icons\icon42.jpg" />
+    <Content Include="img\Icons\icon43.jpg" />
+    <Content Include="img\Icons\icon44.jpg" />
+    <Content Include="img\Icons\icon45.jpg" />
+    <Content Include="img\Icons\icon46.jpg" />
+    <Content Include="img\Icons\icon47.jpg" />
+    <Content Include="img\Icons\icon48.jpg" />
+    <Content Include="img\Icons\icon49.jpg" />
+    <Content Include="img\Icons\icon5.jpg" />
+    <Content Include="img\Icons\icon50.jpg" />
+    <Content Include="img\Icons\icon51.jpg" />
+    <Content Include="img\Icons\icon52.jpg" />
+    <Content Include="img\Icons\icon53.jpg" />
+    <Content Include="img\Icons\icon54.jpg" />
+    <Content Include="img\Icons\icon55.jpg" />
+    <Content Include="img\Icons\icon56.jpg" />
+    <Content Include="img\Icons\icon57.jpg" />
+    <Content Include="img\Icons\icon58.jpg" />
+    <Content Include="img\Icons\icon59.jpg" />
+    <Content Include="img\Icons\icon6.jpg" />
+    <Content Include="img\Icons\icon60.jpg" />
+    <Content Include="img\Icons\icon61.jpg" />
+    <Content Include="img\Icons\icon62.jpg" />
+    <Content Include="img\Icons\icon63.jpg" />
+    <Content Include="img\Icons\icon7.jpg" />
+    <Content Include="img\Icons\icon8.jpg" />
+    <Content Include="img\Icons\icon9.jpg" />
+    <Content Include="img\playing.jpg" />
+    <Content Include="img\step1.jpg" />
+    <Content Include="img\step2.jpg" />
+    <Content Include="img\step3.jpg" />
+    <Content Include="img\step4.jpg" />
+    <Content Include="img\step5.jpg" />
+    <Content Include="img\step6.jpg" />
+    <Content Include="img\units\empire1.jpg" />
+    <Content Include="img\units\empire10.jpg" />
+    <Content Include="img\units\empire11.jpg" />
+    <Content Include="img\units\empire12.jpg" />
+    <Content Include="img\units\empire2.jpg" />
+    <Content Include="img\units\empire3.jpg" />
+    <Content Include="img\units\empire4.jpg" />
+    <Content Include="img\units\empire5.jpg" />
+    <Content Include="img\units\empire6.jpg" />
+    <Content Include="img\units\empire7.jpg" />
+    <Content Include="img\units\empire8.jpg" />
+    <Content Include="img\units\empire9.jpg" />
+    <Content Include="img\units\rebel1.jpg" />
+    <Content Include="img\units\rebel10.jpg" />
+    <Content Include="img\units\rebel11.jpg" />
+    <Content Include="img\units\rebel12.jpg" />
+    <Content Include="img\units\rebel2.jpg" />
+    <Content Include="img\units\rebel3.jpg" />
+    <Content Include="img\units\rebel4.jpg" />
+    <Content Include="img\units\rebel5.jpg" />
+    <Content Include="img\units\rebel6.jpg" />
+    <Content Include="img\units\rebel7.jpg" />
+    <Content Include="img\units\rebel8.jpg" />
+    <Content Include="img\units\rebel9.jpg" />
+    <Content Include="img\units\step1.jpg" />
+    <Content Include="img\units\step2.jpg" />
+    <Content Include="img\units\step3.jpg" />
+    <Content Include="img\units\step4.jpg" />
+    <Content Include="img\units\step5.jpg" />
+    <Content Include="img\units\step6.jpg" />
+    <Content Include="license.txt" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Game\cloudwars.js" />
+    <Content Include="Scripts\Game\game.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\NeedletailMvc.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Game\GetAllPlayers.cshtml" />
+    <Content Include="Views\Game\GetNearByPlayers.cshtml" />
+    <Content Include="Views\Game\MyChallenges.cshtml" />
+    <Content Include="Views\Game\MyMatches.cshtml" />
+    <Content Include="Views\Game\OnlinePlayers.cshtml" />
+    <Content Include="Views\Game\Play.cshtml" />
+    <Content Include="Views\Game\PlayersGrid.cshtml" />
+    <Content Include="Views\Player\CreateProfile.cshtml" />
+    <Content Include="Views\Player\EditProfile.cshtml" />
+    <Content Include="Views\Player\Index.cshtml" />
+    <Content Include="Views\Home\Bitacora.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Home\ComoJugar.cshtml" />
+    <Content Include="Views\Home\Inicio.cshtml" />
+    <Content Include="Views\Home\Tecnologia.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CloudWars.Common\CloudWars.Common.csproj">
+      <Project>{6158b52c-2f89-4508-bce8-f2f1cadb5afd}</Project>
+      <Name>CloudWars.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudWars.DataAccess\CloudWars.DataAccess.csproj">
+      <Project>{73ca0c87-0ae3-4a3f-b1b1-fd21197e2f31}</Project>
+      <Name>CloudWars.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudWars.Entities\CloudWars.Entities.csproj">
+      <Project>{78a0f8f2-6125-485c-b10a-70a3a0653d5c}</Project>
+      <Name>CloudWars.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudWars.SpaceBattle\CloudWars.SpaceBattle.csproj">
+      <Project>{772f6c7d-6efa-4bfc-bb61-c333eb10a964}</Project>
+      <Name>CloudWars.SpaceBattle</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1587</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/CloudWars</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

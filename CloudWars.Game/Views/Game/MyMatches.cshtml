@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ClourWars.Web.Models.MyMatches>
+@{
+    //Layout = "~/Views/Shared/_GameMaster.cshtml";
+}
+
+<h2>Available games</h2>
+
+<table id="players" class="mt20">
+    <tr>
+        <th>
+            <h1>Opponent</h1>
+        </th>
+        
+        <th>
+            <h1>Info</h1>
+        </th>
+        
+        
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr class="gridRow">
+        <td class="mt10 mb10">
+            <div class="row show-grid">    
+            <div class="span1">
+                @if (item.FromPlayerLiveId != ClourWars.Web.Code.ProfileHelper.GetIdentity)
+                {
+                    @Html.DisplayFor(modelItem => item.FromPlayerName)
+                    <img alt="avatarIcon" src ="@string.Format("{0}/{1}", Url.Content("~/img/Icons"),item.FromPlayerAvatar)" class="mt10" />
+                }
+                else
+                { 
+                    @Html.DisplayFor(modelItem => item.ToPlayerName)
+                    <img alt="avatarIcon" src ="@string.Format("{0}/{1}", Url.Content("~/img/Icons"),item.ToPlayerAvatar)" class="mt10" />
+                }
+            </div>
+            </div>
+            
+        </td>
+        <td>
+
+        <p>
+            <h2>Won</h2>
+            @Html.Raw(item.FromPlayerWins.ToString())
+            <h2 class="mt10">Lost</h2>
+            <p class="inline red">@Html.Raw(item.FromPlayerLosses.ToString())</p>
+        </p>
+        <p class="mt10">
+            <a href="javascript:void(0)" onclick="playGame('@item.MatchId')" class="btn btn-success">Play</a>
+        </p>
+        </td>
+        
+    </tr>
+}
+
+</table>
+
+
+<script language="javascript" type="text/javascript">
+
+    function playGame(matchid) {
+        //load game
+        loadUrl('@Url.Action("Play","Game")' + '?matchid=' + matchid);
+    }
+
+</script>

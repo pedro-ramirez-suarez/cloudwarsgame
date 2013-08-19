@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Needletail.Mvc</id>
+    <version>1.0.0.0</version>
+    <title>Needletail MVC</title>
+    <authors>Pedro Ramirez</authors>
+    <owners>Pedro Ramirez</owners>
+    <projectUrl>https://github.com/pedro-ramirez-suarez/needletailtools</projectUrl>
+    <iconUrl>https://raw.github.com/pedro-ramirez-suarez/needletailtools/master/logo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Needletail.Mvc allows you to call javascript code anywhere from your MVC project, this is allows you to tell the client(browser) to call some function when an event occurs on the server's code in real time. Only works with MVC 4 and with browsers that support SSE.</description>
+    <summary>Call javascript code from the server.</summary>
+    <releaseNotes>First version of the package, I have not uploaded the unit tests.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>MVC4 SSE</tags>
+    <references>
+      <reference file="Needletail.Mvc.dll" />
+    </references>
+  </metadata>
+</package>

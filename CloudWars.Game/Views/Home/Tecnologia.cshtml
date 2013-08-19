@@ -1,0 +1,77 @@
+﻿<h1>
+    Technology</h1>
+<h2>
+    How it was written?</h2>
+    <ul>
+        <li>
+            <h3><a href="http://www.asp.net/mvc" target="_blank">Asp.Net MVC 4</a></h3>
+            <p>Our favorite framework for web applications</p>
+        </li>
+        <li>
+            <h3><a href="http://msdn.microsoft.com/en-us/library/vstudio/ms228593.aspx" target="_blank">C#</a></h3>
+            <p>One of the most popular programming languages</p>
+        </li>
+        <li>
+            <h3><a href="http://www.microsoft.com/en-us/sqlserver/editions/2012-editions/express.aspx" target="_blank">SQL server Express</a></h3>
+            <p>The most popular DBMS for .Net applications</p>
+        </li>
+        <li>
+            <h3><a href="http://www.w3.org/html/wg/drafts/html/master/" target="_blank" >Html 5</a></h3>
+            <p>Geolocation, SSE, Audio tag</p>
+        </li>
+        <li>
+            <h3><a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank" >Javascript</a></h3>
+            <p>Does web applications without any javascript exists?</p>
+
+        </li>
+        <li>
+            <h3><a href="http://jquery.com/" target="_blank">JQuery</a></h3>
+            <p>The most popular javascript library</p>
+        </li>                                
+        <li>
+            <h3><a hre="http://getbootstrap.com/" target="_blank">Bootstrap 3 RC2</a></h3>
+            <p>Not the final version but all the sweetness of the best CSS framework for programmers</p>
+
+        </li>
+        <li>
+            <h3><a href="http://pedro-ramirez-suarez.github.io/needletailtools/" target="_blank"> Needletail DataAccess</a></h3>
+            <p>A Micro ORM, it's fast, ideal for shared hosting or apps that need fast data access without the need of a full featured ORM</p>
+        </li>
+        <li>
+            <h3><a href="http://pedro-ramirez-suarez.github.io/needletailtools/" target="_blank">Needletail DataAccess Migrations</a> </h3>
+            <p>The complement of the Needletail Micro ORM, initialize or patch your database automatically when deploying new versions of your app</p>
+        </li>
+        <li>
+            <h3> <a href="http://pedro-ramirez-suarez.github.io/needletailtools/" target="_blank"> Needletail MVC</a></h3>
+            <p>A library that allows your C# server's code to call in realtime the javascript code on the browser without breaking your MVC pattern</p>
+            <p><strong>Important!</strong> the game is not compatible with old browsers or any version of Internet Explorer but support modern versions of Chrome mobile.</p>
+            <p><strong>Important!</strong> for development, don't use IIS express, SSE is not very well implemented on that version of IIS.</p>
+
+        </li>
+        <li>Avatars from <a class="u" href="http://joepgerrits.deviantart.com/">JoepGerrits</a> </li>
+    </ul>
+
+<h3>In the begining...</h3>
+<p>
+    The first version of CloudWars, the one that I wrote for the Microsoft contest was developed with
+    SignalR, wich is a very good and nice library that according to their website:
+    <br />
+    <i>
+        ASP.NET SignalR is a new library for ASP.NET developers that makes it incredibly simple to add real-time web functionality to your applications. What is "real-time web" functionality? It's the ability to have your server-side code push content to the connected clients as it happens, in real-time.
+    </i>
+    <br />
+    The main problem with SignalR, is that it force you to use an specific architecture, so it does not feel natural for Asp.Net MVC applications, thats what I decided to change the game and use Needletail.MVC.
+</p>
+
+<h3>Using Needletail.MVC...</h3>
+<p>
+    Fortunatelly, making the changes was really fast, using Needletail.MVC allows me to follow the MVC pattern and to call javascript code anywhere in my application.
+</p>
+
+
+<h3>Easy to modify</h3>
+<p>
+    You can easily implement a different turn based game like chess just changing the UI and writing your implementation of the game engine.
+</p>
+
+<p><a class="btn btn-default mt10"  href="javascript:void(0)" onclick="loadUrlPost('@Url.Action("Inicio","Home")')">Back &laquo;</a></p>

@@ -1,0 +1,35 @@
+﻿@model CloudWars.Entities.Player.Player
+@{
+    //Layout = "~/Views/Shared/_GameMaster.cshtml";
+}
+
+<div class="row show-grid">
+    <div class="col-lg-6">
+        <h2>
+            My Profile</h2>
+        <div class="row show-grid">
+            <div>
+                Nick: @Model.DisplayName</div>
+        </div>
+        <div class="row show-grid">
+            <div class="col-lg-4">
+                <img alt="avatarIcon" src ="@string.Format("{0}{1}", Url.Content("~/img/Icons/"), Model.Avatar)" class="mt10" />
+            </div>
+        </div>
+        <div class="row show-grid mt10">
+            <div class="col-lg-4">
+                <a class="btn btn-info btn-large" href="javascript:void(0);"  onclick="loadUrl('@Url.Action("EditProfile", "Player")')" >Edit</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <p>
+            <h2>
+                Won</h2>
+            @Html.Raw(Model.Wins.ToString())
+            <h2 class="mt10">
+                Lost</h2>
+            <p class="inline red">@Html.Raw(Model.Losses.ToString())</p>
+        </p>
+    </div>
+</div>

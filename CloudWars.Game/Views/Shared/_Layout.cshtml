@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cloud Wars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    @*<link href="@string.Format("{0}bootstrap.min.css", CDNHelper.CssUrl)" rel="stylesheet" type="text/css" />*@
+      <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/SiteGame.css")" rel="stylesheet" type="text/css" />
+
+    <script src="@Url.Content("~/Scripts/jquery-2.0.3.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/bootstrap.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.10.3.min.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/Game/game.js")" type="text/javascript"></script>   
+    <script src="@Url.Content("~/Scripts/Game/cloudwars.js")" type="text/javascript"></script>   
+    <script src="@Url.Content("~/Scripts/NeedletailMvc.js")" type="text/javascript"></script>   
+
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    
+  </head>
+
+  <body>
+
+    <div class="navbar">
+            <a class="navbar-brand" href="javascript:void(0)" onclick="loadUrlPost('@Url.Action("Inicio","Home")')">
+                <img src='@Url.Content("~/images/logo.png")'  height="20"  />
+            </a>
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="javascript:void(0)" onclick="loadUrlPost('@Url.Action("Inicio","Home")')">Home</a></li>
+              
+              @if (User.Identity.IsAuthenticated)
+              {
+                <li><a href="javascript:void(0);" onclick="loadUrlPost('@Url.Action("Index","Player")')" class="needInitialization">My Profile</a></li>              
+                <li><a href="javascript:void(0);" onclick="loadUrlPost('@Url.Action("OnlinePlayers", "Game")')" class="needInitialization">Players</a></li>              
+                <li><a href="javascript:void(0);" onclick="loadUrlPost('@Url.Action("MyChallenges", "Game")')" class="needInitialization">My Chanllenges</a></li>              
+                <li><a href="javascript:void(0);" onclick="loadUrlPost('@Url.Action("MyMatches", "Game")')" class="needInitialization">My Games</a></li>                              
+              }              
+            </ul>
+            @Html.Partial("_LoginPartial") 
+          
+    </div>
+
+    <div class="container" id="mainContainer">
+
+        @RenderBody()
+      
+      <hr>
+
+      <footer>
+        <p>Cloud Wars</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    <div id="allSounds"> </div>
+
+    <!-- region modals -->
+      <div class="modal fade" id="retoLanzadoModal">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      @*<a class="close" data-dismiss="modal" href="javascript:void(0);" onclick="$('#retoLanzadoModal').hide();">×</a>*@
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                      <h3 id="windowHeader"></h3>
+                  </div>
+                  <div class="modal-body">
+                      <p id="windowText">
+                      </p>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                      @*<a href="javascript:void(0);" class="btn" onclick="$('#retoLanzadoModal').hide();">Close</a>*@
+                  </div>
+              </div>
+          </div>
+      </div>
+    <!-- end region modals -->
+    
+    @RenderSection("scripts", required: false)
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    @*<script src="@Url.Content("~/Scripts/jquery-1.6.4.min.js")" type="text/javascript"></script>*@
+    @*<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js" type="text/javascript"></script>    *@
+      
+    @if (User.Identity.IsAuthenticated)
+    {
+        @*<script src="@string.Format("{0}jquery.signalR.min.js", CDNHelper.ScriptsUrl)" type="text/javascript"></script>
+        <script src="@Url.Content("~/signalr/hubs")" type="text/javascript"></script>*@
+        @*<script src="@string.Format("{0}/Game/cloudwars.js", CDNHelper.ScriptsUrl)" type="text/javascript"></script> *@
+    <script language ="javascript" type="text/javascript">
+
+        liveId = '@ClourWars.Web.Code.ProfileHelper.GetIdentity';
+        gamesUrl = '@Url.Action("MyMatches", "Game")';
+        myMatchesUrl = '@Url.Action("MyMatches", "Game")';
+    
+        </script>
+    }
+      
+    <script language ="javascript" type="text/javascript">
+
+        var twoway = '@Url.Action("Remote", "Api", new { })';
+
+        needleTail.initialize(twoway);
+
+        gameControllerUrl = '@Url.Action("Index","Game")' + '/';
+
+        
+        $("#logon, #hazLogin").click(function () {
+            $('#windowHeader').html('Login');
+            $('#windowText').html('Loading...');
+            $('#retoLanzadoModal').removeClass('hidden');
+            $.ajax({
+                url: '@Html.Raw(Url.Action("IdentityProviders", "Account", new { serviceNamespace = "retostarwarscloudwars", appId = "https://localhost:81/" }))',
+                success: function (data) {
+                    dialogHtml = '<ul>';
+                    for (i = 0; i < data.length; i++) {
+                        dialogHtml += '<li>';
+                        if (data[i].ImageUrl == '') {
+                            dialogHtml += '<a href="' + data[i].LoginUrl + '">' + data[i].Name + '</a>';
+                        } else {
+                            dialogHtml += '<a href="' + data[i].LoginUrl + '"><img style="border: 0px; width: 100px" src="' + data[i].ImageUrl + '" alt="' + data[i].Name + '" /></a>';
+                        }
+
+                        dialogHtml += '</li>';
+                    }
+
+                    dialogHtml += '</ul>';
+
+                    $("#windowText").html(dialogHtml);
+                }
+            })
+        });
+
+
+    </script>
+
+  </body>
+</html>
+
+
