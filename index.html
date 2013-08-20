@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Cloud Wars game by pedro-ramirez-suarez</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Cloud Wars game</h1>
+        <p>How to use the Needletail tools to build a Battleship inspired game</p>
+
+        <p class="view"><a href="https://github.com/pedro-ramirez-suarez/cloudwarsgame">View the Project on GitHub <small>pedro-ramirez-suarez/cloudwarsgame</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/pedro-ramirez-suarez/cloudwarsgame/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/pedro-ramirez-suarez/cloudwarsgame/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/pedro-ramirez-suarez/cloudwarsgame">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p></p><h1>
+<a name="before-you-run-the-game" class="anchor" href="#before-you-run-the-game"><span class="octicon octicon-link"></span></a><img src="https://raw.github.com/pedro-ramirez-suarez/cloudwarsgame/master/CloudWars.Game/Images/logo.png"><h1>
+<a name="before-you-run-the-game-1" class="anchor" href="#before-you-run-the-game-1"><span class="octicon octicon-link"></span></a>
+
+<h2>
+<a name="before-you-run-the-game-2" class="anchor" href="#before-you-run-the-game-2"><span class="octicon octicon-link"></span></a>Before you run the game</h2>
+
+</h1>
+</h1><p>Before you run the game, you need to setup:
+    </p><ul>
+<li><a href="http://blogs.msdn.com/b/webdev/archive/2012/08/15/oauth-openid-support-for-webforms-mvc-and-webpages.aspx">Enable and setup Open Auth </a></li>
+        <li>
+            Modify the Default connection string on <code>web.config</code> to match your environment.
+        </li>
+    </ul><h4>
+<a name="important" class="anchor" href="#important"><span class="octicon octicon-link"></span></a>Important</h4>
+    <ul>
+<li>The game is not compatible with any version of Internet Explorer.</li>
+        <li>Do not use IIS Express, SSE is not properly implemented on it, some events are lost or not sent live</li>
+    <ul>
+<h2>
+<a name="why-these-libraries" class="anchor" href="#why-these-libraries"><span class="octicon octicon-link"></span></a>Why these libraries</h2>
+
+<p>There are a lot of good libraries out there, but sometimes only the creator of the library or people with the "right" problem will 
+try new libraries and then appreciate it's features, so my purpose was to create an application that shows what the Needletail libraries can do for you.
+</p>
+
+<h2>
+<a name="architecture-and-points-of-interest" class="anchor" href="#architecture-and-points-of-interest"><span class="octicon octicon-link"></span></a>Architecture and points of interest</h2>
+
+<p><img src="https://raw.github.com/pedro-ramirez-suarez/cloudwarsgame/master/architecture.jpg"></p>
+
+<p>We use Needletail's Micro ORM to access the database, since the library provide fast access to the data, a social game it's an excelent scenario for it, Needletail MVC is used to push/send events on real time to the browser without breaking up your MVC pattern.</p>
+
+<h2>
+<a name="how-needletail-tools-were-used" class="anchor" href="#how-needletail-tools-were-used"><span class="octicon octicon-link"></span></a>How needletail tools were used</h2>
+
+<h4>
+<a name="needletaildataaccess" class="anchor" href="#needletaildataaccess"><span class="octicon octicon-link"></span></a>Needletail.DataAccess</h4>
+
+<p>The CloudWars.DataAccess library project shows how Needletail.DataAccess was used, you can do the same thing in a few different ways with the library so instead of using the same approach, I use different approaches to get or modify data, a few samples are:</p>
+
+<ul>
+<li>
+        <p>Get a challenge stored in the database</p>
+        <pre><code>return CloudWarsDB.Challenges.GetSingle( where: new { Id = challengeId } );</code></pre>
+    </li>
+    <li>
+        <p>Create a new challenge</p>
+        <pre>
+            <code>
+                var c = new Challenge { Id = Guid.NewGuid(), Player1 = fromId, Player2 = toId };
+                CloudWarsDB.Challenges.Insert(c);
+            </code>
+        </pre>
+    </li>
+    <li>
+        <p>update a player</p>
+        <pre>
+            <code>
+                CloudWarsDB.Players.UpdateWithWhere(values: values, where: where);
+            </code>
+        </pre>
+    </li>
+</ul>
+<h4>
+<a name="needletailmvc" class="anchor" href="#needletailmvc"><span class="octicon octicon-link"></span></a>Needletail.MVC</h4>
+
+<p>The purpose of the game is to interact in real time with your opponent as you are playing, there is a well known alternative for Needletail.MVC which is SignalR, but one thing that I don't like about it, is that it force you to follow some conventions and architecture, since the game
+was developed with Asp.Net MVC 4, it does not feel natural to break your pattern to implement some parts of the functionality, so I decided to build a library for that purpose(with some limitations), here is how the library was used on the game</p>
+
+<ul>
+<li>
+        Chatting with your opponent
+        <pre>
+            <code>
+                //This code is on the GameController
+                [HttpPost]
+                public TwoWayResult PlayerChat(string message, string clientId)
+                {
+                    //sanitize the message
+                    message = Encoder.HtmlEncode(message);
+                    dynamic call = new ClientCall { CallerId = Context.ConnectionId, ClientId = clientId };
+                    call.game.receiveMessage(message); //game.receiveMessage is a javascript method
+                    return new TwoWayResult(call);
+                }
+            </code>
+        </pre>
+    </li>
+    <li>
+        Invite your opponent to start the match
+        <pre>
+            <code>
+                //This code is on the GameController
+                [HttpPost]
+                public  TwoWayResult InvitePlayer(Guid matchId, string clientId)
+                {
+                    var player = factory.GetPlayerPresence().GetPlayerNameByClientId(Context.ConnectionId);
+            
+                    dynamic call = new ClientCall { CallerId = Context.ConnectionId, ClientId = clientId };
+                    call.game.inviteToMatch(matchId, player); //game.inviteToMatch is a javascript method
+                    return new TwoWayResult(call);
+                }
+            </code>
+        </pre>
+    </li>
+</ul>
+<p>You can read more about Needletail libraries <a href="http://pedro-ramirez-suarez.github.io/needletailtools/" target="_blank">here</a></p>
+</ul>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/pedro-ramirez-suarez">pedro-ramirez-suarez</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
