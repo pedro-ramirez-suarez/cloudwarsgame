@@ -239,6 +239,7 @@
     <Compile Include="ServerClientEntities\UnitInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="architecture.jpg" />
     <Content Include="Content\bootstrap-responsive.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />

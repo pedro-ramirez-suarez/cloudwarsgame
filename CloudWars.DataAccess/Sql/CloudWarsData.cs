@@ -205,7 +205,7 @@ namespace CloudWars.DataAccess.Sql
 
         public static Player GetPlayer(Guid playerId)
         {
-            return CloudWarsDB.Players.GetSingle(new { Id = playerId });
+            return CloudWarsDB.Players.GetSingle( where: new { Id = playerId });
         }
 
     }

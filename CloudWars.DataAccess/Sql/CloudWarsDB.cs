@@ -11,7 +11,10 @@ namespace CloudWars.DataAccess.Sql
 {
     public class CloudWarsDB
     {
-        public const string ConnectionString = "CloudWarsConnectionString";
+        /// <summary>
+        /// The connection string for the game
+        /// </summary>
+        public const string ConnectionString = "DefaultConnection";
 
         static DBTableDataSourceBase<Match, Guid> _Matches = new DBTableDataSourceBase<Match, Guid> (ConnectionString, "Match");
         public static DBTableDataSourceBase<Match, Guid> Matches
