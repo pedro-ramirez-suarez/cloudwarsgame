@@ -66,7 +66,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Needletail.DataAccess.Migrations.1.0.0.2\lib\net40\Needletail.DataAccess.dll</HintPath>
     </Reference>
-    <Reference Include="Needletail.DataAccess.Migrations">
+    <Reference Include="Needletail.DataAccess.Migrations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Needletail.DataAccess.Migrations.1.0.0.2\lib\net40\Needletail.DataAccess.Migrations.dll</HintPath>
     </Reference>
     <Reference Include="Needletail.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -547,6 +548,9 @@
     <Content Include="img\units\step5.jpg" />
     <Content Include="img\units\step6.jpg" />
     <Content Include="license.txt" />
+    <Content Include="Migrations\InitializeDatabase.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Game\cloudwars.js" />

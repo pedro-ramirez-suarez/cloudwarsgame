@@ -16,6 +16,9 @@ namespace CloudWars.Game
     {
         protected void Application_Start()
         {
+            //Needletail migrations
+            Needletail.DataAccess.Migrations.Migrator.Migrate("DefaultConnection",Server.MapPath("~"));
+
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);
@@ -23,6 +26,7 @@ namespace CloudWars.Game
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+            
         }
     }
 }
