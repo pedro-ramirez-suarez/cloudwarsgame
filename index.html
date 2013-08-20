@@ -94,6 +94,17 @@ try new libraries and then appreciate it's features, so my purpose was to create
     </li>
 </ul>
 <h4>
+<a name="needletaildataaccessmigratoins" class="anchor" href="#needletaildataaccessmigratoins"><span class="octicon octicon-link"></span></a>Needletail.DataAccess.Migratoins</h4>
+
+<p>Since we don't want to manually create the database, we use the Migrations library to automatically create and prepupulate the database for us.</p>
+
+<ul>
+<li>
+        <p>Creating/updating the database on Global.asax</p>
+        <pre><code>Needletail.DataAccess.Migrations.Migrator.Migrate("DefaultConnection",Server.MapPath("~"));</code></pre>
+    </li>    
+</ul>
+<h4>
 <a name="needletailmvc" class="anchor" href="#needletailmvc"><span class="octicon octicon-link"></span></a>Needletail.MVC</h4>
 
 <p>The purpose of the game is to interact in real time with your opponent as you are playing, there is a well known alternative for Needletail.MVC which is SignalR, but one thing that I don't like about it, is that it force you to follow some conventions and architecture, since the game
