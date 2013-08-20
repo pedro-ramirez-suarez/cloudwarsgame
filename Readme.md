@@ -1,5 +1,5 @@
 ﻿
-<h1>Cloud Wars game<h1>
+<h1><img src="https://raw.github.com/pedro-ramirez-suarez/cloudwarsgame/master/CloudWars.Game/Images/logo.png"/><h1>
 <h2>Before you run the game</h2>
 <p>Before you run the game, you need to setup:
     <ul>
@@ -22,7 +22,7 @@ try new libraries and then appreciate it's features, so my purpose was to create
 
 
 <h2>Architecture and points of interest</h2>
-<img src="architecture.jpg"/>
+<img src="https://raw.github.com/pedro-ramirez-suarez/cloudwarsgame/master/architecture.jpg"/>
 <p>We use Needletail's Micro ORM to access the database, since the library provide fast access to the data, a social game it's an excelent scenario for it, Needletail MVC is used to push/send events on real time to the browser without breaking up your MVC pattern.</p>
 
 <h2>How needletail tools were used</h2>
