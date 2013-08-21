@@ -1,19 +1,23 @@
 ﻿
 <h1><img src="https://raw.github.com/pedro-ramirez-suarez/cloudwarsgame/master/CloudWars.Game/Images/logo.png"/><h1>
 <h2>Before you run the game</h2>
-<p>Before you run the game, you need to setup:
+<p>Before you run the game:</p>
     <ul>
-        <li><a href="http://blogs.msdn.com/b/webdev/archive/2012/08/15/oauth-openid-support-for-webforms-mvc-and-webpages.aspx">Enable and setup Open Auth </a></li>
+        <li>The Needletail Migrations library will create all the tables and populate initial data but you need at least MSSQL Express 2008 R2</li>
+        <li>Create a new database</li>
         <li>
             Modify the Default connection string on <code>web.config</code> to match your environment.
         </li>
+      <li>
+        <a href="http://blogs.msdn.com/b/webdev/archive/2012/08/15/oauth-openid-support-for-webforms-mvc-and-webpages.aspx">Enable and setup Open Auth </a>
+      </li>
     </ul>
     <h4>Important</h4>
     <ul>
         <li>The game is not compatible with any version of Internet Explorer.</li>
         <li>Do not use IIS Express, SSE is not properly implemented on it, some events are lost or not sent live</li>
-    <ul>
-</p>
+    </ul>
+      
 
 <h2>Why these libraries</h2>
 <p>There are a lot of good libraries out there, but sometimes only the creator of the library or people with the "right" problem will 
