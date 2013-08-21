@@ -1,5 +1,5 @@
 ﻿
-<h1><img src="https://raw.github.com/pedro-ramirez-suarez/cloudwarsgame/master/CloudWars.Game/Images/logo.png"/><h1>
+<h1><img src="https://raw.github.com/pedro-ramirez-suarez/cloudwarsgame/master/CloudWars.Game/Images/logo.png"/></h1>
 <img src="https://raw.github.com/pedro-ramirez-suarez/cloudwarsgame/master/CloudWars.Game/img/playing.jpg"/>
 <h2>Before you run the game</h2>
 <p>
@@ -124,6 +124,6 @@ was developed with Asp.Net MVC 4, it does not feel natural to break your pattern
 
 <h4>Not perfect</h4>
 <p>The game is still under development so you may find some bugs, feedback will be appreciated</p>
-  
+<p>
 You can read more about Needletail libraries <a href="http://pedro-ramirez-suarez.github.io/needletailtools/" target="_blank">here</a>
-
+</p>
