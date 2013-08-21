@@ -19,9 +19,23 @@
         <li>Do not use IIS Express, SSE is not properly implemented on it, some events are lost or not sent live</li>
         <li>All the functionality related with account management is the one included with the Asp.Net MVC 4 template</li>
     </ul>
- </p>     
+ </p>
 
-<h2>Why these libraries</h2>
+  <h2>Some of the libraries used are:</h2>
+  <ul>
+    <li>Asp.Net MVC 4</li>
+    <li>AntiXss</li>
+    <li>C#</li>
+    <li>Html5</li>
+    <li>Javascript</li>
+    <li>JQuery</li>
+    <li>Bootstrap 3 RC2</li>
+    <li>Needletail DataAccess</li>
+    <li>Needletail DataAccess Migrations</li>
+    <li>Needletail MVC</li>
+  </ul>
+  
+<h2>Why Needletail libraries</h2>
 <p>There are a lot of good libraries out there, but sometimes only the creator of the library or people with the "right" problem will 
 try new libraries and then appreciate it's features, so my purpose was to create an application that shows what the Needletail libraries can do for you.
 </p>
