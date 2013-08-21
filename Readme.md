@@ -72,7 +72,7 @@ try new libraries and then appreciate it's features, so my purpose was to create
     </li>
 </ul>
 
-<h4>Needletail.DataAccess.Migratoins</h4>
+<h4>Needletail.DataAccess.Migrations</h4>
 <p>Since we don't want to manually create the database, we use the Migrations library to automatically create and prepupulate the database for us.</p>
 <ul>
     <li>
