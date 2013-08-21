@@ -28,7 +28,7 @@ namespace ClourWars.Game.Controllers
             var profile = ProfileHelper.GetPlayerProfile(ProfileHelper.GetIdentity);
             if (profile == null)
                 profile = new Player { DisplayName = string.Empty };
-            return View(profile);
+            return PartialView(profile);
         }
 
         [Authorize]
