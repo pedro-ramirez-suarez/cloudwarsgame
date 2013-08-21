@@ -21,7 +21,7 @@
     </ul>
  </p>
 
-  <h2>Some of the libraries used are:</h2>
+  <h2>Built with:</h2>
   <ul>
     <li>Asp.Net MVC 4</li>
     <li>AntiXss</li>
