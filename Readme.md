@@ -122,5 +122,8 @@ was developed with Asp.Net MVC 4, it does not feel natural to break your pattern
     </li>
 </ul>
 
+<h4>Not perfect</h4>
+<p>The game is still under development so you may find some bugs, feedback will be appreciated</p>
+  
 You can read more about Needletail libraries <a href="http://pedro-ramirez-suarez.github.io/needletailtools/" target="_blank">here</a>
 
