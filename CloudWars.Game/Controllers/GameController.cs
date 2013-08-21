@@ -118,6 +118,8 @@ namespace ClourWars.Game.Controllers
         [HttpPost]
         public void Initialize(string liveId, string latitude, string longitude)
         {
+            if (string.IsNullOrWhiteSpace(liveId))
+                return;
             latitude = string.IsNullOrWhiteSpace(latitude) ? "1" : latitude;
             longitude = string.IsNullOrWhiteSpace(longitude) ? "1" : longitude;
             factory.GetPlayerPresence().PlayerIsOnLine(liveId, Context.ConnectionId, double.Parse(latitude), double.Parse(longitude));

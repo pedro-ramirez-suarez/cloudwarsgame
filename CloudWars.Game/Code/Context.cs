@@ -13,7 +13,7 @@ namespace CloudWars.Web.Code
         {
             get 
             {
-                return HttpContext.Current.User.Identity.IsAuthenticated ? HttpContext.Current.User.Identity.Name : Guid.NewGuid().ToString() ;
+                return HttpContext.Current.User.Identity.Name;
             }
         }
     }
