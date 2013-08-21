@@ -17,6 +17,7 @@
     <ul>
         <li>The game is not compatible with any version of Internet Explorer.</li>
         <li>Do not use IIS Express, SSE is not properly implemented on it, some events are lost or not sent live</li>
+        <li>All the functionality related with account management is the one included with the Asp.Net MVC 4 template</li>
     </ul>
  </p>     
 
