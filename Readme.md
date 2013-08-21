@@ -1,7 +1,7 @@
 ﻿
 <h1><img src="https://raw.github.com/pedro-ramirez-suarez/cloudwarsgame/master/CloudWars.Game/Images/logo.png"/><h1>
+<img src="https://raw.github.com/pedro-ramirez-suarez/cloudwarsgame/master/CloudWars.Game/img/playing.jpg"/>
 <h2>Before you run the game</h2>
-<p>Before you run the game:</p>
     <ul>
         <li>The Needletail Migrations library will create all the tables and populate initial data but you need at least MSSQL Express 2008 R2</li>
         <li>Create a new database</li>
