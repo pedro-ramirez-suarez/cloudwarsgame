@@ -68,7 +68,7 @@ try new libraries and then appreciate it's features, so my purpose was to create
 
 
 <h4>Needletail.MVC</h4>
-<p>The purpose of the game is to interact in real time with your opponent as you are playing, there is a well known alternative for Needletail.MVC which is SignalR, but one thing that I don't like about it, is that it force you to follow some conventions and architecture, since the game
+<p>The purpose of the game is to interact in real time with your opponent as you are playing, there is a well known alternative for Needletail.MVC which is SignalR, but one thing that I don't like about it, is that it force you to follow some conventions and pattern, since the game
 was developed with Asp.Net MVC 4, it does not feel natural to break your pattern to implement some parts of the functionality, so I decided to build a library for that purpose(with some limitations), here is how the library was used on the game</p>
 <ul>
     <li>
