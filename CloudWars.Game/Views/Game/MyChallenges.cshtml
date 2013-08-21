@@ -25,7 +25,7 @@
             <div class="row show-grid">
                 <div class="span1">
                     @Html.DisplayFor(modelItem => item.FromPlayerName)
-                    <img alt="avatarIcon" src ="@string.Format("{0}/{1}", Url.Content("~/img/Icons/"),item.FromPlayerAvatar)" class="mt10" />
+                    <img alt="avatarIcon" src ="@string.Format("{0}/{1}", Url.Content("~/img/Icons"),item.FromPlayerAvatar)" class="mt10" />
                 </div>
             </div>
         </td>
@@ -40,8 +40,8 @@
             </p>
             <p class="mt10">
                 <a href="javascript:void(0)" onclick="challengeAccepted('@item.ChallengeId',this)" class="btn btn-success">
-                    Accept Challenge</a>
-                 <a href="javascript:void(0)" onclick="challengeRejected('@item.ChallengeId',this)" class="btn btn-danger ml10">
+                    Accept Challenge</a>                
+                 <a href="javascript:void(0)" onclick="challengeRejected('@item.ChallengeId',this)" class="btn btn-danger mt10">
                         Reject Challenge</a>
             </p>
         </td>
