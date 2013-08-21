@@ -18,9 +18,9 @@ namespace CloudWars.Game
             //    clientId: "",
             //    clientSecret: "");
 
-            OAuthWebSecurity.RegisterTwitterClient(
-                consumerKey: "gtVgY9UW2sNL6WbjZO3cQ",
-                consumerSecret: "jWATZhpQJqBaJ6tcEs08JKC5hkaH6DOKcG3fTejIA");
+            //OAuthWebSecurity.RegisterTwitterClient(
+            //    consumerKey: "",
+            //    consumerSecret: "");
 
             //OAuthWebSecurity.RegisterFacebookClient(
             //    appId: "",
