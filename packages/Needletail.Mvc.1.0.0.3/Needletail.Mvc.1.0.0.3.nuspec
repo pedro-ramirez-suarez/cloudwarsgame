@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Needletail.Mvc</id>
-    <version>1.0.0.1</version>
+    <version>1.0.0.3</version>
     <title>Needletail MVC</title>
     <authors>Pedro Ramirez</authors>
     <owners>Pedro Ramirez</owners>
@@ -13,11 +13,8 @@
     <summary>Call javascript code from the server.</summary>
     <releaseNotes>Minor fixes and improvements.
 
-NOT COMPATIBLE WITH IIS EXPRESS</releaseNotes>
-    <copyright>Copyright 2013</copyright>
+Issues with IIS EXPRESS</releaseNotes>
+    <copyright>Copyright 2015</copyright>
     <tags>MVC4 SSE</tags>
-    <references>
-      <reference file="Needletail.Mvc.dll" />
-    </references>
   </metadata>
 </package>
