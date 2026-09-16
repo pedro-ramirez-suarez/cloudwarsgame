@@ -1,0 +1,10 @@
+<Project>
+  <!-- Mac/Linux build shim for the legacy (non-SDK) projects: compile against Mono's .NET Framework
+       reference assemblies of the project's own TargetFrameworkVersion. No effect on Windows or on
+       SDK-style projects (which bring their own reference assemblies). -->
+  <PropertyGroup Condition="'$(OS)' != 'Windows_NT' and '$(UsingMicrosoftNETSdk)' != 'true' and '$(TargetFrameworkVersion)' != ''">
+    <MonoReferenceAssembliesRoot Condition="'$(MonoReferenceAssembliesRoot)' == '' and Exists('/opt/homebrew/lib/mono')">/opt/homebrew/lib/mono</MonoReferenceAssembliesRoot>
+    <MonoReferenceAssembliesRoot Condition="'$(MonoReferenceAssembliesRoot)' == '' and Exists('/Library/Frameworks/Mono.framework/Versions/Current/lib/mono')">/Library/Frameworks/Mono.framework/Versions/Current/lib/mono</MonoReferenceAssembliesRoot>
+    <FrameworkPathOverride Condition="'$(MonoReferenceAssembliesRoot)' != ''">$(MonoReferenceAssembliesRoot)/$(TargetFrameworkVersion.TrimStart('v'))-api</FrameworkPathOverride>
+  </PropertyGroup>
+</Project>
