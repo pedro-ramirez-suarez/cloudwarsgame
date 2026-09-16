@@ -1,0 +1,44 @@
+[
+    {
+        "project":  "CloudWars.Common.csproj",
+        "sdkStyle":  false,
+        "targetFramework":  "v4.5",
+        "lines":  222
+    },
+    {
+        "project":  "CloudWars.DataAccess.csproj",
+        "sdkStyle":  false,
+        "targetFramework":  "v4.5",
+        "lines":  400
+    },
+    {
+        "project":  "CloudWars.Engine.csproj",
+        "sdkStyle":  false,
+        "targetFramework":  "v4.0",
+        "lines":  188
+    },
+    {
+        "project":  "CloudWars.Entities.csproj",
+        "sdkStyle":  false,
+        "targetFramework":  "v4.5",
+        "lines":  179
+    },
+    {
+        "project":  "CloudWars.Game.csproj",
+        "sdkStyle":  false,
+        "targetFramework":  "v4.5",
+        "lines":  1382
+    },
+    {
+        "project":  "CloudWars.Glue.csproj",
+        "sdkStyle":  false,
+        "targetFramework":  "v4.0",
+        "lines":  42
+    },
+    {
+        "project":  "CloudWars.SpaceBattle.csproj",
+        "sdkStyle":  false,
+        "targetFramework":  "v4.5",
+        "lines":  421
+    }
+]
