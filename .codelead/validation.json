@@ -1,0 +1,8 @@
+{
+  "scopes": {
+    "CloudWars.Characterization.Db": [
+      { "label": "dotnet build (net48)", "command": "dotnet", "args": ["build", "-nologo", "-v", "q"] },
+      { "label": "mono xunit (net48)", "command": "mono", "args": ["/Users/peter/.nuget/packages/xunit.runner.console/2.9.2/tools/net472/xunit.console.exe", "bin/Debug/net48/CloudWars.Characterization.Db.dll", "-nologo"] }
+    ]
+  }
+}

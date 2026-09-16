@@ -53,3 +53,6 @@ build/
 
 
 .codeleadsessions/
+
+# pilot: local database connection for the characterization tests (never committed)
+connections.local.config
