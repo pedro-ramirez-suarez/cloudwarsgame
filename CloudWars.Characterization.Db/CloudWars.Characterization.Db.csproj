@@ -23,6 +23,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Needletail.DataAccess">
+      <HintPath>..\packages\Needletail.DataAccess.1.0.0.3\lib\net40\Needletail.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types">
+      <HintPath>..\packages\Needletail.DataAccess.1.0.0.3\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="connections.local.config" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
