@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net48;net8.0</TargetFrameworks>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <IsPackable>false</IsPackable>
@@ -31,8 +31,14 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Include="connections.local.config" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="CloudWars.Characterization.Db.dll.config" CopyToOutputDirectory="PreserveNewest" Condition="Exists('CloudWars.Characterization.Db.dll.config')" />
   </ItemGroup>
 
 </Project>
