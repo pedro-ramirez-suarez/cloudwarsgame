@@ -56,3 +56,15 @@ build/
 
 # pilot: local database connection for the characterization tests (never committed)
 connections.local.config
+.vs/CloudWars/config/applicationhost.config
+.vs/CloudWars/CopilotIndices/18.10.1189.45219/SemanticSymbols.db
+.vs/CloudWars/DesignTimeBuild/.dtbcache.v2
+.vs/CloudWars/FileContentIndex/041dc707-edc3-4809-91fc-36c4f77999bd.vsidx
+.vs/CloudWars/FileContentIndex/99841fea-7967-4a94-b00b-8ebcfb022465.vsidx
+.vs/CloudWars/v18/.futdcache.v2
+.vs/CloudWars/v18/DocumentLayout.backup.json
+.vs/CloudWars/v18/DocumentLayout.json
+.vs/config/applicationhost.config
+.vs/ProjectEvaluation/cloudwars.metadata.v10.bin
+.vs/ProjectEvaluation/cloudwars.projects.v10.bin
+.vs/ProjectEvaluation/cloudwars.strings.v10.bin
