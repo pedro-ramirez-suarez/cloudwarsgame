@@ -1,0 +1,8 @@
+{
+    "msbuild":  "18.10.1.42706",
+    "timestamp":  "2026-09-17T09-35-34",
+    "gitStatusDirty":  4,
+    "git":  "36f2792bb774bbf223081460e03fa80683a57662",
+    "dotnet":  "10.0.401",
+    "os":  "Microsoft Windows 10 Pro"
+}

@@ -1,33 +1,15 @@
 [
     {
-        "project":  "CloudWars.Characterization.csproj",
-        "sdkStyle":  true,
-        "targetFramework":  "net8.0",
-        "lines":  141
-    },
-    {
-        "project":  "CloudWars.Characterization.Db.csproj",
-        "sdkStyle":  true,
-        "targetFramework":  {
-
-                            },
-        "lines":  888
-    },
-    {
         "project":  "CloudWars.Common.csproj",
-        "sdkStyle":  true,
-        "targetFramework":  {
-
-                            },
-        "lines":  226
+        "sdkStyle":  false,
+        "targetFramework":  "v4.5",
+        "lines":  222
     },
     {
         "project":  "CloudWars.DataAccess.csproj",
-        "sdkStyle":  true,
-        "targetFramework":  {
-
-                            },
-        "lines":  524
+        "sdkStyle":  false,
+        "targetFramework":  "v4.5",
+        "lines":  400
     },
     {
         "project":  "CloudWars.Engine.csproj",
@@ -37,11 +19,9 @@
     },
     {
         "project":  "CloudWars.Entities.csproj",
-        "sdkStyle":  true,
-        "targetFramework":  {
-
-                            },
-        "lines":  183
+        "sdkStyle":  false,
+        "targetFramework":  "v4.5",
+        "lines":  179
     },
     {
         "project":  "CloudWars.Game.csproj",
@@ -57,10 +37,8 @@
     },
     {
         "project":  "CloudWars.SpaceBattle.csproj",
-        "sdkStyle":  true,
-        "targetFramework":  {
-
-                            },
-        "lines":  445
+        "sdkStyle":  false,
+        "targetFramework":  "v4.5",
+        "lines":  421
     }
 ]
