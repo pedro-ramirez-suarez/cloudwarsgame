@@ -7,4 +7,9 @@
     <MonoReferenceAssembliesRoot Condition="'$(MonoReferenceAssembliesRoot)' == '' and Exists('/Library/Frameworks/Mono.framework/Versions/Current/lib/mono')">/Library/Frameworks/Mono.framework/Versions/Current/lib/mono</MonoReferenceAssembliesRoot>
     <FrameworkPathOverride Condition="'$(MonoReferenceAssembliesRoot)' != ''">$(MonoReferenceAssembliesRoot)/$(TargetFrameworkVersion.TrimStart('v'))-api</FrameworkPathOverride>
   </PropertyGroup>
+  <!-- SDK-style projects that multi-target a .NET Framework TFM on Mac/Linux: reference assemblies from NuGet
+       (Phase 2, 2026-09-17). Inert on Windows, where the targeting pack is installed. -->
+  <ItemGroup Condition="'$(OS)' != 'Windows_NT' and '$(UsingMicrosoftNETSdk)' == 'true' and $([System.String]::Copy('$(TargetFramework)').StartsWith('net4'))">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
 </Project>

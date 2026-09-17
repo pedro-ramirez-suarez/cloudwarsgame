@@ -1,8 +1,100 @@
 {
   "scopes": {
     "CloudWars.Characterization.Db": [
-      { "label": "dotnet build (net48)", "command": "dotnet", "args": ["build", "-nologo", "-v", "q"] },
-      { "label": "mono xunit (net48)", "command": "mono", "args": ["/Users/peter/.nuget/packages/xunit.runner.console/2.9.2/tools/net472/xunit.console.exe", "bin/Debug/net48/CloudWars.Characterization.Db.dll", "-nologo"] }
+      {
+        "label": "dotnet build (net48)",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "-nologo",
+          "-v",
+          "q"
+        ]
+      },
+      {
+        "label": "mono xunit (net48)",
+        "command": "mono",
+        "args": [
+          "/Users/peter/.nuget/packages/xunit.runner.console/2.9.2/tools/net472/xunit.console.exe",
+          "bin/Debug/net48/CloudWars.Characterization.Db.dll",
+          "-nologo"
+        ]
+      }
+    ],
+    ".": [
+      {
+        "label": "build Common (both targets)",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "CloudWars.Common/CloudWars.Common.csproj",
+          "-nologo",
+          "-v",
+          "q"
+        ]
+      },
+      {
+        "label": "build Entities (both targets)",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "CloudWars.Entities/CloudWars.Entities.csproj",
+          "-nologo",
+          "-v",
+          "q"
+        ]
+      },
+      {
+        "label": "build DataAccess (both targets)",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "CloudWars.DataAccess/CloudWars.DataAccess.csproj",
+          "-nologo",
+          "-v",
+          "q"
+        ]
+      },
+      {
+        "label": "build SpaceBattle (both targets)",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj",
+          "-nologo",
+          "-v",
+          "q"
+        ]
+      },
+      {
+        "label": "pins in-memory (dotnet test, net8.0)",
+        "command": "dotnet",
+        "args": [
+          "test",
+          "CloudWars.Characterization/CloudWars.Characterization.csproj",
+          "-nologo"
+        ]
+      },
+      {
+        "label": "pins database (build net48)",
+        "command": "dotnet",
+        "args": [
+          "build",
+          "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj",
+          "-nologo",
+          "-v",
+          "q"
+        ]
+      },
+      {
+        "label": "pins database (mono xunit, net48)",
+        "command": "mono",
+        "args": [
+          "/Users/peter/.nuget/packages/xunit.runner.console/2.9.2/tools/net472/xunit.console.exe",
+          "CloudWars.Characterization.Db/bin/Debug/net48/CloudWars.Characterization.Db.dll",
+          "-nologo"
+        ]
+      }
     ]
   }
 }
