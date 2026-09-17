@@ -24,14 +24,20 @@ namespace CloudWars.SpaceBattle
         bool MatchEnded { get; set; }
         bool PlayingNow { get; set; }
         Guid Winner { get; set; }
+        private readonly ICloudWarsData _data;
         
 
-        public SpaceBattleGame(Guid matchId, bool loadMatchData)
+        public SpaceBattleGame(ICloudWarsData data)
+        {
+            _data = data;
+        }
+
+        public SpaceBattleGame(Guid matchId, bool loadMatchData) : this(new SqlCloudWarsData())
         {
             //load the match
             if (loadMatchData)
             {
-                var m = CloudWarsData.GetMatch(matchId);
+                var m = _data.GetMatch(matchId);
                 this.MatchId = m.Id;
                 this.Player1 = m.Player1;
                 this.Player2 = m.Player2;
@@ -43,7 +49,7 @@ namespace CloudWars.SpaceBattle
                 this.Winner = m.Winner;
                 this.PlayingNow = m.PlayingNow;
                 //Get the units
-                var dbUnits = CloudWarsData.GetUnits(matchId);
+                var dbUnits = _data.GetUnits(matchId);
                 Units = new List<IGameUnit>();
                 foreach (var u in dbUnits)
                 {
@@ -58,7 +64,7 @@ namespace CloudWars.SpaceBattle
 
         
 
-        public SpaceBattleGame()
+        public SpaceBattleGame() : this(new SqlCloudWarsData())
         { 
         }
 
@@ -70,7 +76,7 @@ namespace CloudWars.SpaceBattle
             Player1 = player1;
             Player2 = player2;
             //Create the match and set the matchid
-            MatchId = CloudWarsData.CreateMatch(player1, player2);
+            MatchId = _data.CreateMatch(player1, player2);
             Turn = player1;
         }
 
@@ -179,48 +185,48 @@ namespace CloudWars.SpaceBattle
         public Message MatchFinished(Guid winner, Guid losser)
         {
             //update player stats
-            CloudWarsData.PlayerWin(winner);
-            CloudWarsData.PlayerLose(losser);
+            _data.PlayerWin(winner);
+            _data.PlayerLose(losser);
             //delete the match
-            CloudWarsData.DeleteMatch(this.MatchId);
+            _data.DeleteMatch(this.MatchId);
             //return the message
             return new Message { Winner = winner, Losser = losser, Command = Command.EndGame,  MatchId = this.MatchId };
         }
 
         private void UpdateUnit(object columns, object where)
         {
-            CloudWarsData.UpdateMatchUnit(values: columns, where: where);
+            _data.UpdateMatchUnit(values: columns, where: where);
         }
 
         private void UpdateMatch()
         {
             var cols = new { Turn = this.Turn, Player1Ready = this.Player1Ready, Player2Ready = this.Player2Ready, Initialized = this.Initialized, MatchEnded = this.MatchEnded, Winner = this.Winner, PlayingNow = this.PlayingNow };
             var where = new { Id = this.MatchId };
-            CloudWarsData.UpdateMatch(values: cols, where: where);
+            _data.UpdateMatch(values: cols, where: where);
         }
 
         private void UpdateMatch(object columns, object where)
         {
-            CloudWarsData.UpdateMatch(values: columns, where: where);
+            _data.UpdateMatch(values: columns, where: where);
         }
 
         private void UpdatePlayer(object columns, object where)
         {
-            CloudWarsData.UpdatePlayer(values: columns, where: where);
+            _data.UpdatePlayer(values: columns, where: where);
         }
         
 
         public void ChallengePlayer(Guid fromId, Guid toId)
         {
-            CloudWarsData.ChallengePlayer(fromId, toId);
+            _data.ChallengePlayer(fromId, toId);
         }
 
         public Tuple<Guid, Guid, Guid> AcceptChallenge(Guid challengeId)
         {
             //Get the challenge 
-            var c = CloudWarsData.GetChallenge (challengeId );
+            var c = _data.GetChallenge (challengeId );
             //accept the challenge and create the match
-            CloudWarsData.AcceptChallenge(challengeId);
+            _data.AcceptChallenge(challengeId);
             this.CreateMatch(c.Player1, c.Player2);
             return new Tuple<Guid, Guid, Guid>(this.MatchId, c.Player1, c.Player2);
         }
@@ -228,10 +234,10 @@ namespace CloudWars.SpaceBattle
 
         public Tuple<string, string> RejectChallenge(Guid challengeId)
         {
-            var c = CloudWarsData.GetChallenge(challengeId);
-            var p1 = CloudWarsData.GetPlayer(c.Player1);
-            var p2 = CloudWarsData.GetPlayer(c.Player2);
-            CloudWarsData.RejectChallenge(challengeId);
+            var c = _data.GetChallenge(challengeId);
+            var p1 = _data.GetPlayer(c.Player1);
+            var p2 = _data.GetPlayer(c.Player2);
+            _data.RejectChallenge(challengeId);
             return new Tuple<string, string>(p1.ClientId, p2.DisplayName);
 
         }
