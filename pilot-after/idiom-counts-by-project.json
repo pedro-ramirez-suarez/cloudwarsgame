@@ -1,0 +1,35 @@
+{
+    "datatable":  {
+
+                  },
+    "config-appsettings":  {
+
+                           },
+    "static-data-facade":  {
+                               "CloudWars.Engine":  5,
+                               "CloudWars.DataAccess":  20,
+                               "CloudWars.Game":  3,
+                               "CloudWars.Characterization.Db":  25
+                           },
+    "static-gateway":  {
+                           "CloudWars.Game":  6,
+                           "CloudWars.DataAccess":  33,
+                           "CloudWars.Characterization.Db":  25
+                       },
+    "region-blocks":  {
+                          "CloudWars.Game":  2
+                      },
+    "legacy-framework-ns":  {
+                                "CloudWars.Engine":  4,
+                                "CloudWars.Game":  19
+                            },
+    "web-config":  {
+
+                   },
+    "hungarian-fields":  {
+
+                         },
+    "sync-over-async":  {
+
+                        }
+}
