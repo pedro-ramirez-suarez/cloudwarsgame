@@ -94,6 +94,17 @@
           "CloudWars.Characterization.Db/bin/Debug/net48/CloudWars.Characterization.Db.dll",
           "-nologo"
         ]
+      },
+      {
+        "label": "pins database (dotnet test, net8.0)",
+        "command": "dotnet",
+        "args": [
+          "test",
+          "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj",
+          "-f",
+          "net8.0",
+          "-nologo"
+        ]
       }
     ]
   }
