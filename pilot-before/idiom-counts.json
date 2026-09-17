@@ -1,10 +1,10 @@
 {
     "datatable":  0,
-    "static-gateway":  39,
+    "static-gateway":  64,
     "web-config":  0,
     "config-appsettings":  0,
     "region-blocks":  2,
     "legacy-framework-ns":  23,
-    "hungarian-fields":  202,
+    "hungarian-fields":  225,
     "sync-over-async":  0
 }
