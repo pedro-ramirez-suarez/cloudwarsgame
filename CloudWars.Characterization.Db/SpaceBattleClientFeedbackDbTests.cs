@@ -131,7 +131,7 @@ namespace CloudWars.Characterization.Db
 
             Assert.Equal(NotificationTypes.ChallengePlayer, notifications[0].NotificationType);
             Assert.Equal(p2.Id, notifications[0].PlayerId);
-            Assert.Equal(p2.Id, notifications[0].OtherPlayer);
+            Assert.Equal(p1.Id, notifications[0].OtherPlayer);
             Assert.Equal(Guid.Empty, notifications[0].MatchId);
 
             CleanupNotifications(p1.Id);
@@ -155,7 +155,7 @@ namespace CloudWars.Characterization.Db
 
             Assert.Equal(NotificationTypes.ChallengeAccepted, notifications[0].NotificationType);
             Assert.Equal(p2.Id, notifications[0].PlayerId);
-            Assert.Equal(p2.Id, notifications[0].OtherPlayer);
+            Assert.Equal(p1.Id, notifications[0].OtherPlayer);
             Assert.Equal(matchId, notifications[0].MatchId);
 
             CleanupNotifications(p1.Id);
