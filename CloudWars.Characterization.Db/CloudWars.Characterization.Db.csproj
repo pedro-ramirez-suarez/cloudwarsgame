@@ -37,7 +37,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="connections.local.config" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="connections.local.config" CopyToOutputDirectory="PreserveNewest" Condition="Exists('connections.local.config')" />
     <None Include="CloudWars.Characterization.Db.dll.config" CopyToOutputDirectory="PreserveNewest" Condition="Exists('CloudWars.Characterization.Db.dll.config')" />
   </ItemGroup>
 
