@@ -1,0 +1,71 @@
+{
+  "id": "ev-20260921210016-e3zan4",
+  "schema": "codelead.evidence/1",
+  "created_at": "2026-09-21T21:00:16.591Z",
+  "workspace": "C:\\src\\cloudwarsgame",
+  "command": "implement",
+  "request": "Add one more in-memory characterization fact to the CloudWars.Characterization project, for a behaviour of SpaceBattleGame that the existing facts do not cover; test files only; the root gate must stay green",
+  "outcome": "landed",
+  "preflight": {
+    "strategy": "architect"
+  },
+  "surface": {
+    "files": [
+      "CloudWars.Characterization/SpaceBattleGameTests.cs"
+    ],
+    "additions": 68,
+    "removals": 55
+  },
+  "patch_check": {
+    "status": "can_apply",
+    "problems": [],
+    "warning_count": 0
+  },
+  "apply": {
+    "status": "applied",
+    "files_changed": 1
+  },
+  "validation": {
+    "status": "passed",
+    "commands": [
+      {
+        "command": "dotnet build CloudWars.Common/CloudWars.Common.csproj -nologo -v q",
+        "status": "passed",
+        "exitCode": 0
+      },
+      {
+        "command": "dotnet build CloudWars.Entities/CloudWars.Entities.csproj -nologo -v q",
+        "status": "passed",
+        "exitCode": 0
+      },
+      {
+        "command": "dotnet build CloudWars.DataAccess/CloudWars.DataAccess.csproj -nologo -v q",
+        "status": "passed",
+        "exitCode": 0
+      },
+      {
+        "command": "dotnet build CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj -nologo -v q",
+        "status": "passed",
+        "exitCode": 0
+      },
+      {
+        "command": "dotnet test CloudWars.Characterization/CloudWars.Characterization.csproj -nologo",
+        "status": "passed",
+        "exitCode": 0
+      },
+      {
+        "command": "dotnet build CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj -nologo -v q",
+        "status": "passed",
+        "exitCode": 0
+      }
+    ]
+  },
+  "knowledge_ids": [
+    "k-20260921210016-36tgnz",
+    "k-20260921210016-5u9rr0",
+    "k-20260921210016-qbvpnb",
+    "k-20260921210016-v2o923",
+    "k-20260921210016-rp15pu",
+    "k-20260921210016-6sd3fa"
+  ]
+}

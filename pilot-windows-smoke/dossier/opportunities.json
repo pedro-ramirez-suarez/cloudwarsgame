@@ -1,0 +1,202 @@
+{
+  "generatedAt": "2026-09-21T20:44:09.527Z",
+  "repo": "cloudwarsgame",
+  "opportunities": [
+    {
+      "title": "Move 7 projects off an end-of-life runtime",
+      "category": "runtime",
+      "finding": "CloudWars.Common/CloudWars.Common.csproj (net45), CloudWars.DataAccess/CloudWars.DataAccess.csproj (net45), CloudWars.Engine/CloudWars.Engine.csproj (net40), CloudWars.Entities/CloudWars.Entities.csproj (net45), CloudWars.Game/CloudWars.Game.csproj (net45), CloudWars.Glue/CloudWars.Glue.csproj (net40), CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj (net45) — end of support 2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported).",
+      "consequence": "No vendor security fixes are available for these projects at all. A disclosed vulnerability has no remediation path other than in-house patching.",
+      "action": "Retarget to a supported runtime. Do this after characterization tests exist, so the retarget is provable.",
+      "effort": "weeks",
+      "nature": "judgment",
+      "evidence": [
+        "dependencies.json → runtimes"
+      ],
+      "rank": 100,
+      "id": "O1"
+    },
+    {
+      "title": "Pin behaviour in 3 untested areas",
+      "category": "verification",
+      "finding": "No test reaches CloudWars.Game, CloudWars.Engine, CloudWars.Glue.",
+      "consequence": "No change to these areas — including a security patch — can be shown to be safe before release. This blocks every other improvement.",
+      "action": "Start with the 2 area(s) rated \"likely pinnable\" (CloudWars.Engine, CloudWars.Glue); they need no refactoring first.",
+      "effort": "weeks",
+      "nature": "judgment",
+      "evidence": [
+        "test-census.json → testDeserts"
+      ],
+      "rank": 95,
+      "id": "O2"
+    },
+    {
+      "title": "Resolve the legacy package manifest against a live advisory feed",
+      "category": "dependencies",
+      "finding": "Dependencies are declared in pre-SDK `packages.config` manifests, which the standard tooling cannot check for currency or advisories.",
+      "consequence": "The security posture of these dependencies is unknown — not clean. \"0 advisories\" here means \"not checked\".",
+      "action": "Resolve every pinned version against nuget.org (or an offline mirror), then migrate the manifests to PackageReference so future checks are automatic.",
+      "effort": "days",
+      "nature": "mechanical",
+      "evidence": [
+        "dependencies.json → notes"
+      ],
+      "rank": 90,
+      "id": "O3"
+    },
+    {
+      "title": "Capture what Cloudancy knows",
+      "category": "knowledge",
+      "finding": "2 core file(s) are ≥80% one author's work (CloudWars.Game/Web.config 100%; CloudWars.Game/CloudWars.Game.csproj 83%).",
+      "consequence": "If that person becomes unavailable, the reasoning behind these files is unrecoverable — and it is the reasoning, not the code, that migrations depend on.",
+      "action": "Interview now and record the answers as durable knowledge entries. This is the cheapest and most perishable item in any plan.",
+      "effort": "days",
+      "nature": "judgment",
+      "evidence": [
+        "git-history.json → authorConcentration"
+      ],
+      "rank": 85,
+      "id": "O4"
+    },
+    {
+      "title": "Entity Framework 6 or earlier → Entity Framework Core",
+      "category": "dependencies",
+      "finding": "EntityFramework 5.0.0 is referenced by CloudWars.Game/packages.config.",
+      "consequence": "requires a data-layer migration; usually the largest single item",
+      "action": "Plan the replacement as part of the runtime move; requires a data-layer migration; usually the largest single item.",
+      "effort": "months",
+      "nature": "judgment",
+      "evidence": [
+        "dependencies.json → packages"
+      ],
+      "rank": 80,
+      "id": "O5"
+    },
+    {
+      "title": "ASP.NET MVC (System.Web) → ASP.NET Core MVC",
+      "category": "dependencies",
+      "finding": "Microsoft.AspNet.Mvc 4.0.20710.0 is referenced by CloudWars.Game/packages.config.",
+      "consequence": "the web host and pipeline change; controllers largely survive",
+      "action": "Plan the replacement as part of the runtime move; the web host and pipeline change; controllers largely survive.",
+      "effort": "months",
+      "nature": "judgment",
+      "evidence": [
+        "dependencies.json → packages"
+      ],
+      "rank": 80,
+      "id": "O6"
+    },
+    {
+      "title": "ASP.NET Web API 2 → ASP.NET Core controllers",
+      "category": "dependencies",
+      "finding": "Microsoft.AspNet.WebApi 4.0.20710.0 is referenced by CloudWars.Game/packages.config.",
+      "consequence": "route and formatter configuration is rewritten",
+      "action": "Plan the replacement as part of the runtime move; route and formatter configuration is rewritten.",
+      "effort": "months",
+      "nature": "judgment",
+      "evidence": [
+        "dependencies.json → packages"
+      ],
+      "rank": 80,
+      "id": "O7"
+    },
+    {
+      "title": "Extract seams in CloudWars.Game",
+      "category": "structure",
+      "finding": "61 I/O touch points across 38 source files (database 1, network 11, time 44, globals 5)",
+      "consequence": "Time, network and database calls made inline cannot be substituted in a test, so this area's behaviour cannot be pinned as written.",
+      "action": "Introduce injection points for the clock and external calls — the minimum change that makes the area testable, done before any behaviour change.",
+      "effort": "days",
+      "nature": "judgment",
+      "evidence": [
+        "test-census.json → areas"
+      ],
+      "rank": 75,
+      "id": "O8"
+    },
+    {
+      "title": "Plan the exit from 6 maintenance-only targets",
+      "category": "runtime",
+      "finding": "net8.0 receive security fixes only, with no new platform work.",
+      "consequence": "Every year on a maintenance target widens the gap to the supported platform and raises the eventual cost of the move.",
+      "action": "Schedule the upgrade as a funded phase rather than letting it arrive as an incident.",
+      "effort": "weeks",
+      "nature": "judgment",
+      "evidence": [
+        "dependencies.json → runtimes"
+      ],
+      "rank": 70,
+      "id": "O9"
+    },
+    {
+      "title": "Confirm the version policy for Needletail.DataAccess",
+      "category": "dependencies",
+      "finding": "Needletail.DataAccess is used in 3 areas (3 references).",
+      "consequence": "A shared component pinned to an old version means every fix made upstream has to be re-made here, or is simply missing.",
+      "action": "Compare the pinned version against the component's current release and decide, explicitly, whether to track it.",
+      "effort": "hours",
+      "nature": "judgment",
+      "evidence": [
+        "usage.json → libraries"
+      ],
+      "rank": 65,
+      "id": "O10"
+    },
+    {
+      "title": "Triage 4 author notes left in the code",
+      "category": "hygiene",
+      "finding": "4 TODO/HACK/NOTE markers remain in the source.",
+      "consequence": "Each is a note from an author to a future maintainer about work they knew was unfinished. A static survey cannot tell which were resolved elsewhere.",
+      "action": "Triage them with the authors: resolve in code, or record an explicit decision to accept each one.",
+      "effort": "days",
+      "nature": "judgment",
+      "evidence": [
+        "business-rules.json → rules[kind=marker_comment]"
+      ],
+      "rank": 55,
+      "id": "O11"
+    },
+    {
+      "title": "DotNetOpenAuth → a maintained OpenID Connect library",
+      "category": "dependencies",
+      "finding": "DotNetOpenAuth.AspNet 4.1.4.12333 is referenced by CloudWars.Game/packages.config.",
+      "consequence": "the project is unmaintained; auth flows must be re-verified",
+      "action": "Plan the replacement as part of the runtime move; the project is unmaintained; auth flows must be re-verified.",
+      "effort": "days",
+      "nature": "judgment",
+      "evidence": [
+        "dependencies.json → packages"
+      ],
+      "rank": 45,
+      "id": "O12"
+    },
+    {
+      "title": "jQuery 1.x → a current front-end approach",
+      "category": "dependencies",
+      "finding": "jQuery 1.9.1 is referenced by CloudWars.Game/packages.config.",
+      "consequence": "front-end work, independent of the server migration",
+      "action": "Plan the replacement as part of the runtime move; front-end work, independent of the server migration.",
+      "effort": "days",
+      "nature": "judgment",
+      "evidence": [
+        "dependencies.json → packages"
+      ],
+      "rank": 45,
+      "id": "O13"
+    },
+    {
+      "title": "Newtonsoft.Json → System.Text.Json",
+      "category": "dependencies",
+      "finding": "Newtonsoft.Json 4.5.11 is referenced by CloudWars.Game/packages.config.",
+      "consequence": "mechanical for simple payloads; attribute-heavy models need review",
+      "action": "Plan the replacement as part of the runtime move; mechanical for simple payloads; attribute-heavy models need review.",
+      "effort": "days",
+      "nature": "judgment",
+      "evidence": [
+        "dependencies.json → packages"
+      ],
+      "rank": 45,
+      "id": "O14"
+    }
+  ]
+}

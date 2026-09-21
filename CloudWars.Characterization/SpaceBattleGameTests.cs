@@ -17,6 +17,19 @@ namespace CloudWars.Characterization
         }
 
         [Fact]
+        public void ParameterlessConstructor_Defaults_MatchIdPlayersTurnAndReadyFlagsAreDefault()
+        {
+            var game = new SpaceBattleGame();
+
+            Assert.Equal(Guid.Empty, game.MatchId);
+            Assert.Equal(Guid.Empty, game.Player1);
+            Assert.Equal(Guid.Empty, game.Player2);
+            Assert.Equal(Guid.Empty, game.Turn);
+            Assert.False(game.Player1Ready);
+            Assert.False(game.Player2Ready);
+        }
+
+        [Fact]
         public void TwoParamConstructor_LoadFalse_SetsMatchId_LeavesTurnAndReadyFlagsAtDefaults()
         {
             var matchId = Guid.NewGuid();

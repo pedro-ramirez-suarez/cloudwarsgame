@@ -1,0 +1,107 @@
+{
+  "generatedAt": "2026-09-21T20:44:09.901Z",
+  "automatedSharePercent": 61,
+  "sections": [
+    {
+      "id": "D1",
+      "title": "System inventory & architecture map",
+      "coverage": "AUTOMATED",
+      "evidence": "project-map.{json,md}",
+      "summary": "12 modules, 150 files, 24 module-level dependencies (Mermaid diagram included)."
+    },
+    {
+      "id": "D2",
+      "title": "Contracts & integrations catalogue",
+      "coverage": "PARTIAL",
+      "evidence": "contracts.{json,md}",
+      "summary": "65 public types and 186 public methods across 9 areas; 1 external integration points (config values redacted). Consumer mapping (\"who breaks\") is manual in v0."
+    },
+    {
+      "id": "D3",
+      "title": "Dependency & vulnerability inventory",
+      "coverage": "AUTOMATED",
+      "evidence": "dependencies.{json,md}",
+      "summary": "39 packages (0 outdated, 0 with advisories); 14 runtime targets classified against an offline EOL snapshot (2026-09-18)."
+    },
+    {
+      "id": "D4",
+      "title": "History intelligence",
+      "coverage": "AUTOMATED",
+      "evidence": "git-history.{json,md}",
+      "summary": "41 commits by 3 authors; 25 hot files, 22 co-change pairs, 3 knowledge-concentration rows."
+    },
+    {
+      "id": "D5",
+      "title": "Business rules found in the code",
+      "coverage": "PARTIAL",
+      "evidence": "business-rules.{json,md}, usage.{json}",
+      "summary": "21 rules lifted with file:line evidence (3 state vocabularies, 11 validation limits, 0 enforced guards, 3 thresholds, 4 author notes); 0 comment/code conflict(s). Every rule states WHAT the code does; the WHY is the interview half below."
+    },
+    {
+      "id": "D5b",
+      "title": "Tribal knowledge (interviews)",
+      "coverage": "MANUAL",
+      "evidence": "interviews — not performed by the survey",
+      "summary": "Why the rules are what they are, undocumented conventions, and the history no commit records. Captured as `expert_testimony` entries during the engagement. This half is human by nature, not by tooling gap."
+    },
+    {
+      "id": "D6",
+      "title": "Risk, testability & pinnability map",
+      "coverage": "PARTIAL",
+      "evidence": "test-census.{json,md}",
+      "summary": "8 areas measured; 3 test desert(s): CloudWars.Game, CloudWars.Engine, CloudWars.Glue. I/O tangling per area feeds a pinnability HINT; the pinnability judgment itself is human."
+    },
+    {
+      "id": "D7",
+      "title": "Modernization candidates & wavefront",
+      "coverage": "PARTIAL",
+      "evidence": "wavefront.{json,md}",
+      "summary": "6 clusters; 5 proposed waves by dependency direction. Proposal automated; the recommendation is human."
+    },
+    {
+      "id": "D8",
+      "title": "Validation strategy",
+      "coverage": "MANUAL",
+      "evidence": "method template",
+      "summary": "Per wave: pin current behavior (characterization tests) → transform → prove (parity + gates). Written by hand from the method, informed by D6."
+    },
+    {
+      "id": "D12",
+      "title": "Coding practices & principles",
+      "coverage": "PARTIAL",
+      "evidence": "coding-practices.{json,md}",
+      "summary": "26 pattern(s) that raise migration risk across 5 principle(s): Fail visibly (12); Avoid shared mutable state (10); Single responsibility — file size (2), …. Only patterns that make a transformation more dangerous are reported — no formatting or naming opinions — and vendored third-party code is skipped."
+    },
+    {
+      "id": "D13",
+      "title": "Modernization readiness",
+      "coverage": "AUTOMATED",
+      "evidence": "modernization-readiness.{json,md}",
+      "summary": "9 project(s): 3 legacy-format, 7 without tests; 2 runtime(s) out of support, 1 ending within a year (shipped snapshot 2026-09-18); build floor: 3 legacy-format .NET projects: builds with MSBuild/Visual Studio on Windows (Mono reference assemblies elsewhere); `dotnet build` needs the SDK-style format."
+    },
+    {
+      "id": "D11",
+      "title": "Improvement & modernization opportunities",
+      "coverage": "PARTIAL",
+      "evidence": "opportunities.{json,md}",
+      "summary": "14 opportunities derived from the findings, ranked by consequence: Move 7 projects off an end-of-life runtime; Pin behaviour in 3 untested areas; Resolve the legacy package manifest against a live advisory feed, …. Each carries its evidence, an effort band, and whether it is mechanical or a judgment call."
+    },
+    {
+      "id": "D9",
+      "title": "Evidence appendix",
+      "coverage": "AUTOMATED",
+      "evidence": "this document + the artifacts it cites",
+      "summary": "Every claim above traces to a named artifact file; each section is labeled automated, partial, or manual."
+    },
+    {
+      "id": "D10",
+      "title": "Browsable knowledge base",
+      "coverage": "PARTIAL",
+      "evidence": "..\\..\\..\\src\\cloudwarsgame\\docs\\codelead\\dossier\\.codelead\\knowledge.json",
+      "summary": "Machine-derived findings seeded as trust-labeled knowledge entries (below); the PKB instance renders them. Interview-sourced entries are added during the engagement."
+    }
+  ],
+  "knowledgeEntries": 41,
+  "knowledgeObservations": 44,
+  "knowledgeNote": "knowledgeEntries is the number of distinct entries in the store; knowledgeObservations is the number of times a finding was recorded. The store deduplicates by (type, summary), so observations >= entries and the difference is re-observation."
+}

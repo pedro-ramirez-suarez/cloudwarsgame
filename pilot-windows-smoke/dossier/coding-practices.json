@@ -1,0 +1,397 @@
+{
+  "generatedAt": "2026-09-21T20:43:57.472Z",
+  "repo": "cloudwarsgame",
+  "filesScanned": 91,
+  "summary": [
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "count": 12,
+      "files": 4,
+      "examples": [
+        {
+          "kind": "swallowed_exception",
+          "principle": "Fail visibly",
+          "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+          "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+          "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+          "line": 27,
+          "evidence": "catch { } } if (_playerId != Guid.Empty)"
+        },
+        {
+          "kind": "swallowed_exception",
+          "principle": "Fail visibly",
+          "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+          "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+          "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+          "line": 32,
+          "evidence": "catch { } } if (_otherPlayerId != Guid.Empty)"
+        },
+        {
+          "kind": "swallowed_exception",
+          "principle": "Fail visibly",
+          "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+          "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+          "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+          "line": 37,
+          "evidence": "catch { } } }"
+        }
+      ],
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late."
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "count": 10,
+      "files": 2,
+      "examples": [
+        {
+          "kind": "mutable_static",
+          "principle": "Avoid shared mutable state",
+          "finding": "`_Matches` is mutable static state.",
+          "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+          "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+          "line": 19,
+          "evidence": "static DBTableDataSourceBase<Match, Guid> _Matches = new DBTableDataSourceBase<Match, Guid> (ConnectionString, \"Match\");"
+        },
+        {
+          "kind": "mutable_static",
+          "principle": "Avoid shared mutable state",
+          "finding": "`_MatchUnits` is mutable static state.",
+          "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+          "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+          "line": 29,
+          "evidence": "static DBTableDataSourceBase<MatchUnit, Guid> _MatchUnits = new DBTableDataSourceBase<MatchUnit, Guid>(ConnectionString, \"MatchUnit\");"
+        },
+        {
+          "kind": "mutable_static",
+          "principle": "Avoid shared mutable state",
+          "finding": "`_PlayerUnits` is mutable static state.",
+          "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+          "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+          "line": 39,
+          "evidence": "static DBTableDataSourceBase<PlayerUnit, Guid> _PlayerUnits = new DBTableDataSourceBase<PlayerUnit, Guid>(ConnectionString, \"PlayerUnit\");"
+        }
+      ],
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this."
+    },
+    {
+      "kind": "oversized_unit",
+      "principle": "Single responsibility — file size",
+      "count": 2,
+      "files": 2,
+      "examples": [
+        {
+          "kind": "oversized_unit",
+          "principle": "Single responsibility — file size",
+          "finding": "1292 lines in one file.",
+          "migrationRisk": "Every change to this file produces a diff no reviewer can fully verify, and the file will appear in the change surface of unrelated increments — the pattern that makes migrations stall.",
+          "file": "CloudWars.Game/Scripts/jquery.validate-vsdoc.js",
+          "line": 1,
+          "evidence": "1292 lines"
+        },
+        {
+          "kind": "oversized_unit",
+          "principle": "Single responsibility — file size",
+          "finding": "1249 lines in one file.",
+          "migrationRisk": "Every change to this file produces a diff no reviewer can fully verify, and the file will appear in the change surface of unrelated increments — the pattern that makes migrations stall.",
+          "file": "CloudWars.Game/Scripts/jquery.validate.js",
+          "line": 1,
+          "evidence": "1249 lines"
+        }
+      ],
+      "migrationRisk": "Every change to this file produces a diff no reviewer can fully verify, and the file will appear in the change surface of unrelated increments — the pattern that makes migrations stall."
+    },
+    {
+      "kind": "long_method",
+      "principle": "Single responsibility — method length",
+      "count": 1,
+      "files": 1,
+      "examples": [
+        {
+          "kind": "long_method",
+          "principle": "Single responsibility — method length",
+          "finding": "`Run` is 88 lines long.",
+          "migrationRisk": "Too long to characterize with a focused test, so it is usually migrated whole and verified by eye — the step where behaviour quietly changes.",
+          "file": "CloudWars.Engine/WorkerRole.cs",
+          "line": 30,
+          "evidence": "public override void Run()"
+        }
+      ],
+      "migrationRisk": "Too long to characterize with a focused test, so it is usually migrated whole and verified by eye — the step where behaviour quietly changes."
+    },
+    {
+      "kind": "concrete_dependency",
+      "principle": "Dependency inversion",
+      "count": 1,
+      "files": 1,
+      "examples": [
+        {
+          "kind": "concrete_dependency",
+          "principle": "Dependency inversion",
+          "finding": "StreamReader is constructed directly here rather than injected.",
+          "migrationRisk": "This code cannot be exercised without the real dependency, so it cannot be pinned by a characterization test before the migration, and the dependency cannot be swapped for its replacement afterwards.",
+          "file": "CloudWars.DataAccess/Queue/MessageRepositoryBase.cs",
+          "line": 39,
+          "evidence": "AddMessage(new StreamReader(ms).ReadToEnd());"
+        }
+      ],
+      "migrationRisk": "This code cannot be exercised without the real dependency, so it cannot be pinned by a characterization test before the migration, and the dependency cannot be swapped for its replacement afterwards."
+    }
+  ],
+  "byArea": [
+    {
+      "area": "CloudWars.Characterization.Db",
+      "count": 12
+    },
+    {
+      "area": "CloudWars.DataAccess",
+      "count": 8
+    },
+    {
+      "area": "CloudWars.Game",
+      "count": 5
+    },
+    {
+      "area": "CloudWars.Engine",
+      "count": 1
+    }
+  ],
+  "findings": [
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+      "line": 27,
+      "evidence": "catch { } } if (_playerId != Guid.Empty)"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+      "line": 32,
+      "evidence": "catch { } } if (_otherPlayerId != Guid.Empty)"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+      "line": 37,
+      "evidence": "catch { } } }"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattleGameChallengeDbTests.cs",
+      "line": 27,
+      "evidence": "catch { } } if (_challengeId != Guid.Empty)"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattleGameChallengeDbTests.cs",
+      "line": 32,
+      "evidence": "catch { } } if (_player1Id != Guid.Empty)"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattleGameChallengeDbTests.cs",
+      "line": 37,
+      "evidence": "catch { } } if (_player2Id != Guid.Empty)"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattleGameChallengeDbTests.cs",
+      "line": 42,
+      "evidence": "catch { } } }"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattleGameMatchFinishedDbTests.cs",
+      "line": 31,
+      "evidence": "catch { } } if (_player2Id != Guid.Empty)"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattleGameMatchFinishedDbTests.cs",
+      "line": 36,
+      "evidence": "catch { } } }"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattlePlayerPresenceDbTests.cs",
+      "line": 25,
+      "evidence": "catch { } } if (_playerId != Guid.Empty)"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattlePlayerPresenceDbTests.cs",
+      "line": 30,
+      "evidence": "catch { } } }"
+    },
+    {
+      "kind": "swallowed_exception",
+      "principle": "Fail visibly",
+      "finding": "An exception is caught and discarded without logging, rethrowing, or handling.",
+      "migrationRisk": "A migration that breaks this path produces no error and no log line. The system reports success while doing the wrong thing — the single most expensive failure mode to discover late.",
+      "file": "CloudWars.Characterization.Db/SpaceBattlePlayerPresenceDbTests.cs",
+      "line": 138,
+      "evidence": "catch { } } }"
+    },
+    {
+      "kind": "long_method",
+      "principle": "Single responsibility — method length",
+      "finding": "`Run` is 88 lines long.",
+      "migrationRisk": "Too long to characterize with a focused test, so it is usually migrated whole and verified by eye — the step where behaviour quietly changes.",
+      "file": "CloudWars.Engine/WorkerRole.cs",
+      "line": 30,
+      "evidence": "public override void Run()"
+    },
+    {
+      "kind": "concrete_dependency",
+      "principle": "Dependency inversion",
+      "finding": "StreamReader is constructed directly here rather than injected.",
+      "migrationRisk": "This code cannot be exercised without the real dependency, so it cannot be pinned by a characterization test before the migration, and the dependency cannot be swapped for its replacement afterwards.",
+      "file": "CloudWars.DataAccess/Queue/MessageRepositoryBase.cs",
+      "line": 39,
+      "evidence": "AddMessage(new StreamReader(ms).ReadToEnd());"
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "finding": "`_Matches` is mutable static state.",
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+      "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+      "line": 19,
+      "evidence": "static DBTableDataSourceBase<Match, Guid> _Matches = new DBTableDataSourceBase<Match, Guid> (ConnectionString, \"Match\");"
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "finding": "`_MatchUnits` is mutable static state.",
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+      "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+      "line": 29,
+      "evidence": "static DBTableDataSourceBase<MatchUnit, Guid> _MatchUnits = new DBTableDataSourceBase<MatchUnit, Guid>(ConnectionString, \"MatchUnit\");"
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "finding": "`_PlayerUnits` is mutable static state.",
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+      "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+      "line": 39,
+      "evidence": "static DBTableDataSourceBase<PlayerUnit, Guid> _PlayerUnits = new DBTableDataSourceBase<PlayerUnit, Guid>(ConnectionString, \"PlayerUnit\");"
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "finding": "`_Players` is mutable static state.",
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+      "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+      "line": 49,
+      "evidence": "static DBTableDataSourceBase<Player, Guid> _Players = new DBTableDataSourceBase<Player, Guid>(ConnectionString, \"Player\");"
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "finding": "`_VanillaUnits` is mutable static state.",
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+      "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+      "line": 58,
+      "evidence": "static IEnumerable<PlayerUnit> _VanillaUnits;"
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "finding": "`_PlayerNotifications` is mutable static state.",
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+      "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+      "line": 71,
+      "evidence": "static DBTableDataSourceBase<PlayerNotification, Guid> _PlayerNotifications = new DBTableDataSourceBase<PlayerNotification, Guid>(ConnectionString, \"PlayerNotif"
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "finding": "`_Challenges` is mutable static state.",
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+      "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+      "line": 81,
+      "evidence": "static DBTableDataSourceBase<Challenge, Guid> _Challenges = new DBTableDataSourceBase<Challenge, Guid>(ConnectionString, \"Challenge\");"
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "finding": "`_initializer` is mutable static state.",
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+      "file": "CloudWars.Game/Filters/InitializeSimpleMembershipAttribute.cs",
+      "line": 14,
+      "evidence": "private static SimpleMembershipInitializer _initializer;"
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "finding": "`_initializerLock` is mutable static state.",
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+      "file": "CloudWars.Game/Filters/InitializeSimpleMembershipAttribute.cs",
+      "line": 15,
+      "evidence": "private static object _initializerLock = new object();"
+    },
+    {
+      "kind": "mutable_static",
+      "principle": "Avoid shared mutable state",
+      "finding": "`_isInitialized` is mutable static state.",
+      "migrationRisk": "Shared across every test in the process, so tests touching it cannot run in isolation or in parallel. Characterization tests — the first thing a migration needs — are the hardest to write against exactly this.",
+      "file": "CloudWars.Game/Filters/InitializeSimpleMembershipAttribute.cs",
+      "line": 16,
+      "evidence": "private static bool _isInitialized;"
+    },
+    {
+      "kind": "oversized_unit",
+      "principle": "Single responsibility — file size",
+      "finding": "1292 lines in one file.",
+      "migrationRisk": "Every change to this file produces a diff no reviewer can fully verify, and the file will appear in the change surface of unrelated increments — the pattern that makes migrations stall.",
+      "file": "CloudWars.Game/Scripts/jquery.validate-vsdoc.js",
+      "line": 1,
+      "evidence": "1292 lines"
+    },
+    {
+      "kind": "oversized_unit",
+      "principle": "Single responsibility — file size",
+      "finding": "1249 lines in one file.",
+      "migrationRisk": "Every change to this file produces a diff no reviewer can fully verify, and the file will appear in the change surface of unrelated increments — the pattern that makes migrations stall.",
+      "file": "CloudWars.Game/Scripts/jquery.validate.js",
+      "line": 1,
+      "evidence": "1249 lines"
+    }
+  ],
+  "note": "Only patterns that raise migration risk are reported. A pattern's absence is not a claim that the code is idiomatic — it means this pass found nothing that would make a transformation more dangerous."
+}

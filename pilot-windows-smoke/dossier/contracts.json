@@ -1,0 +1,1267 @@
+{
+  "generatedAt": "2026-09-21T20:43:31.421Z",
+  "repo": "cloudwarsgame",
+  "publicSurface": [
+    {
+      "area": "CloudWars.Characterization",
+      "types": 2,
+      "methods": 9,
+      "members": [
+        {
+          "kind": "class",
+          "name": "GameUnitTests"
+        },
+        {
+          "kind": "function",
+          "name": "Constructor_CopiesPublicFieldsFromMatchUnit_ColMapsToColumn",
+          "signature": "void Constructor_CopiesPublicFieldsFromMatchUnit_ColMapsToColumn()"
+        },
+        {
+          "kind": "function",
+          "name": "Constructor_CopiesPrivateId_VerifiedViaToEntity",
+          "signature": "void Constructor_CopiesPrivateId_VerifiedViaToEntity()"
+        },
+        {
+          "kind": "function",
+          "name": "TakeDamage_Zero_SubtractsExactlyOneFromHealth",
+          "signature": "void TakeDamage_Zero_SubtractsExactlyOneFromHealth()"
+        },
+        {
+          "kind": "function",
+          "name": "TakeDamage_Five_SubtractsExactlyOneFromHealth",
+          "signature": "void TakeDamage_Five_SubtractsExactlyOneFromHealth()"
+        },
+        {
+          "kind": "function",
+          "name": "MoveTo_SetsRowAndColumn",
+          "signature": "void MoveTo_SetsRowAndColumn()"
+        },
+        {
+          "kind": "function",
+          "name": "ToEntity_ReturnsMatchUnit_WithCurrentValues_IncludingOriginalId",
+          "signature": "void ToEntity_ReturnsMatchUnit_WithCurrentValues_IncludingOriginalId()"
+        },
+        {
+          "kind": "class",
+          "name": "SpaceBattleGameTests"
+        },
+        {
+          "kind": "function",
+          "name": "ParameterlessConstructor_Units_IsNull",
+          "signature": "void ParameterlessConstructor_Units_IsNull()"
+        },
+        {
+          "kind": "function",
+          "name": "TwoParamConstructor_LoadFalse_SetsMatchId_LeavesTurnAndReadyFlagsAtDefaults",
+          "signature": "void TwoParamConstructor_LoadFalse_SetsMatchId_LeavesTurnAndReadyFlagsAtDefaults()"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerAttack_PlayerIdNotCurrentTurn_ReturnsNotYourTurn_ShotMissed_WithoutTouchingUnits",
+          "signature": "void PlayerAttack_PlayerIdNotCurrentTurn_ReturnsNotYourTurn_ShotMissed_WithoutTouchingUnits()"
+        }
+      ]
+    },
+    {
+      "area": "CloudWars.Characterization.Db",
+      "types": 5,
+      "methods": 36,
+      "members": [
+        {
+          "kind": "class",
+          "name": "SpaceBattleClientFeedbackDbTests"
+        },
+        {
+          "kind": "function",
+          "name": "Dispose",
+          "signature": "void Dispose()"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerWon_InsertsOneNotification_WithCorrectType_PlayerId_OtherPlayerIsNull_MatchId",
+          "signature": "void PlayerWon_InsertsOneNotification_WithCorrectType_PlayerId_OtherPlayerIsNull_MatchId()"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerLost_InsertsOneNotification_WithCorrectType_PlayerId_OtherPlayerIsNull_MatchId",
+          "signature": "void PlayerLost_InsertsOneNotification_WithCorrectType_PlayerId_OtherPlayerIsNull_MatchId()"
+        },
+        {
+          "kind": "function",
+          "name": "ChallengePlayer_InsertsOneNotification_ForChallengedPlayer_WithCorrectType_MatchIdIsEmpty",
+          "signature": "void ChallengePlayer_InsertsOneNotification_ForChallengedPlayer_WithCorrectType_MatchIdIsEmpty()"
+        },
+        {
+          "kind": "function",
+          "name": "ChallengeAccepted_InsertsOneNotification_ForOtherPlayer_WithCorrectType_MatchId",
+          "signature": "void ChallengeAccepted_InsertsOneNotification_ForOtherPlayer_WithCorrectType_MatchId()"
+        },
+        {
+          "kind": "function",
+          "name": "StartMatch_InsertsOneNotification_WithCorrectType_MatchId",
+          "signature": "void StartMatch_InsertsOneNotification_WithCorrectType_MatchId()"
+        },
+        {
+          "kind": "function",
+          "name": "ShotMade_InsertsOneNotification_WithCorrectType_RowColFromPosition",
+          "signature": "void ShotMade_InsertsOneNotification_WithCorrectType_RowColFromPosition()"
+        },
+        {
+          "kind": "function",
+          "name": "ShotMissed_InsertsOneNotification_WithCorrectType_RowColFromPosition",
+          "signature": "void ShotMissed_InsertsOneNotification_WithCorrectType_RowColFromPosition()"
+        },
+        {
+          "kind": "class",
+          "name": "SpaceBattleGameChallengeDbTests"
+        },
+        {
+          "kind": "function",
+          "name": "Dispose",
+          "signature": "void Dispose()"
+        },
+        {
+          "kind": "function",
+          "name": "CloudWarsData_ChallengePlayer_StoresChallengeRow_WithPlayer1_Player2_AcceptedFalse",
+          "signature": "void CloudWarsData_ChallengePlayer_StoresChallengeRow_WithPlayer1_Player2_AcceptedFalse()"
+        },
+        {
+          "kind": "function",
+          "name": "SpaceBattleGame_ChallengePlayer_StoresChallengeRow_WithPlayer1_Player2_AcceptedFalse",
+          "signature": "void SpaceBattleGame_ChallengePlayer_StoresChallengeRow_WithPlayer1_Player2_AcceptedFalse()"
+        },
+        {
+          "kind": "function",
+          "name": "AcceptChallenge_DeletesChallenge_CreatesMatch_TurnIsPlayer1_ReturnsTuple",
+          "signature": "void AcceptChallenge_DeletesChallenge_CreatesMatch_TurnIsPlayer1_ReturnsTuple()"
+        },
+        {
+          "kind": "function",
+          "name": "RejectChallenge_DeletesChallenge_ReturnsTupleOfClientIds",
+          "signature": "void RejectChallenge_DeletesChallenge_ReturnsTupleOfClientIds()"
+        },
+        {
+          "kind": "class",
+          "name": "SpaceBattleGameDbTests"
+        },
+        {
+          "kind": "function",
+          "name": "Dispose",
+          "signature": "void Dispose()"
+        },
+        {
+          "kind": "function",
+          "name": "CreateMatch_SetsPlayersAndTurn_StoresMatchRow_WithMatchingId",
+          "signature": "void CreateMatch_SetsPlayersAndTurn_StoresMatchRow_WithMatchingId()"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerReady_SinglePlayer_InitializedFalse_IndirectViaDb",
+          "signature": "void PlayerReady_SinglePlayer_InitializedFalse_IndirectViaDb()"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerReady_BothPlayers_InitializedTrue_IndirectViaDb",
+          "signature": "void PlayerReady_BothPlayers_InitializedTrue_IndirectViaDb()"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerReady_BothPlayers_ReloadReflectsPersistedReadyFlags",
+          "signature": "void PlayerReady_BothPlayers_ReloadReflectsPersistedReadyFlags()"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerAttack_BeforeRestart_ReturnsNotYourTurn_IndirectPlayingNowFalse",
+          "signature": "void PlayerAttack_BeforeRestart_ReturnsNotYourTurn_IndirectPlayingNowFalse()"
+        },
+        {
+          "kind": "function",
+          "name": "RestartMatch_PersistsPlayingNowTrue_ReloadReadsTrue_OriginalStillNotYourTurn",
+          "signature": "void RestartMatch_PersistsPlayingNowTrue_ReloadReadsTrue_OriginalStillNotYourTurn()"
+        },
+        {
+          "kind": "function",
+          "name": "CreateMatch_StoresOneMatchUnitPerVanillaUnit_HealthEqualsMaxHealth_RowColZero",
+          "signature": "void CreateMatch_StoresOneMatchUnitPerVanillaUnit_HealthEqualsMaxHealth_RowColZero()"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerAttack_EmptyPosition_ShotMissed_GameAction_TurnSwitchesToPlayer2_Persisted",
+          "signature": "void PlayerAttack_EmptyPosition_ShotMissed_GameAction_TurnSwitchesToPlayer2_Persisted()"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerAttack_Row0Col0_ShotMade_GameAction_HealthAfterAttackIsMaxHealthMinusOne",
+          "signature": "void PlayerAttack_Row0Col0_ShotMade_GameAction_HealthAfterAttackIsMaxHealthMinusOne()"
+        },
+        {
+          "kind": "class",
+          "name": "SpaceBattleGameMatchFinishedDbTests"
+        },
+        {
+          "kind": "function",
+          "name": "Dispose",
+          "signature": "void Dispose()"
+        },
+        {
+          "kind": "function",
+          "name": "MatchFinished_ReturnsMessage_WithEndGame_Winner_Losser_MatchId",
+          "signature": "void MatchFinished_ReturnsMessage_WithEndGame_Winner_Losser_MatchId()"
+        },
+        {
+          "kind": "function",
+          "name": "MatchFinished_IncrementsWinnerWinsByOne_InPlayerTable",
+          "signature": "void MatchFinished_IncrementsWinnerWinsByOne_InPlayerTable()"
+        },
+        {
+          "kind": "function",
+          "name": "MatchFinished_IncrementsLoserLossesByOne_InPlayerTable",
+          "signature": "void MatchFinished_IncrementsLoserLossesByOne_InPlayerTable()"
+        },
+        {
+          "kind": "function",
+          "name": "MatchFinished_DeletesMatchRow",
+          "signature": "void MatchFinished_DeletesMatchRow()"
+        },
+        {
+          "kind": "function",
+          "name": "MatchFinished_DeletesMatchUnits",
+          "signature": "void MatchFinished_DeletesMatchUnits()"
+        },
+        {
+          "kind": "class",
+          "name": "SpaceBattlePlayerPresenceDbTests"
+        },
+        {
+          "kind": "function",
+          "name": "Dispose",
+          "signature": "void Dispose()"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayerId_ReturnsPlayerId_ForGivenClientId",
+          "signature": "void GetPlayerId_ReturnsPlayerId_ForGivenClientId()"
+        },
+        {
+          "kind": "function",
+          "name": "GetClientId_ReturnsClientId_ForGivenPlayerId",
+          "signature": "void GetClientId_ReturnsClientId_ForGivenPlayerId()"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayerNameByClientId_ReturnsDisplayName_ForGivenClientId",
+          "signature": "void GetPlayerNameByClientId_ReturnsDisplayName_ForGivenClientId()"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerDisconnected_SetsStatusToOffLine_AndClientIdToEmptyString",
+          "signature": "void PlayerDisconnected_SetsStatusToOffLine_AndClientIdToEmptyString()"
+        },
+        {
+          "kind": "function",
+          "name": "IsPlayingMatch_ReturnsNull_WhenNoMatchWithPlayingNowTrue",
+          "signature": "void IsPlayingMatch_ReturnsNull_WhenNoMatchWithPlayingNowTrue()"
+        },
+        {
+          "kind": "function",
+          "name": "IsPlayingMatch_ReturnsMatchId_AfterRestartMatch",
+          "signature": "void IsPlayingMatch_ReturnsMatchId_AfterRestartMatch()"
+        }
+      ]
+    },
+    {
+      "area": "CloudWars.Common",
+      "types": 10,
+      "methods": 0,
+      "members": [
+        {
+          "kind": "interface",
+          "name": "IClientFeedback"
+        },
+        {
+          "kind": "interface",
+          "name": "IFactory"
+        },
+        {
+          "kind": "interface",
+          "name": "IGame"
+        },
+        {
+          "kind": "interface",
+          "name": "IPlayerPresence"
+        },
+        {
+          "kind": "enum",
+          "name": "Command"
+        },
+        {
+          "kind": "enum",
+          "name": "GameAction"
+        },
+        {
+          "kind": "class",
+          "name": "Message"
+        },
+        {
+          "kind": "class",
+          "name": "NotificationTypes"
+        },
+        {
+          "kind": "class",
+          "name": "Position"
+        },
+        {
+          "kind": "interface",
+          "name": "IGameUnit"
+        }
+      ]
+    },
+    {
+      "area": "CloudWars.Engine",
+      "types": 1,
+      "methods": 3,
+      "members": [
+        {
+          "kind": "class",
+          "name": "WorkerRole"
+        },
+        {
+          "kind": "function",
+          "name": "Run",
+          "signature": "void Run()"
+        },
+        {
+          "kind": "function",
+          "name": "CheckUserStatus",
+          "signature": "void CheckUserStatus(object state)"
+        },
+        {
+          "kind": "function",
+          "name": "OnStart",
+          "signature": "bool OnStart()"
+        }
+      ]
+    },
+    {
+      "area": "CloudWars.Game",
+      "types": 29,
+      "methods": 56,
+      "members": [
+        {
+          "kind": "class",
+          "name": "MvcApplication"
+        },
+        {
+          "kind": "class",
+          "name": "AuthConfig"
+        },
+        {
+          "kind": "function",
+          "name": "RegisterAuth",
+          "signature": "void RegisterAuth()"
+        },
+        {
+          "kind": "class",
+          "name": "BundleConfig"
+        },
+        {
+          "kind": "function",
+          "name": "RegisterBundles",
+          "signature": "void RegisterBundles(BundleCollection bundles)"
+        },
+        {
+          "kind": "class",
+          "name": "FilterConfig"
+        },
+        {
+          "kind": "function",
+          "name": "RegisterGlobalFilters",
+          "signature": "void RegisterGlobalFilters(GlobalFilterCollection filters)"
+        },
+        {
+          "kind": "class",
+          "name": "RouteConfig"
+        },
+        {
+          "kind": "function",
+          "name": "RegisterRoutes",
+          "signature": "void RegisterRoutes(RouteCollection routes)"
+        },
+        {
+          "kind": "class",
+          "name": "WebApiConfig"
+        },
+        {
+          "kind": "function",
+          "name": "Register",
+          "signature": "void Register(HttpConfiguration config)"
+        },
+        {
+          "kind": "class",
+          "name": "CDNHelper"
+        },
+        {
+          "kind": "class",
+          "name": "Context"
+        },
+        {
+          "kind": "class",
+          "name": "GameHelper"
+        },
+        {
+          "kind": "function",
+          "name": "GetOnlinePlayers",
+          "signature": "IEnumerable<Player> GetOnlinePlayers()"
+        },
+        {
+          "kind": "function",
+          "name": "GetOnlinePlayers",
+          "signature": "IEnumerable<Player> GetOnlinePlayers(string liveId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetNearbyPlayers",
+          "signature": "IEnumerable<Player> GetNearbyPlayers(string liveId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetMyChallenges",
+          "signature": "IEnumerable<MyChallenge> GetMyChallenges(string liveId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetMyMatches",
+          "signature": "IEnumerable<MyMatches> GetMyMatches(string liveId)"
+        },
+        {
+          "kind": "class",
+          "name": "ProfileHelper"
+        },
+        {
+          "kind": "function",
+          "name": "UserHasProfile",
+          "signature": "bool UserHasProfile(string user)"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayerProfile",
+          "signature": "Player GetPlayerProfile(string user)"
+        },
+        {
+          "kind": "function",
+          "name": "UpdateProfile",
+          "signature": "void UpdateProfile(Guid id, string displayName, string avatar,string user)"
+        },
+        {
+          "kind": "class",
+          "name": "AccountController"
+        },
+        {
+          "kind": "enum",
+          "name": "ManageMessageId"
+        },
+        {
+          "kind": "function",
+          "name": "Login",
+          "signature": "ActionResult Login(string returnUrl)"
+        },
+        {
+          "kind": "function",
+          "name": "Login",
+          "signature": "ActionResult Login(LoginModel model, string returnUrl)"
+        },
+        {
+          "kind": "function",
+          "name": "LogOff",
+          "signature": "ActionResult LogOff()"
+        },
+        {
+          "kind": "function",
+          "name": "Register",
+          "signature": "ActionResult Register()"
+        },
+        {
+          "kind": "function",
+          "name": "Register",
+          "signature": "ActionResult Register(RegisterModel model)"
+        },
+        {
+          "kind": "function",
+          "name": "Disassociate",
+          "signature": "ActionResult Disassociate(string provider, string providerUserId)"
+        },
+        {
+          "kind": "function",
+          "name": "Manage",
+          "signature": "ActionResult Manage(ManageMessageId? message)"
+        },
+        {
+          "kind": "function",
+          "name": "Manage",
+          "signature": "ActionResult Manage(LocalPasswordModel model)"
+        },
+        {
+          "kind": "function",
+          "name": "ExternalLogin",
+          "signature": "ActionResult ExternalLogin(string provider, string returnUrl)"
+        },
+        {
+          "kind": "function",
+          "name": "ExternalLoginCallback",
+          "signature": "ActionResult ExternalLoginCallback(string returnUrl)"
+        },
+        {
+          "kind": "function",
+          "name": "ExternalLoginConfirmation",
+          "signature": "ActionResult ExternalLoginConfirmation(RegisterExternalLoginModel model, string returnUrl)"
+        },
+        {
+          "kind": "function",
+          "name": "ExternalLoginFailure",
+          "signature": "ActionResult ExternalLoginFailure()"
+        },
+        {
+          "kind": "function",
+          "name": "ExternalLoginsList",
+          "signature": "ActionResult ExternalLoginsList(string returnUrl)"
+        },
+        {
+          "kind": "function",
+          "name": "RemoveExternalLogins",
+          "signature": "ActionResult RemoveExternalLogins()"
+        },
+        {
+          "kind": "function",
+          "name": "ExecuteResult",
+          "signature": "void ExecuteResult(ControllerContext context)"
+        },
+        {
+          "kind": "class",
+          "name": "GameController"
+        },
+        {
+          "kind": "function",
+          "name": "Play",
+          "signature": "ActionResult Play(Guid matchId)"
+        },
+        {
+          "kind": "function",
+          "name": "OnlinePlayers",
+          "signature": "ActionResult OnlinePlayers()"
+        },
+        {
+          "kind": "function",
+          "name": "GetNearByPlayers",
+          "signature": "ActionResult GetNearByPlayers()"
+        },
+        {
+          "kind": "function",
+          "name": "GetAllPlayers",
+          "signature": "ActionResult GetAllPlayers()"
+        },
+        {
+          "kind": "function",
+          "name": "MyChallenges",
+          "signature": "ActionResult MyChallenges()"
+        },
+        {
+          "kind": "function",
+          "name": "MyMatches",
+          "signature": "ActionResult MyMatches()"
+        },
+        {
+          "kind": "function",
+          "name": "ChallengePlayer",
+          "signature": "TwoWayResult ChallengePlayer(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "Initialize",
+          "signature": "void Initialize(string liveId, string latitude, string longitude)"
+        },
+        {
+          "kind": "function",
+          "name": "AcceptChallenge",
+          "signature": "TwoWayResult AcceptChallenge(Guid challengeId)"
+        },
+        {
+          "kind": "function",
+          "name": "RejectChallenge",
+          "signature": "TwoWayResult RejectChallenge(Guid challengeId)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerReady",
+          "signature": "void PlayerReady(Guid matchId, Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayMatch",
+          "signature": "TwoWayResult PlayMatch(Guid matchId)"
+        },
+        {
+          "kind": "function",
+          "name": "InvitePlayer",
+          "signature": "TwoWayResult InvitePlayer(Guid matchId, string clientId)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerMoveTo",
+          "signature": "void PlayerMoveTo(Guid matchId, string unitId, int row, int col)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerAttack",
+          "signature": "void PlayerAttack(Guid matchId, Guid playerId, int row, int col)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerChat",
+          "signature": "TwoWayResult PlayerChat(string message, string clientId)"
+        },
+        {
+          "kind": "class",
+          "name": "HomeController"
+        },
+        {
+          "kind": "function",
+          "name": "Index",
+          "signature": "ActionResult Index()"
+        },
+        {
+          "kind": "function",
+          "name": "Inicio",
+          "signature": "ActionResult Inicio()"
+        },
+        {
+          "kind": "function",
+          "name": "ComoJugar",
+          "signature": "ActionResult ComoJugar()"
+        },
+        {
+          "kind": "function",
+          "name": "Bitacora",
+          "signature": "ActionResult Bitacora()"
+        },
+        {
+          "kind": "function",
+          "name": "Tecnologia",
+          "signature": "ActionResult Tecnologia()"
+        },
+        {
+          "kind": "function",
+          "name": "About",
+          "signature": "ActionResult About()"
+        },
+        {
+          "kind": "class",
+          "name": "PlayerController"
+        },
+        {
+          "kind": "function",
+          "name": "Index",
+          "signature": "ActionResult Index()"
+        },
+        {
+          "kind": "function",
+          "name": "CreateProfile",
+          "signature": "ActionResult CreateProfile()"
+        },
+        {
+          "kind": "function",
+          "name": "CreateProfile",
+          "signature": "ActionResult CreateProfile(Guid id, string displayName, string avatar)"
+        },
+        {
+          "kind": "function",
+          "name": "EditProfile",
+          "signature": "ActionResult EditProfile()"
+        },
+        {
+          "kind": "function",
+          "name": "EditProfile",
+          "signature": "ActionResult EditProfile(Guid id, string displayName,string avatar)"
+        },
+        {
+          "kind": "class",
+          "name": "RemoteController"
+        },
+        {
+          "kind": "class",
+          "name": "InitializeSimpleMembershipAttribute"
+        },
+        {
+          "kind": "function",
+          "name": "OnActionExecuting",
+          "signature": "void OnActionExecuting(ActionExecutingContext filterContext)"
+        },
+        {
+          "kind": "class",
+          "name": "UsersContext"
+        },
+        {
+          "kind": "class",
+          "name": "UserProfile"
+        },
+        {
+          "kind": "class",
+          "name": "RegisterExternalLoginModel"
+        },
+        {
+          "kind": "class",
+          "name": "LocalPasswordModel"
+        },
+        {
+          "kind": "class",
+          "name": "LoginModel"
+        },
+        {
+          "kind": "class",
+          "name": "RegisterModel"
+        },
+        {
+          "kind": "class",
+          "name": "ExternalLogin"
+        },
+        {
+          "kind": "class",
+          "name": "MyChallenge"
+        },
+        {
+          "kind": "class",
+          "name": "MyMatches"
+        },
+        {
+          "kind": "class",
+          "name": "Damage"
+        },
+        {
+          "kind": "class",
+          "name": "MatchInfo"
+        },
+        {
+          "kind": "class",
+          "name": "UnitInfo"
+        }
+      ]
+    },
+    {
+      "area": "CloudWars.Glue",
+      "types": 1,
+      "methods": 0,
+      "members": [
+        {
+          "kind": "class",
+          "name": "Class1"
+        }
+      ]
+    },
+    {
+      "area": "CloudWars.SpaceBattle",
+      "types": 5,
+      "methods": 31,
+      "members": [
+        {
+          "kind": "class",
+          "name": "SpaceBattleClientFeedback"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerWon",
+          "signature": "void PlayerWon(Guid playerId, Guid matchId)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerLost",
+          "signature": "void PlayerLost(Guid playerId, Guid matchId)"
+        },
+        {
+          "kind": "function",
+          "name": "ChallengePlayer",
+          "signature": "void ChallengePlayer(Guid fromPlayer, Guid toPlayer)"
+        },
+        {
+          "kind": "function",
+          "name": "ChallengeAccepted",
+          "signature": "void ChallengeAccepted(Guid matchId,Guid fromPlayer, Guid toPlayer)"
+        },
+        {
+          "kind": "function",
+          "name": "StartMatch",
+          "signature": "void StartMatch(Guid matchId, Guid player1, Guid player2)"
+        },
+        {
+          "kind": "function",
+          "name": "ShotMade",
+          "signature": "void ShotMade(Guid matchId, Guid player1, Guid player2, int healthAfterAttack, Guid unitId, Common.Other.Position coordinates)"
+        },
+        {
+          "kind": "function",
+          "name": "ShotMissed",
+          "signature": "void ShotMissed(Guid matchId, Guid player1, Guid player2, Common.Other.Position coordinates)"
+        },
+        {
+          "kind": "class",
+          "name": "SpaceBattleFactory"
+        },
+        {
+          "kind": "function",
+          "name": "GetGame",
+          "signature": "IGame GetGame()"
+        },
+        {
+          "kind": "function",
+          "name": "GetGame",
+          "signature": "IGame GetGame(Guid matchId, bool loadMatchData)"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayerPresence",
+          "signature": "IPlayerPresence GetPlayerPresence()"
+        },
+        {
+          "kind": "function",
+          "name": "GetClientFeedback",
+          "signature": "IClientFeedback GetClientFeedback()"
+        },
+        {
+          "kind": "class",
+          "name": "SpaceBattleGame"
+        },
+        {
+          "kind": "function",
+          "name": "CreateMatch",
+          "signature": "void CreateMatch(Guid player1, Guid player2)"
+        },
+        {
+          "kind": "function",
+          "name": "Initialize",
+          "signature": "void Initialize(object initialState)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerReady",
+          "signature": "void PlayerReady(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerMoveTo",
+          "signature": "void PlayerMoveTo(Position coordinates,Guid unitId)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerAttack",
+          "signature": "Message PlayerAttack(Position coordinates, Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "PauseMatch",
+          "signature": "void PauseMatch()"
+        },
+        {
+          "kind": "function",
+          "name": "RestartMatch",
+          "signature": "void RestartMatch()"
+        },
+        {
+          "kind": "function",
+          "name": "MatchFinished",
+          "signature": "Message MatchFinished(Guid winner, Guid losser)"
+        },
+        {
+          "kind": "function",
+          "name": "ChallengePlayer",
+          "signature": "void ChallengePlayer(Guid fromId, Guid toId)"
+        },
+        {
+          "kind": "function",
+          "name": "AcceptChallenge",
+          "signature": "Tuple<Guid, Guid, Guid> AcceptChallenge(Guid challengeId)"
+        },
+        {
+          "kind": "function",
+          "name": "RejectChallenge",
+          "signature": "Tuple<string, string> RejectChallenge(Guid challengeId)"
+        },
+        {
+          "kind": "class",
+          "name": "SpaceBattlePlayerPresence"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayerId",
+          "signature": "Guid GetPlayerId(string clientId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetClientId",
+          "signature": "string GetClientId(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerIsOnLine",
+          "signature": "void PlayerIsOnLine(string liveId, string clientId, double latitude, double longitude)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerDisconnected",
+          "signature": "void PlayerDisconnected(string clientId)"
+        },
+        {
+          "kind": "function",
+          "name": "IsPlayingMatch",
+          "signature": "Guid? IsPlayingMatch(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayerNameByClientId",
+          "signature": "string GetPlayerNameByClientId(string clientId)"
+        },
+        {
+          "kind": "class",
+          "name": "GameUnit"
+        },
+        {
+          "kind": "function",
+          "name": "TakeDamage",
+          "signature": "void TakeDamage(int damage)"
+        },
+        {
+          "kind": "function",
+          "name": "MoveTo",
+          "signature": "void MoveTo(int row, int column)"
+        },
+        {
+          "kind": "function",
+          "name": "ToEntity",
+          "signature": "MatchUnit ToEntity()"
+        }
+      ]
+    },
+    {
+      "area": "CloudWars.DataAccess",
+      "types": 4,
+      "methods": 51,
+      "members": [
+        {
+          "kind": "function",
+          "name": "AddMessageToQueue",
+          "signature": "void AddMessageToQueue(Message msg)"
+        },
+        {
+          "kind": "function",
+          "name": "GetMessages",
+          "signature": "List<Message> GetMessages()"
+        },
+        {
+          "kind": "class",
+          "name": "CloudWarsData"
+        },
+        {
+          "kind": "function",
+          "name": "CreateMatch",
+          "signature": "Guid CreateMatch(Guid player1, Guid player2)"
+        },
+        {
+          "kind": "function",
+          "name": "DeleteMatch",
+          "signature": "void DeleteMatch(Guid matchId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetMatch",
+          "signature": "Match GetMatch(Guid matchId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetUnits",
+          "signature": "IEnumerable<MatchUnit> GetUnits(Guid matchId)"
+        },
+        {
+          "kind": "function",
+          "name": "UpdateMatch",
+          "signature": "void UpdateMatch(object values, object where)"
+        },
+        {
+          "kind": "function",
+          "name": "UpdateMatchUnit",
+          "signature": "void UpdateMatchUnit(object values, object where)"
+        },
+        {
+          "kind": "function",
+          "name": "AddNotification",
+          "signature": "void AddNotification(PlayerNotification notification)"
+        },
+        {
+          "kind": "function",
+          "name": "GetMatches",
+          "signature": "IEnumerable<Match> GetMatches()"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayers",
+          "signature": "IEnumerable<Player> GetPlayers()"
+        },
+        {
+          "kind": "function",
+          "name": "UpdatePlayer",
+          "signature": "void UpdatePlayer(Player player)"
+        },
+        {
+          "kind": "function",
+          "name": "UpdatePlayer",
+          "signature": "void UpdatePlayer(object values, object where)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerIsOnline",
+          "signature": "void PlayerIsOnline(string liveId, string clientId, double latitude, double longitude)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerWin",
+          "signature": "void PlayerWin(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerLose",
+          "signature": "void PlayerLose(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "ActiveMatches",
+          "signature": "int ActiveMatches()"
+        },
+        {
+          "kind": "function",
+          "name": "GetChallenge",
+          "signature": "Challenge GetChallenge(Guid challengeId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayerId",
+          "signature": "Guid GetPlayerId(string clientId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayerName",
+          "signature": "string GetPlayerName(string clientId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetClientId",
+          "signature": "string GetClientId(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "IsPlayingMatch",
+          "signature": "Guid? IsPlayingMatch(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "ChallengePlayer",
+          "signature": "Guid ChallengePlayer(Guid fromId, Guid toId)"
+        },
+        {
+          "kind": "function",
+          "name": "AcceptChallenge",
+          "signature": "void AcceptChallenge(Guid challengeId)"
+        },
+        {
+          "kind": "function",
+          "name": "RejectChallenge",
+          "signature": "void RejectChallenge(Guid challengeId)"
+        },
+        {
+          "kind": "function",
+          "name": "OnlinePlayers",
+          "signature": "int OnlinePlayers()"
+        },
+        {
+          "kind": "function",
+          "name": "GetOnlinePlayers",
+          "signature": "IEnumerable<Player> GetOnlinePlayers()"
+        },
+        {
+          "kind": "function",
+          "name": "GetOnlinePlayers",
+          "signature": "IEnumerable<Player> GetOnlinePlayers(string liveId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetOnlinePlayersNearBy",
+          "signature": "IEnumerable<Player> GetOnlinePlayersNearBy(string liveId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetTop10Players",
+          "signature": "IEnumerable<Player> GetTop10Players()"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayer",
+          "signature": "Player GetPlayer(Guid playerId)"
+        },
+        {
+          "kind": "class",
+          "name": "CloudWarsDB"
+        },
+        {
+          "kind": "interface",
+          "name": "ICloudWarsData"
+        },
+        {
+          "kind": "class",
+          "name": "SqlCloudWarsData"
+        },
+        {
+          "kind": "function",
+          "name": "CreateMatch",
+          "signature": "Guid CreateMatch(Guid player1, Guid player2)"
+        },
+        {
+          "kind": "function",
+          "name": "GetMatch",
+          "signature": "Match GetMatch(Guid matchId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetUnits",
+          "signature": "IEnumerable<MatchUnit> GetUnits(Guid matchId)"
+        },
+        {
+          "kind": "function",
+          "name": "DeleteMatch",
+          "signature": "void DeleteMatch(Guid matchId)"
+        },
+        {
+          "kind": "function",
+          "name": "UpdateMatch",
+          "signature": "void UpdateMatch(object values, object where)"
+        },
+        {
+          "kind": "function",
+          "name": "UpdateMatchUnit",
+          "signature": "void UpdateMatchUnit(object values, object where)"
+        },
+        {
+          "kind": "function",
+          "name": "UpdatePlayer",
+          "signature": "void UpdatePlayer(object values, object where)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerWin",
+          "signature": "void PlayerWin(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerLose",
+          "signature": "void PlayerLose(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "ChallengePlayer",
+          "signature": "Guid ChallengePlayer(Guid fromId, Guid toId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetChallenge",
+          "signature": "Challenge GetChallenge(Guid challengeId)"
+        },
+        {
+          "kind": "function",
+          "name": "AcceptChallenge",
+          "signature": "void AcceptChallenge(Guid challengeId)"
+        },
+        {
+          "kind": "function",
+          "name": "RejectChallenge",
+          "signature": "void RejectChallenge(Guid challengeId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayer",
+          "signature": "Player GetPlayer(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "AddNotification",
+          "signature": "void AddNotification(PlayerNotification notification)"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayerId",
+          "signature": "Guid GetPlayerId(string clientId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetClientId",
+          "signature": "string GetClientId(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "PlayerIsOnline",
+          "signature": "void PlayerIsOnline(string liveId, string clientId, double latitude, double longitude)"
+        },
+        {
+          "kind": "function",
+          "name": "IsPlayingMatch",
+          "signature": "Guid? IsPlayingMatch(Guid playerId)"
+        },
+        {
+          "kind": "function",
+          "name": "GetPlayerName",
+          "signature": "string GetPlayerName(string clientId)"
+        }
+      ]
+    },
+    {
+      "area": "CloudWars.Entities",
+      "types": 8,
+      "methods": 0,
+      "members": [
+        {
+          "kind": "class",
+          "name": "Challenge"
+        },
+        {
+          "kind": "class",
+          "name": "Match"
+        },
+        {
+          "kind": "class",
+          "name": "MatchUnit"
+        },
+        {
+          "kind": "class",
+          "name": "PlayerNotification"
+        },
+        {
+          "kind": "class",
+          "name": "PlayerUnit"
+        },
+        {
+          "kind": "class",
+          "name": "Player"
+        },
+        {
+          "kind": "class",
+          "name": "PlayerRank"
+        },
+        {
+          "kind": "class",
+          "name": "PlayerStatus"
+        }
+      ]
+    }
+  ],
+  "integrations": [
+    {
+      "category": "database",
+      "detail": "ADO.NET/ORM usage: DbContext",
+      "file": "CloudWars.Game/Models/AccountModels.cs"
+    }
+  ],
+  "note": "Consumers of each contract (who breaks if it moves) are a manual pass in Dossier v0; the workspace index (B2) automates it."
+}

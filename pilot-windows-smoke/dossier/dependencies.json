@@ -1,0 +1,507 @@
+{
+  "generatedAt": "2026-09-21T20:43:42.463Z",
+  "repo": "cloudwarsgame",
+  "eolSnapshotDate": "2026-09-18",
+  "runtimes": [
+    {
+      "project": "CloudWars.Characterization/CloudWars.Characterization.csproj",
+      "framework": "net8.0",
+      "lifecycle": {
+        "runtime": ".NET",
+        "version": "8.0 (LTS)",
+        "status": "maintenance",
+        "eolDate": "2026-11-10"
+      }
+    },
+    {
+      "project": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj",
+      "framework": "net48",
+      "lifecycle": {
+        "runtime": ".NET Framework",
+        "version": "4.8",
+        "status": "active"
+      }
+    },
+    {
+      "project": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj",
+      "framework": "net8.0",
+      "lifecycle": {
+        "runtime": ".NET",
+        "version": "8.0 (LTS)",
+        "status": "maintenance",
+        "eolDate": "2026-11-10"
+      }
+    },
+    {
+      "project": "CloudWars.Common/CloudWars.Common.csproj",
+      "framework": "net45",
+      "lifecycle": {
+        "runtime": ".NET Framework",
+        "version": "4.5",
+        "status": "eol",
+        "eolDate": "2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported)"
+      }
+    },
+    {
+      "project": "CloudWars.Common/CloudWars.Common.csproj",
+      "framework": "net8.0",
+      "lifecycle": {
+        "runtime": ".NET",
+        "version": "8.0 (LTS)",
+        "status": "maintenance",
+        "eolDate": "2026-11-10"
+      }
+    },
+    {
+      "project": "CloudWars.DataAccess/CloudWars.DataAccess.csproj",
+      "framework": "net45",
+      "lifecycle": {
+        "runtime": ".NET Framework",
+        "version": "4.5",
+        "status": "eol",
+        "eolDate": "2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported)"
+      }
+    },
+    {
+      "project": "CloudWars.DataAccess/CloudWars.DataAccess.csproj",
+      "framework": "net8.0",
+      "lifecycle": {
+        "runtime": ".NET",
+        "version": "8.0 (LTS)",
+        "status": "maintenance",
+        "eolDate": "2026-11-10"
+      }
+    },
+    {
+      "project": "CloudWars.Engine/CloudWars.Engine.csproj",
+      "framework": "net40",
+      "lifecycle": {
+        "runtime": ".NET Framework",
+        "version": "4.0",
+        "status": "eol",
+        "eolDate": "2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported)"
+      }
+    },
+    {
+      "project": "CloudWars.Entities/CloudWars.Entities.csproj",
+      "framework": "net45",
+      "lifecycle": {
+        "runtime": ".NET Framework",
+        "version": "4.5",
+        "status": "eol",
+        "eolDate": "2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported)"
+      }
+    },
+    {
+      "project": "CloudWars.Entities/CloudWars.Entities.csproj",
+      "framework": "net8.0",
+      "lifecycle": {
+        "runtime": ".NET",
+        "version": "8.0 (LTS)",
+        "status": "maintenance",
+        "eolDate": "2026-11-10"
+      }
+    },
+    {
+      "project": "CloudWars.Game/CloudWars.Game.csproj",
+      "framework": "net45",
+      "lifecycle": {
+        "runtime": ".NET Framework",
+        "version": "4.5",
+        "status": "eol",
+        "eolDate": "2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported)"
+      }
+    },
+    {
+      "project": "CloudWars.Glue/CloudWars.Glue.csproj",
+      "framework": "net40",
+      "lifecycle": {
+        "runtime": ".NET Framework",
+        "version": "4.0",
+        "status": "eol",
+        "eolDate": "2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported)"
+      }
+    },
+    {
+      "project": "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj",
+      "framework": "net45",
+      "lifecycle": {
+        "runtime": ".NET Framework",
+        "version": "4.5",
+        "status": "eol",
+        "eolDate": "2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported)"
+      }
+    },
+    {
+      "project": "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj",
+      "framework": "net8.0",
+      "lifecycle": {
+        "runtime": ".NET",
+        "version": "8.0 (LTS)",
+        "status": "maintenance",
+        "eolDate": "2026-11-10"
+      }
+    }
+  ],
+  "packages": [
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "AntiXSS",
+      "requested": "4.2.1",
+      "resolved": "4.2.1",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "DotNetOpenAuth.AspNet",
+      "requested": "4.1.4.12333",
+      "resolved": "4.1.4.12333",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "DotNetOpenAuth.Core",
+      "requested": "4.1.4.12333",
+      "resolved": "4.1.4.12333",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "DotNetOpenAuth.OAuth.Consumer",
+      "requested": "4.1.4.12333",
+      "resolved": "4.1.4.12333",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "DotNetOpenAuth.OAuth.Core",
+      "requested": "4.1.4.12333",
+      "resolved": "4.1.4.12333",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "DotNetOpenAuth.OpenId.Core",
+      "requested": "4.1.4.12333",
+      "resolved": "4.1.4.12333",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "DotNetOpenAuth.OpenId.RelyingParty",
+      "requested": "4.1.4.12333",
+      "resolved": "4.1.4.12333",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "EntityFramework",
+      "requested": "5.0.0",
+      "resolved": "5.0.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "jQuery",
+      "requested": "1.9.1",
+      "resolved": "1.9.1",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "jQuery.UI.Combined",
+      "requested": "1.8.24",
+      "resolved": "1.8.24",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "jQuery.Validation",
+      "requested": "1.10.0",
+      "resolved": "1.10.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "knockoutjs",
+      "requested": "2.2.0",
+      "resolved": "2.2.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.Mvc",
+      "requested": "4.0.20710.0",
+      "resolved": "4.0.20710.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.Mvc.FixedDisplayModes",
+      "requested": "1.0.0",
+      "resolved": "1.0.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.Razor",
+      "requested": "2.0.20715.0",
+      "resolved": "2.0.20715.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.Web.Optimization",
+      "requested": "1.0.0",
+      "resolved": "1.0.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.WebApi",
+      "requested": "4.0.20710.0",
+      "resolved": "4.0.20710.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.WebApi.Client",
+      "requested": "4.0.20710.0",
+      "resolved": "4.0.20710.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.WebApi.Core",
+      "requested": "4.0.20710.0",
+      "resolved": "4.0.20710.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.WebApi.OData",
+      "requested": "4.0.0",
+      "resolved": "4.0.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.WebApi.WebHost",
+      "requested": "4.0.20710.0",
+      "resolved": "4.0.20710.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.WebPages",
+      "requested": "2.0.20710.0",
+      "resolved": "2.0.20710.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.WebPages.Data",
+      "requested": "2.0.20710.0",
+      "resolved": "2.0.20710.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.WebPages.OAuth",
+      "requested": "2.0.20710.0",
+      "resolved": "2.0.20710.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.AspNet.WebPages.WebData",
+      "requested": "2.0.20710.0",
+      "resolved": "2.0.20710.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.Data.Edm",
+      "requested": "5.2.0",
+      "resolved": "5.2.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.Data.OData",
+      "requested": "5.2.0",
+      "resolved": "5.2.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.jQuery.Unobtrusive.Ajax",
+      "requested": "2.0.30116.0",
+      "resolved": "2.0.30116.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.jQuery.Unobtrusive.Validation",
+      "requested": "2.0.30116.0",
+      "resolved": "2.0.30116.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.Net.Http",
+      "requested": "2.0.20710.0",
+      "resolved": "2.0.20710.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Microsoft.Web.Infrastructure",
+      "requested": "1.0.0.0",
+      "resolved": "1.0.0.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Modernizr",
+      "requested": "2.6.2",
+      "resolved": "2.6.2",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Needletail.DataAccess",
+      "requested": "1.0.0.3",
+      "resolved": "1.0.0.3",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Needletail.DataAccess.Migrations",
+      "requested": "1.0.0.2",
+      "resolved": "1.0.0.2",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Needletail.Mvc",
+      "requested": "1.0.0.3",
+      "resolved": "1.0.0.3",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Newtonsoft.Json",
+      "requested": "4.5.11",
+      "resolved": "4.5.11",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "System.Spatial",
+      "requested": "5.2.0",
+      "resolved": "5.2.0",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "Twitter.Bootstrap",
+      "requested": "2.3.2",
+      "resolved": "2.3.2",
+      "outdated": false,
+      "vulnerabilities": []
+    },
+    {
+      "ecosystem": "dotnet",
+      "project": "CloudWars.Game/packages.config",
+      "name": "WebGrease",
+      "requested": "1.3.0",
+      "resolved": "1.3.0",
+      "outdated": false,
+      "vulnerabilities": []
+    }
+  ],
+  "summary": {
+    "total": 39,
+    "outdated": 0,
+    "withVulnerabilities": 0
+  },
+  "notes": [
+    "dotnet list package returned no rows (expected for pre-SDK projects); 1 packages.config manifest(s) inventoried instead. Version currency and advisories for these are NOT machine-checked here — a migration engagement resolves them against nuget.org or an offline mirror."
+  ]
+}

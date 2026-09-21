@@ -1,0 +1,547 @@
+{
+  "schema": "codelead.modernization-options/1",
+  "generatedAt": "2026-09-21T20:44:07.539Z",
+  "basis": {
+    "calibration": "CloudWars pilot, 2026-09-17: 8 landed increments (4 pin, 4 transform) in 24 sessions, 59 model calls, 10.9 h elapsed; rates fitted on 1,467 recorded calls (R² 0.95)",
+    "callsPerIncrement": 7.375,
+    "promptTokensPerIncrement": 102325.25,
+    "completionTokensPerIncrement": 50830.125,
+    "generationTokPerS": 16,
+    "prefillTokPerS": 433,
+    "overheadSPerCall": 3.9,
+    "elapsedMinutesPerIncrement": 81.75,
+    "humanRatio": 0.5
+  },
+  "options": [
+    {
+      "type": {
+        "id": "T1",
+        "name": "Platform upgrade in place",
+        "changes": "Framework, runtime and language version; project format; package versions",
+        "preserves": "Architecture, code, behaviour, data",
+        "driver": "Support end, security, hiring",
+        "pins": "Characterization pins on touched modules; dual-run parity on old and new runtime",
+        "gates": "Build on both targets; every pin green on both",
+        "consequences": "IDE and SDK floor rises; CI images change"
+      },
+      "fit": "fits",
+      "fits": true,
+      "reason": "2 runtime(s) out of support and 1 ending within a year; 3 legacy-format project(s)",
+      "scope": [
+        "CloudWars.Characterization.Db",
+        "CloudWars.Characterization",
+        "CloudWars.Common",
+        "CloudWars.DataAccess",
+        "CloudWars.Engine",
+        "CloudWars.Entities",
+        "CloudWars.Game",
+        "CloudWars.Glue",
+        "CloudWars.SpaceBattle"
+      ],
+      "risks": [
+        "API removals between framework generations surface at build time; the pins catch behavioural drift",
+        "Toolchain floor rises for every developer (pilot finding)"
+      ],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)",
+        "Target: Latest long-term-support release of the current stack"
+      ],
+      "consequences": [
+        "IDE and SDK floor rises; CI images change"
+      ],
+      "estimate": {
+        "pinIncrements": 7,
+        "transformIncrements": 9,
+        "toolHours": 15.3,
+        "humanHours": 7.7,
+        "elapsedDays": {
+          "low": 3,
+          "high": 6
+        },
+        "confidence": "low",
+        "basis": "16 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement"
+      }
+    },
+    {
+      "type": {
+        "id": "T2",
+        "name": "Upgrade and containerize",
+        "changes": "T1 plus Dockerfile, compose, configuration from environment, health endpoints, logging to stdout",
+        "preserves": "Behaviour, data",
+        "driver": "Deployment portability, cloud readiness",
+        "pins": "T1 pins plus a container runtime probe",
+        "gates": "T1 gates plus the container starts and answers its health check",
+        "consequences": "Container registry, secrets handling"
+      },
+      "fit": "fits",
+      "fits": true,
+      "reason": "follows T1; makes the upgraded build deployable anywhere",
+      "scope": [
+        "CloudWars.Characterization.Db",
+        "CloudWars.Characterization",
+        "CloudWars.Common",
+        "CloudWars.DataAccess",
+        "CloudWars.Engine",
+        "CloudWars.Entities",
+        "CloudWars.Game",
+        "CloudWars.Glue",
+        "CloudWars.SpaceBattle"
+      ],
+      "risks": [
+        "Configuration read from files or the registry must move to the environment (see config idioms in D13)"
+      ],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)"
+      ],
+      "consequences": [
+        "Container registry, secrets handling",
+        "Container runtime on developer machines"
+      ],
+      "estimate": {
+        "pinIncrements": 7,
+        "transformIncrements": 10,
+        "toolHours": 16.3,
+        "humanHours": 8.2,
+        "elapsedDays": {
+          "low": 3,
+          "high": 6
+        },
+        "confidence": "low",
+        "basis": "17 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement"
+      }
+    },
+    {
+      "type": {
+        "id": "T3",
+        "name": "Cloud-optimize / re-platform",
+        "changes": "Managed services, configuration and secrets, observability, Kubernetes manifests or Helm, autoscaling",
+        "preserves": "Business logic, most code",
+        "driver": "Cloud mandate, cost, scale",
+        "pins": "Pins plus infrastructure tests (deploy to a test cluster, smoke)",
+        "gates": "Smoke on the target platform",
+        "consequences": "Kubernetes, infrastructure as code, cloud accounts, operations skills"
+      },
+      "fit": "possible",
+      "fits": false,
+      "reason": "intake does not name a cloud target (hosting: undecided)",
+      "howToYes": "Name a cloud in the hosting answer, or Kubernetes / serverless in orchestration; the estimate assumes a test environment the client provides.",
+      "scope": [
+        "CloudWars.Characterization.Db",
+        "CloudWars.Characterization",
+        "CloudWars.Common",
+        "CloudWars.DataAccess",
+        "CloudWars.Engine",
+        "CloudWars.Entities",
+        "CloudWars.Game",
+        "CloudWars.Glue",
+        "CloudWars.SpaceBattle"
+      ],
+      "risks": [
+        "Managed-service differences (database engine version, connection limits) are found late without a test cluster",
+        "Cost model changes; the dossier does not estimate run cost"
+      ],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)",
+        "T1 or T2 landed",
+        "A test cluster or environment the client provides"
+      ],
+      "consequences": [
+        "Kubernetes, infrastructure as code, cloud accounts, operations skills",
+        "Final infrastructure to be agreed with the client (Peter, 2026-09-18)"
+      ],
+      "estimate": {
+        "pinIncrements": 7,
+        "transformIncrements": 3,
+        "toolHours": 9.6,
+        "humanHours": 4.8,
+        "elapsedDays": {
+          "low": 2,
+          "high": 4
+        },
+        "confidence": "low",
+        "basis": "10 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement"
+      }
+    },
+    {
+      "type": {
+        "id": "T4",
+        "name": "Partial rewrite by layer",
+        "changes": "One layer replaced: UI, backend services, or data access",
+        "preserves": "The other layers and their contracts",
+        "driver": "UX refresh, unsupported UI framework, unmaintained data layer",
+        "pins": "Contract tests at the layer boundary",
+        "gates": "Boundary pins green with the new layer in place",
+        "consequences": "Depends on the layer"
+      },
+      "fit": "possible",
+      "fits": false,
+      "reason": "fewer than two layer-shaped projects",
+      "howToYes": "Name the layer to replace under modules of interest (a UI, API or data-access project), with an appetite other than \"upgrade in place only\".",
+      "scope": [
+        "CloudWars.DataAccess"
+      ],
+      "risks": [
+        "Boundary contracts must be pinned before the layer is replaced; undocumented coupling shows up at the seam"
+      ],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)"
+      ],
+      "consequences": [
+        "Depends on the layer"
+      ],
+      "estimate": {
+        "pinIncrements": 1,
+        "transformIncrements": 1,
+        "toolHours": 1.9,
+        "humanHours": 1,
+        "elapsedDays": {
+          "low": 1,
+          "high": 1
+        },
+        "confidence": "low",
+        "basis": "2 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement"
+      }
+    },
+    {
+      "type": {
+        "id": "T5",
+        "name": "Module extraction / strangler",
+        "changes": "One module at a time behind a seam, rewritten or replaced",
+        "preserves": "Everything else, until its turn",
+        "driver": "Large systems, no big-bang tolerance",
+        "pins": "Per-module pins; the seam is the gate",
+        "gates": "Module pins green through the seam",
+        "consequences": "Routing or facade infrastructure"
+      },
+      "fit": "fits",
+      "fits": true,
+      "reason": "9 projects: seam-and-replace one module at a time (the pilot's method)",
+      "scope": [
+        "CloudWars.Characterization.Db",
+        "CloudWars.Common",
+        "CloudWars.DataAccess",
+        "CloudWars.Entities",
+        "CloudWars.Game",
+        "CloudWars.SpaceBattle"
+      ],
+      "risks": [
+        "Static gateways and shared state resist seams (see idioms)"
+      ],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)"
+      ],
+      "consequences": [
+        "Routing or facade infrastructure"
+      ],
+      "estimate": {
+        "pinIncrements": 5,
+        "transformIncrements": 12,
+        "toolHours": 16.3,
+        "humanHours": 8.2,
+        "elapsedDays": {
+          "low": 3,
+          "high": 6
+        },
+        "confidence": "low",
+        "basis": "17 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement"
+      }
+    },
+    {
+      "type": {
+        "id": "T6",
+        "name": "Full behaviour-preserving rewrite",
+        "changes": "All code, possibly the stack",
+        "preserves": "Business rules, data, external contracts",
+        "driver": "Stack dead-ended; team cannot maintain",
+        "pins": "Whole-system pins (API, UI flows, data), golden data sets, parallel run",
+        "gates": "Parallel run parity",
+        "consequences": "Everything; the dual-run cost trough"
+      },
+      "fit": "possible",
+      "fits": false,
+      "reason": "always possible; not indicated because the intake's appetite is \"upgrade in place where possible, rewrite only what blocks it\" — the estimate below is the comparison against the incremental path",
+      "howToYes": "Set the rewrite appetite to \"full rewrite preserving behaviour\". Precondition: whole-system pins and golden data before any code is replaced; the estimate here is the comparison against the incremental path.",
+      "scope": [
+        "CloudWars.Characterization.Db",
+        "CloudWars.Characterization",
+        "CloudWars.Common",
+        "CloudWars.DataAccess",
+        "CloudWars.Engine",
+        "CloudWars.Entities",
+        "CloudWars.Game",
+        "CloudWars.Glue",
+        "CloudWars.SpaceBattle"
+      ],
+      "risks": [
+        "The dual-run cost trough: two systems to run until parity",
+        "Undocumented rules are the ones that break; whole-system pins are the only defence"
+      ],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)",
+        "Whole-system pins and golden data before any rewrite"
+      ],
+      "consequences": [
+        "Everything; the dual-run cost trough"
+      ],
+      "estimate": {
+        "pinIncrements": 9,
+        "transformIncrements": 17,
+        "toolHours": 41.1,
+        "humanHours": 20.6,
+        "elapsedDays": {
+          "low": 8,
+          "high": 15
+        },
+        "confidence": "low",
+        "basis": "26 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); sized from the pricing units (31 actions, 1 EF contexts, 4 controllers, 11 tables, 29 views; plus 6 fixed increments) with the rewrite weights (10 facts per pin increment; a controller with its views, a form, a context, a report, a contract or a third-party control package is one increment); code-creating increments at 2× the pilot's volumes (the pilot edited, it did not create: an assumption until a rewrite is calibrated); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement",
+        "sizedFrom": "31 actions, 1 EF contexts, 4 controllers, 11 tables, 29 views; plus 6 fixed increments",
+        "volumeFactor": 2
+      }
+    },
+    {
+      "type": {
+        "id": "T7",
+        "name": "Re-architecture",
+        "changes": "Monolith to services or modular monolith; synchronous to event-driven",
+        "preserves": "Business rules",
+        "driver": "Scale, team topology",
+        "pins": "Contract pins per boundary; data ownership tests",
+        "gates": "Boundary contracts green",
+        "consequences": "Messaging and service infrastructure"
+      },
+      "fit": "possible",
+      "fits": false,
+      "reason": "always possible; not indicated because the goals name no scale, service-boundary or team-topology driver (\"Keep the system supportable and changeable: supported runtimes, a test safety ne…\")",
+      "howToYes": "State a scale, team-topology or service-boundary goal (services, event-driven, independent deployment). Nothing in a codebase makes this necessary on its own.",
+      "scope": [
+        "CloudWars.Characterization.Db",
+        "CloudWars.Characterization",
+        "CloudWars.Common",
+        "CloudWars.DataAccess",
+        "CloudWars.Engine",
+        "CloudWars.Entities",
+        "CloudWars.Game",
+        "CloudWars.Glue",
+        "CloudWars.SpaceBattle"
+      ],
+      "risks": [
+        "New boundaries without pinned contracts move behaviour silently"
+      ],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)"
+      ],
+      "consequences": [
+        "Messaging and service infrastructure"
+      ],
+      "estimate": {
+        "pinIncrements": 9,
+        "transformIncrements": 10,
+        "toolHours": 27.7,
+        "humanHours": 13.9,
+        "elapsedDays": {
+          "low": 5,
+          "high": 10
+        },
+        "confidence": "low",
+        "basis": "19 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); sized from the pricing units (31 actions, 1 EF contexts, 4 controllers, 11 tables, 29 views; plus 4 fixed increments) with the rewrite weights (10 facts per pin increment; a controller with its views, a form, a context, a report, a contract or a third-party control package is one increment); code-creating increments at 2× the pilot's volumes (the pilot edited, it did not create: an assumption until a rewrite is calibrated); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement",
+        "sizedFrom": "31 actions, 1 EF contexts, 4 controllers, 11 tables, 29 views; plus 4 fixed increments",
+        "volumeFactor": 2
+      }
+    },
+    {
+      "type": {
+        "id": "T8",
+        "name": "Language or stack migration",
+        "changes": "VB.NET to C#, AngularJS to a current framework, jQuery pages to components, Web Forms to MVC/Razor/Blazor",
+        "preserves": "Behaviour, structure where possible",
+        "driver": "Skills, ecosystem",
+        "pins": "Pins; translation reviewed per file; idiom conformance",
+        "gates": "Pins green on the new stack",
+        "consequences": "New build chain"
+      },
+      "fit": "fits",
+      "fits": true,
+      "reason": "CloudWars.Game: System.Web (20 lines) (ASP.NET MVC 4.0.20710.0, ASP.NET Web API 4.0.20710.0)",
+      "scope": [
+        "CloudWars.Game"
+      ],
+      "risks": [
+        "Translation drift per file; idiom conformance must be checked, not assumed"
+      ],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)"
+      ],
+      "consequences": [
+        "New build chain"
+      ],
+      "estimate": {
+        "pinIncrements": 9,
+        "transformIncrements": 11,
+        "toolHours": 19.1,
+        "humanHours": 9.6,
+        "elapsedDays": {
+          "low": 4,
+          "high": 7
+        },
+        "confidence": "low",
+        "basis": "20 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); sized from the pricing units (31 actions, 1 EF contexts, 4 controllers, 11 tables, 29 views) with the rewrite weights (10 facts per pin increment; a controller with its views, a form, a context, a report, a contract or a third-party control package is one increment); code-creating increments at 1× the pilot's volumes (the pilot edited, it did not create: an assumption until a rewrite is calibrated); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement",
+        "sizedFrom": "31 actions, 1 EF contexts, 4 controllers, 11 tables, 29 views",
+        "volumeFactor": 1
+      }
+    },
+    {
+      "type": {
+        "id": "T9",
+        "name": "Data migration",
+        "changes": "Database engine or schema; data cleanup",
+        "preserves": "Application behaviour",
+        "driver": "Licensing, cloud, consolidation",
+        "pins": "Data-parity checks; dual-write or replay",
+        "gates": "Parity on a copy of production data",
+        "consequences": "Database administration involvement"
+      },
+      "fit": "possible",
+      "fits": false,
+      "reason": "data access via CloudWars.Characterization.Db: System.Data.SqlClient, CloudWars.Game: EntityFramework; no engine change requested",
+      "howToYes": "A database package in the code plus a cloud target or a named engine in the target stack (for example SQL Server to PostgreSQL).",
+      "scope": [
+        "CloudWars.Characterization.Db",
+        "CloudWars.Game"
+      ],
+      "risks": [
+        "Data parity is the hard part; schema-only checks miss semantics"
+      ],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)"
+      ],
+      "consequences": [
+        "Database administration involvement"
+      ],
+      "estimate": {
+        "pinIncrements": 1,
+        "transformIncrements": 2,
+        "toolHours": 2.9,
+        "humanHours": 1.5,
+        "elapsedDays": {
+          "low": 1,
+          "high": 2
+        },
+        "confidence": "low",
+        "basis": "3 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement"
+      }
+    },
+    {
+      "type": {
+        "id": "T10",
+        "name": "Dependency replacement",
+        "changes": "An unsupported library replaced behind an adapter",
+        "preserves": "Everything else",
+        "driver": "Security, no maintainer",
+        "pins": "Pins around the dependency's use sites; adapter first",
+        "gates": "Pins green with the replacement",
+        "consequences": "Usually none"
+      },
+      "fit": "fits",
+      "fits": true,
+      "reason": "CloudWars.Characterization.Db: System.Data.SqlClient (superseded by Microsoft.Data.SqlClient); CloudWars.Game: DotNetOpenAuth.AspNet (unmaintained since 2015); CloudWars.Game: DotNetOpenAuth.Core (unmaintained since 2015); CloudWars.Game: DotNetOpenAuth.OAuth.Consumer (unmaintained since 2015); CloudWars.Game: DotNetOpenAuth.OAuth.Core (unmaintained since 2015); CloudWars.Game: DotNetOpenAuth.OpenId.Core (unmaintained since 2015); CloudWars.Game: DotNetOpenAuth.OpenId.RelyingParty (unmaintained since 2015); CloudWars.Game: EntityFramework (EF6: maintenance only); CloudWars.Game: jQuery.UI.Combined (jQuery UI: maintenance only); CloudWars.Game: knockoutjs (Knockout: maintenance only); CloudWars.Game: Microsoft.AspNet.Mvc (ASP.NET MVC 5 and earlier: no longer serviced); CloudWars.Game: Microsoft.AspNet.Mvc.FixedDisplayModes (ASP.NET MVC 5 and earlier: no longer serviced); CloudWars.Game: Microsoft.AspNet.WebApi (ASP.NET Web API 2: no longer serviced); CloudWars.Game: Microsoft.AspNet.WebApi.Client (ASP.NET Web API 2: no longer serviced); CloudWars.Game: Microsoft.AspNet.WebApi.Core (ASP.NET Web API 2: no longer serviced); CloudWars.Game: Microsoft.AspNet.WebApi.OData (ASP.NET Web API 2: no longer serviced); CloudWars.Game: Microsoft.AspNet.WebApi.WebHost (ASP.NET Web API 2: no longer serviced); CloudWars.Game: Needletail.DataAccess (no maintained release); CloudWars.Game: Needletail.DataAccess.Migrations (no maintained release); CloudWars.Game: Needletail.Mvc (no maintained release)",
+      "scope": [
+        "CloudWars.Characterization.Db",
+        "CloudWars.Game"
+      ],
+      "risks": [
+        "Replacement libraries differ in edge behaviour; adapter first, pins around the use sites"
+      ],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)"
+      ],
+      "consequences": [
+        "Usually none"
+      ],
+      "estimate": {
+        "pinIncrements": 1,
+        "transformIncrements": 20,
+        "toolHours": 20.1,
+        "humanHours": 10.1,
+        "elapsedDays": {
+          "low": 4,
+          "high": 8
+        },
+        "confidence": "low",
+        "basis": "21 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement"
+      }
+    },
+    {
+      "type": {
+        "id": "T11",
+        "name": "Lift-and-shift",
+        "changes": "Infrastructure only",
+        "preserves": "Code",
+        "driver": "Data-centre exit",
+        "pins": "Smoke tests; no code pins",
+        "gates": "Smoke on the new infrastructure",
+        "consequences": "Infrastructure only"
+      },
+      "fit": "possible",
+      "fits": false,
+      "reason": "either hosting stays or code changes are acceptable, so an upgrade beats a lift",
+      "howToYes": "A hosting change with the appetite \"upgrade in place only\": move the code as it is, prove it with smoke tests.",
+      "scope": [],
+      "risks": [],
+      "preconditions": [
+        "Characterization pins first for 7 project(s) without tests (CloudWars.Common, CloudWars.DataAccess, CloudWars.Engine, CloudWars.Entities, CloudWars.Game, CloudWars.Glue, …)"
+      ],
+      "consequences": [
+        "Infrastructure only"
+      ],
+      "estimate": {
+        "pinIncrements": 0,
+        "transformIncrements": 1,
+        "toolHours": 1,
+        "humanHours": 0.5,
+        "elapsedDays": {
+          "low": 1,
+          "high": 1
+        },
+        "confidence": "low",
+        "basis": "1 increments at the pilot's volumes (57 min of model time and 82 min elapsed each); human hours = tool hours × 0.5 (operator ratio: the pilot measured about 0.25, one engagement; 0.5 is the midpoint used until a second engagement measures it); confidence low: one calibration engagement"
+      }
+    },
+    {
+      "type": {
+        "id": "T12",
+        "name": "Retire and replace",
+        "changes": "Replace with a product or service; write integrations and data export",
+        "preserves": "Data (exported), some integrations",
+        "driver": "Not worth maintaining",
+        "pins": "Data-export parity; integration tests",
+        "gates": "Export parity",
+        "consequences": "Vendor dependence"
+      },
+      "fit": "not_assessed",
+      "fits": false,
+      "reason": "not assessed by the survey: a build-versus-buy decision needs the market, not the code",
+      "howToYes": "Not a survey question: a build-versus-buy decision needs the market, the vendor and the data-export contract.",
+      "scope": [],
+      "risks": [],
+      "preconditions": [],
+      "consequences": []
+    }
+  ],
+  "recommendation": {
+    "sequence": [
+      "T10",
+      "T1",
+      "T2",
+      "T5",
+      "T8"
+    ],
+    "why": [
+      "Pin first: 7 of 9 projects have no tests, so no change can be shown safe until characterization tests exist.",
+      "Dependency replacement removes unmaintained code paths before they are carried onto a new runtime.",
+      "The in-place upgrade addresses the out-of-support runtimes with the least change to the code.",
+      "Containerizing the upgraded build makes it deployable on any host and is the precondition for a cloud move.",
+      "Where modules must be rewritten, the strangler order limits the dual-run exposure to one module at a time.",
+      "Stack migration follows the upgrade so it targets the supported platform."
+    ]
+  }
+}

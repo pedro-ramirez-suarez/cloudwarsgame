@@ -1,0 +1,333 @@
+{
+  "generatedAt": "2026-09-21T20:43:45.184Z",
+  "repo": "cloudwarsgame",
+  "windowSince": "(full history)",
+  "totalCommits": 41,
+  "authors": 3,
+  "hotFiles": [
+    {
+      "path": "Readme.md",
+      "commits": 13,
+      "churn": 161,
+      "lastTouched": "2013-08-21T09:04:23-05:00"
+    },
+    {
+      "path": "CloudWars.Game/CloudWars.Game.csproj",
+      "commits": 6,
+      "churn": 698,
+      "lastTouched": "2015-04-23T10:22:48-05:00"
+    },
+    {
+      "path": "CloudWars.Game/Web.config",
+      "commits": 5,
+      "churn": 106,
+      "lastTouched": "2013-08-21T05:34:37-05:00"
+    },
+    {
+      "path": ".gitignore",
+      "commits": 4,
+      "churn": 70,
+      "lastTouched": "2026-09-17T09:38:18-07:00"
+    },
+    {
+      "path": "CloudWars.Game/Controllers/GameController.cs",
+      "commits": 3,
+      "churn": 377,
+      "lastTouched": "2013-08-21T15:10:20-05:00"
+    },
+    {
+      "path": "pilot-before/needletail-api-calls.txt",
+      "commits": 3,
+      "churn": 320,
+      "lastTouched": "2026-09-17T09:46:29-07:00"
+    },
+    {
+      "path": "pilot-before/projects.json",
+      "commits": 3,
+      "churn": 136,
+      "lastTouched": "2026-09-17T09:46:29-07:00"
+    },
+    {
+      "path": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj",
+      "commits": 3,
+      "churn": 46,
+      "lastTouched": "2026-09-17T01:25:33-07:00"
+    },
+    {
+      "path": "pilot-before/environment.json",
+      "commits": 3,
+      "churn": 26,
+      "lastTouched": "2026-09-17T09:46:29-07:00"
+    },
+    {
+      "path": "pilot-before/idiom-counts.json",
+      "commits": 3,
+      "churn": 18,
+      "lastTouched": "2026-09-17T09:46:29-07:00"
+    },
+    {
+      "path": "CloudWars.DataAccess/packages.config",
+      "commits": 3,
+      "churn": 10,
+      "lastTouched": "2026-09-17T00:58:32-07:00"
+    },
+    {
+      "path": "CloudWars.Entities/packages.config",
+      "commits": 3,
+      "churn": 10,
+      "lastTouched": "2026-09-17T00:58:32-07:00"
+    },
+    {
+      "path": "pilot-before/needletail-api-calls.count",
+      "commits": 3,
+      "churn": 5,
+      "lastTouched": "2026-09-17T09:46:29-07:00"
+    },
+    {
+      "path": "pilot-before/test-count.before",
+      "commits": 3,
+      "churn": 5,
+      "lastTouched": "2026-09-17T09:46:29-07:00"
+    },
+    {
+      "path": "pilot-before/README.txt",
+      "commits": 3,
+      "churn": 0,
+      "lastTouched": "2026-09-17T09:46:29-07:00"
+    },
+    {
+      "path": "pilot-before/msbuild-baseline.log",
+      "commits": 3,
+      "churn": 0,
+      "lastTouched": "2026-09-17T09:46:29-07:00"
+    },
+    {
+      "path": "CloudWars.SpaceBattle/SpaceBattleGame.cs",
+      "commits": 2,
+      "churn": 283,
+      "lastTouched": "2026-09-17T00:58:32-07:00"
+    },
+    {
+      "path": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+      "commits": 2,
+      "churn": 247,
+      "lastTouched": "2026-09-16T17:46:25-07:00"
+    },
+    {
+      "path": "pilot-after/needletail-api-calls.txt",
+      "commits": 2,
+      "churn": 237,
+      "lastTouched": "2026-09-17T12:34:57-07:00"
+    },
+    {
+      "path": "CloudWars.DataAccess/Sql/CloudWarsData.cs",
+      "commits": 2,
+      "churn": 214,
+      "lastTouched": "2013-08-20T16:39:30-05:00"
+    },
+    {
+      "path": "CloudWars.DataAccess/CloudWars.DataAccess.csproj",
+      "commits": 2,
+      "churn": 183,
+      "lastTouched": "2026-09-16T21:46:41-07:00"
+    },
+    {
+      "path": "CloudWars.Entities/CloudWars.Entities.csproj",
+      "commits": 2,
+      "churn": 173,
+      "lastTouched": "2026-09-16T21:46:41-07:00"
+    },
+    {
+      "path": "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj",
+      "commits": 2,
+      "churn": 157,
+      "lastTouched": "2026-09-16T22:16:06-07:00"
+    },
+    {
+      "path": "CloudWars.Common/CloudWars.Common.csproj",
+      "commits": 2,
+      "churn": 132,
+      "lastTouched": "2026-09-16T21:46:41-07:00"
+    },
+    {
+      "path": "cloudwars-before-metrics.ps1",
+      "commits": 2,
+      "churn": 127,
+      "lastTouched": "2026-09-17T09:46:29-07:00"
+    }
+  ],
+  "coChangePairs": [
+    {
+      "a": "pilot-before/README.txt",
+      "b": "pilot-before/environment.json",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/README.txt",
+      "b": "pilot-before/idiom-counts.json",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/README.txt",
+      "b": "pilot-before/needletail-api-calls.count",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/README.txt",
+      "b": "pilot-before/needletail-api-calls.txt",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/README.txt",
+      "b": "pilot-before/projects.json",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/README.txt",
+      "b": "pilot-before/test-count.before",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/environment.json",
+      "b": "pilot-before/idiom-counts.json",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/environment.json",
+      "b": "pilot-before/needletail-api-calls.count",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/environment.json",
+      "b": "pilot-before/needletail-api-calls.txt",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/environment.json",
+      "b": "pilot-before/projects.json",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/environment.json",
+      "b": "pilot-before/test-count.before",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/idiom-counts.json",
+      "b": "pilot-before/needletail-api-calls.count",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/idiom-counts.json",
+      "b": "pilot-before/needletail-api-calls.txt",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/idiom-counts.json",
+      "b": "pilot-before/projects.json",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/idiom-counts.json",
+      "b": "pilot-before/test-count.before",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/needletail-api-calls.count",
+      "b": "pilot-before/needletail-api-calls.txt",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/needletail-api-calls.count",
+      "b": "pilot-before/projects.json",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/needletail-api-calls.count",
+      "b": "pilot-before/test-count.before",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/needletail-api-calls.txt",
+      "b": "pilot-before/projects.json",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/needletail-api-calls.txt",
+      "b": "pilot-before/test-count.before",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "pilot-before/projects.json",
+      "b": "pilot-before/test-count.before",
+      "together": 3,
+      "strength": 1
+    },
+    {
+      "a": "CloudWars.Game/CloudWars.Game.csproj",
+      "b": "CloudWars.Game/Web.config",
+      "together": 3,
+      "strength": 0.6
+    }
+  ],
+  "authorConcentration": [
+    {
+      "path": "CloudWars.Game/Web.config",
+      "commits": 5,
+      "topAuthor": "Cloudancy",
+      "topAuthorShare": 1,
+      "authors": 1
+    },
+    {
+      "path": "CloudWars.Game/CloudWars.Game.csproj",
+      "commits": 6,
+      "topAuthor": "Cloudancy",
+      "topAuthorShare": 0.83,
+      "authors": 2
+    },
+    {
+      "path": "Readme.md",
+      "commits": 13,
+      "topAuthor": "Pedro Ramirez",
+      "topAuthorShare": 0.46,
+      "authors": 3
+    }
+  ],
+  "churnTrend": [
+    {
+      "month": "2013-08",
+      "commits": 23,
+      "churn": 48865
+    },
+    {
+      "month": "2015-04",
+      "commits": 1,
+      "churn": 6
+    },
+    {
+      "month": "2026-09",
+      "commits": 17,
+      "churn": 3214
+    }
+  ]
+}

@@ -1,0 +1,1005 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "id": "k-20260921204409-vpn5qg",
+      "type": "risk_fact",
+      "summary": "CloudWars.Characterization/CloudWars.Characterization.csproj targets net8.0 — .NET 8.0 (LTS) is maintenance",
+      "body": "End of life: 2026-11-10. Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.638Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.638Z",
+      "last_seen": "2026-09-21T20:44:09.638Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-o353dc",
+      "type": "risk_fact",
+      "summary": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj targets net8.0 — .NET 8.0 (LTS) is maintenance",
+      "body": "End of life: 2026-11-10. Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.648Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.648Z",
+      "last_seen": "2026-09-21T20:44:09.648Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-145syq",
+      "type": "risk_fact",
+      "summary": "CloudWars.Common/CloudWars.Common.csproj targets net45 — .NET Framework 4.5 is eol",
+      "body": "End of life: 2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported). Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.653Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.653Z",
+      "last_seen": "2026-09-21T20:44:09.653Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-0u83wv",
+      "type": "risk_fact",
+      "summary": "CloudWars.Common/CloudWars.Common.csproj targets net8.0 — .NET 8.0 (LTS) is maintenance",
+      "body": "End of life: 2026-11-10. Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.660Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.660Z",
+      "last_seen": "2026-09-21T20:44:09.660Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-0lrv16",
+      "type": "risk_fact",
+      "summary": "CloudWars.DataAccess/CloudWars.DataAccess.csproj targets net45 — .NET Framework 4.5 is eol",
+      "body": "End of life: 2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported). Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.669Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.669Z",
+      "last_seen": "2026-09-21T20:44:09.669Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-wigrol",
+      "type": "risk_fact",
+      "summary": "CloudWars.DataAccess/CloudWars.DataAccess.csproj targets net8.0 — .NET 8.0 (LTS) is maintenance",
+      "body": "End of life: 2026-11-10. Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.681Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.681Z",
+      "last_seen": "2026-09-21T20:44:09.681Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-lfjdh4",
+      "type": "risk_fact",
+      "summary": "CloudWars.Engine/CloudWars.Engine.csproj targets net40 — .NET Framework 4.0 is eol",
+      "body": "End of life: 2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported). Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.688Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.688Z",
+      "last_seen": "2026-09-21T20:44:09.688Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-qtdk9q",
+      "type": "risk_fact",
+      "summary": "CloudWars.Entities/CloudWars.Entities.csproj targets net45 — .NET Framework 4.5 is eol",
+      "body": "End of life: 2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported). Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.693Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.693Z",
+      "last_seen": "2026-09-21T20:44:09.693Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-xmhaju",
+      "type": "risk_fact",
+      "summary": "CloudWars.Entities/CloudWars.Entities.csproj targets net8.0 — .NET 8.0 (LTS) is maintenance",
+      "body": "End of life: 2026-11-10. Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.699Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.699Z",
+      "last_seen": "2026-09-21T20:44:09.699Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-jhmc5e",
+      "type": "risk_fact",
+      "summary": "CloudWars.Game/CloudWars.Game.csproj targets net45 — .NET Framework 4.5 is eol",
+      "body": "End of life: 2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported). Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.704Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.704Z",
+      "last_seen": "2026-09-21T20:44:09.704Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-r1yzet",
+      "type": "risk_fact",
+      "summary": "CloudWars.Glue/CloudWars.Glue.csproj targets net40 — .NET Framework 4.0 is eol",
+      "body": "End of life: 2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported). Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.711Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.711Z",
+      "last_seen": "2026-09-21T20:44:09.711Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-d61oqu",
+      "type": "risk_fact",
+      "summary": "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj targets net45 — .NET Framework 4.5 is eol",
+      "body": "End of life: 2016-01-12 (target out of support; runs in place on 4.6.2+/4.8, which remain supported). Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.719Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.719Z",
+      "last_seen": "2026-09-21T20:44:09.719Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-ze93ow",
+      "type": "risk_fact",
+      "summary": "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj targets net8.0 — .NET 8.0 (LTS) is maintenance",
+      "body": "End of life: 2026-11-10. Source: offline endoflife.date snapshot 2026-09-18.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/dependencies.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "runtime-eol"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.725Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.725Z",
+      "last_seen": "2026-09-21T20:44:09.725Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-fkh7mg",
+      "type": "risk_fact",
+      "summary": "Test desert: no test reaches CloudWars.Game",
+      "body": "Behavior in this area is unpinned; characterization tests are required before any transformation.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/test-census.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "test-desert"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.732Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.732Z",
+      "last_seen": "2026-09-21T20:44:09.732Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-4i4w51",
+      "type": "risk_fact",
+      "summary": "Test desert: no test reaches CloudWars.Engine",
+      "body": "Behavior in this area is unpinned; characterization tests are required before any transformation.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/test-census.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "test-desert"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.739Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.739Z",
+      "last_seen": "2026-09-21T20:44:09.739Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-hookhw",
+      "type": "risk_fact",
+      "summary": "Test desert: no test reaches CloudWars.Glue",
+      "body": "Behavior in this area is unpinned; characterization tests are required before any transformation.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/test-census.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "modernization",
+        "test-desert"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.746Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.746Z",
+      "last_seen": "2026-09-21T20:44:09.746Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-2wchs8",
+      "type": "cochange_fact",
+      "summary": "pilot-before/README.txt and pilot-before/environment.json change together (3 commits, strength 1)",
+      "body": "Historical co-change: treat as a likely co-change obligation when either file is modified.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "co-change"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.752Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.752Z",
+      "last_seen": "2026-09-21T20:44:09.752Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-139uak",
+      "type": "cochange_fact",
+      "summary": "pilot-before/README.txt and pilot-before/idiom-counts.json change together (3 commits, strength 1)",
+      "body": "Historical co-change: treat as a likely co-change obligation when either file is modified.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "co-change"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.758Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.758Z",
+      "last_seen": "2026-09-21T20:44:09.758Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-j3mk8m",
+      "type": "cochange_fact",
+      "summary": "pilot-before/README.txt and pilot-before/needletail-api-calls.count change together (3 commits, strength 1)",
+      "body": "Historical co-change: treat as a likely co-change obligation when either file is modified.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "co-change"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.763Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.763Z",
+      "last_seen": "2026-09-21T20:44:09.763Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-na3fp3",
+      "type": "cochange_fact",
+      "summary": "pilot-before/README.txt and pilot-before/needletail-api-calls.txt change together (3 commits, strength 1)",
+      "body": "Historical co-change: treat as a likely co-change obligation when either file is modified.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "co-change"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.769Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.769Z",
+      "last_seen": "2026-09-21T20:44:09.769Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-il72po",
+      "type": "cochange_fact",
+      "summary": "pilot-before/README.txt and pilot-before/projects.json change together (3 commits, strength 1)",
+      "body": "Historical co-change: treat as a likely co-change obligation when either file is modified.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "co-change"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.774Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.774Z",
+      "last_seen": "2026-09-21T20:44:09.774Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-qj1q55",
+      "type": "cochange_fact",
+      "summary": "pilot-before/README.txt and pilot-before/test-count.before change together (3 commits, strength 1)",
+      "body": "Historical co-change: treat as a likely co-change obligation when either file is modified.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "co-change"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.779Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.779Z",
+      "last_seen": "2026-09-21T20:44:09.779Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-8v3afi",
+      "type": "cochange_fact",
+      "summary": "pilot-before/environment.json and pilot-before/idiom-counts.json change together (3 commits, strength 1)",
+      "body": "Historical co-change: treat as a likely co-change obligation when either file is modified.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "co-change"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.787Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.787Z",
+      "last_seen": "2026-09-21T20:44:09.787Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-ccrfvy",
+      "type": "cochange_fact",
+      "summary": "pilot-before/environment.json and pilot-before/needletail-api-calls.count change together (3 commits, strength 1)",
+      "body": "Historical co-change: treat as a likely co-change obligation when either file is modified.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "co-change"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.792Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.792Z",
+      "last_seen": "2026-09-21T20:44:09.792Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-mxy29n",
+      "type": "cochange_fact",
+      "summary": "pilot-before/environment.json and pilot-before/needletail-api-calls.txt change together (3 commits, strength 1)",
+      "body": "Historical co-change: treat as a likely co-change obligation when either file is modified.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "co-change"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.798Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.798Z",
+      "last_seen": "2026-09-21T20:44:09.798Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-ofrr20",
+      "type": "cochange_fact",
+      "summary": "pilot-before/environment.json and pilot-before/projects.json change together (3 commits, strength 1)",
+      "body": "Historical co-change: treat as a likely co-change obligation when either file is modified.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "co-change"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.804Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.804Z",
+      "last_seen": "2026-09-21T20:44:09.804Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-x61qyc",
+      "type": "open_question",
+      "summary": "Who besides Cloudancy understands CloudWars.Game/Web.config?",
+      "body": "100% of 5 commits are by one author — interview target for D5.",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "bus-factor",
+        "interview"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.809Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.809Z",
+      "last_seen": "2026-09-21T20:44:09.809Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-qmgpt6",
+      "type": "open_question",
+      "summary": "Who besides Cloudancy understands CloudWars.Game/CloudWars.Game.csproj?",
+      "body": "83% of 6 commits are by one author — interview target for D5.",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/git-history.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "bus-factor",
+        "interview"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.814Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.814Z",
+      "last_seen": "2026-09-21T20:44:09.814Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-0207st",
+      "type": "contract_fact",
+      "summary": "Command is one of: NotYourTurn, ChallengePlayer, ChallengeAccepted, StartGame, EndGame, PlayerOnline, PlayerOffLine, GameAction",
+      "body": "Lifted from CloudWars.Common/Other/Enums.cs:8 — public enum Command",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Common/Other/Enums.cs:8"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "state_vocabulary"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.820Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.820Z",
+      "last_seen": "2026-09-21T20:44:09.820Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-gpwms6",
+      "type": "contract_fact",
+      "summary": "GameAction is one of: PlayerReady, UnitMoved, Attack, ShotMade, ShotMissed",
+      "body": "Lifted from CloudWars.Common/Other/Enums.cs:21 — public enum GameAction",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Common/Other/Enums.cs:21"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "state_vocabulary"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.825Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.825Z",
+      "last_seen": "2026-09-21T20:44:09.825Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-7ea42y",
+      "type": "contract_fact",
+      "summary": "ManageMessageId is one of: ChangePasswordSuccess, SetPasswordSuccess, RemoveLoginSuccess",
+      "body": "Lifted from CloudWars.Game/Controllers/AccountController.cs:342 — public enum ManageMessageId",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Game/Controllers/AccountController.cs:342"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "state_vocabulary"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.830Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.830Z",
+      "last_seen": "2026-09-21T20:44:09.830Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-bjxcl1",
+      "type": "contract_fact",
+      "summary": "UserName must satisfy Required",
+      "body": "Lifted from CloudWars.Game/Models/AccountModels.cs:75 — [Required] → public string UserName { get; set; }",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:32",
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:60",
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:75"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "validation_limit"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.835Z",
+          "event": "created"
+        },
+        {
+          "at": "2026-09-21T20:44:09.859Z",
+          "event": "seen"
+        },
+        {
+          "at": "2026-09-21T20:44:09.869Z",
+          "event": "seen"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.835Z",
+      "last_seen": "2026-09-21T20:44:09.869Z",
+      "seen_count": 3
+    },
+    {
+      "id": "k-20260921204409-ly5xeg",
+      "type": "contract_fact",
+      "summary": "OldPassword must satisfy Required",
+      "body": "Lifted from CloudWars.Game/Models/AccountModels.cs:41 — [Required] → public string OldPassword { get; set; }",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:41"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "validation_limit"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.840Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.840Z",
+      "last_seen": "2026-09-21T20:44:09.840Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-bvdun2",
+      "type": "contract_fact",
+      "summary": "NewPassword must satisfy Required",
+      "body": "Lifted from CloudWars.Game/Models/AccountModels.cs:46 — [Required] → public string NewPassword { get; set; }",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:46"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "validation_limit"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.844Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.844Z",
+      "last_seen": "2026-09-21T20:44:09.844Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-0s2el4",
+      "type": "contract_fact",
+      "summary": "NewPassword must satisfy StringLength (100, ErrorMessage = \"The {0} must be at least {2} characters)",
+      "body": "Lifted from CloudWars.Game/Models/AccountModels.cs:47 — [StringLength(100, ErrorMessage = \"The {0} must be at least {2} characters long.\", MinimumLength = 6)] → public string NewPassword { get; set; }",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:47"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "validation_limit"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.849Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.849Z",
+      "last_seen": "2026-09-21T20:44:09.849Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-ma7rzf",
+      "type": "contract_fact",
+      "summary": "ConfirmPassword must satisfy Compare (\"NewPassword\", ErrorMessage = \"The new password and confirma)",
+      "body": "Lifted from CloudWars.Game/Models/AccountModels.cs:54 — [Compare(\"NewPassword\", ErrorMessage = \"The new password and confirmation password do not match.\")] → public string ConfirmPassword { get; set; }",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:54"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "validation_limit"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.855Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.855Z",
+      "last_seen": "2026-09-21T20:44:09.855Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-jd2tjx",
+      "type": "contract_fact",
+      "summary": "Password must satisfy Required",
+      "body": "Lifted from CloudWars.Game/Models/AccountModels.cs:79 — [Required] → public string Password { get; set; }",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:64",
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:79"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "validation_limit"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.864Z",
+          "event": "created"
+        },
+        {
+          "at": "2026-09-21T20:44:09.873Z",
+          "event": "seen"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.864Z",
+      "last_seen": "2026-09-21T20:44:09.873Z",
+      "seen_count": 2
+    },
+    {
+      "id": "k-20260921204409-u1428t",
+      "type": "contract_fact",
+      "summary": "Password must satisfy StringLength (100, ErrorMessage = \"The {0} must be at least {2} characters)",
+      "body": "Lifted from CloudWars.Game/Models/AccountModels.cs:80 — [StringLength(100, ErrorMessage = \"The {0} must be at least {2} characters long.\", MinimumLength = 6)] → public string Password { get; set; }",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:80"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "validation_limit"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.878Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.878Z",
+      "last_seen": "2026-09-21T20:44:09.878Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-a51d79",
+      "type": "contract_fact",
+      "summary": "ConfirmPassword must satisfy Compare (\"Password\", ErrorMessage = \"The password and confirmation pa)",
+      "body": "Lifted from CloudWars.Game/Models/AccountModels.cs:87 — [Compare(\"Password\", ErrorMessage = \"The password and confirmation password do not match.\")] → public string ConfirmPassword { get; set; }",
+      "trust_level": "reported",
+      "source_links": [
+        "dossier/business-rules.json#CloudWars.Game/Models/AccountModels.cs:87"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "business-rule",
+        "inferred",
+        "validation_limit"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.883Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.883Z",
+      "last_seen": "2026-09-21T20:44:09.883Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-zsvanj",
+      "type": "contract_fact",
+      "summary": "Needletail.DataAccess is used by CloudWars.DataAccess, CloudWars.Entities, CloudWars.Game (3 references)",
+      "body": "Evidence: CloudWars.DataAccess/Sql/CloudWarsDB.cs:5, CloudWars.DataAccess/Sql/CloudWarsDB.cs:8. Usage is verified from imports and call sites, not inferred from the manifest.",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/usage.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "dependency",
+        "usage"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.888Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.888Z",
+      "last_seen": "2026-09-21T20:44:09.888Z",
+      "seen_count": 1
+    },
+    {
+      "id": "k-20260921204409-52mk9j",
+      "type": "contract_fact",
+      "summary": "Integration point (database) in CloudWars.Game/Models/AccountModels.cs",
+      "body": "ADO.NET/ORM usage: DbContext",
+      "trust_level": "evidence_backed",
+      "source_links": [
+        "dossier/contracts.json"
+      ],
+      "validity_scope": "workspace",
+      "reuse_tags": [
+        "integration"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T20:44:09.892Z",
+          "event": "created"
+        }
+      ],
+      "created_at": "2026-09-21T20:44:09.892Z",
+      "last_seen": "2026-09-21T20:44:09.892Z",
+      "seen_count": 1
+    }
+  ],
+  "updatedAt": "2026-09-21T20:44:09.892Z"
+}
