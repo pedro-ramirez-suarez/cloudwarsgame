@@ -18,7 +18,25 @@
           "/Users/peter/.nuget/packages/xunit.runner.console/2.9.2/tools/net472/xunit.console.exe",
           "bin/Debug/net48/CloudWars.Characterization.Db.dll",
           "-nologo"
+        ],
+        "platforms": [
+          "darwin",
+          "linux"
         ]
+      },
+      {
+        "label": "xunit (dotnet test, net48, Windows)",
+        "command": "dotnet",
+        "args": [
+          "test",
+          "-f",
+          "net48",
+          "-nologo"
+        ],
+        "platforms": [
+          "win32"
+        ],
+        "note": "needs the SQL Server connection; step 2 of the Windows smoke"
       }
     ],
     ".": [
@@ -93,6 +111,10 @@
           "/Users/peter/.nuget/packages/xunit.runner.console/2.9.2/tools/net472/xunit.console.exe",
           "CloudWars.Characterization.Db/bin/Debug/net48/CloudWars.Characterization.Db.dll",
           "-nologo"
+        ],
+        "platforms": [
+          "darwin",
+          "linux"
         ]
       },
       {
@@ -104,8 +126,13 @@
           "-f",
           "net8.0",
           "-nologo"
+        ],
+        "platforms": [
+          "darwin",
+          "linux"
         ]
       }
     ]
-  }
+  },
+  "note": "Windows (backlog plan wave 1.1, 2026-09-22): the Mono runner does not exist there and the database pins need the SQL Server connection, so those entries run on darwin/linux only; Windows runs the builds and the in-memory pins on both targets. The database pins on Windows are step 2 of the smoke (dotnet test -f net48 once connections.local.config points at a reachable SQL Server)."
 }
