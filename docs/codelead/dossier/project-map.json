@@ -1,0 +1,417 @@
+{
+  "generatedAt": "2026-09-23T00:58:04.851Z",
+  "repo": "pedro-ramirez-suarez-fluffy-system",
+  "profile": {
+    "rootPath": "C:\\Users\\pedro\\.copilot\\repos\\copilot-worktrees\\cloudwarsgame\\pedro-ramirez-suarez-fluffy-system",
+    "projectType": "existing",
+    "isGreenfield": false,
+    "detectedLanguages": [
+      {
+        "name": "C#",
+        "confidence": 0.95,
+        "evidence": [
+          "Found 68 .cs files",
+          "Found CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj",
+          "Found CloudWars.Characterization/CloudWars.Characterization.csproj",
+          "Found CloudWars.Common/CloudWars.Common.csproj",
+          "Found CloudWars.sln"
+        ]
+      },
+      {
+        "name": "JavaScript",
+        "confidence": 0.72,
+        "evidence": [
+          "Found 40 .js files"
+        ]
+      }
+    ],
+    "detectedTools": [
+      {
+        "name": ".NET",
+        "category": "runtime",
+        "confidence": 0.95,
+        "evidence": [
+          "Found CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj",
+          "Found CloudWars.Characterization/CloudWars.Characterization.csproj",
+          "Found CloudWars.Common/CloudWars.Common.csproj",
+          "Found CloudWars.DataAccess/CloudWars.DataAccess.csproj"
+        ]
+      },
+      {
+        "name": ".NET test",
+        "category": "test",
+        "confidence": 0.85,
+        "evidence": [
+          "Found common .NET test package in .csproj"
+        ]
+      }
+    ],
+    "importantFiles": [
+      {
+        "path": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj",
+        "reason": "C# project file."
+      },
+      {
+        "path": "CloudWars.Characterization/CloudWars.Characterization.csproj",
+        "reason": "C# project file."
+      },
+      {
+        "path": "CloudWars.Common/CloudWars.Common.csproj",
+        "reason": "C# project file."
+      },
+      {
+        "path": "CloudWars.DataAccess/CloudWars.DataAccess.csproj",
+        "reason": "C# project file."
+      },
+      {
+        "path": "CloudWars.Engine/CloudWars.Engine.csproj",
+        "reason": "C# project file."
+      },
+      {
+        "path": "CloudWars.Entities/CloudWars.Entities.csproj",
+        "reason": "C# project file."
+      },
+      {
+        "path": "CloudWars.Game/CloudWars.Game.csproj",
+        "reason": "C# project file."
+      },
+      {
+        "path": "CloudWars.Glue/CloudWars.Glue.csproj",
+        "reason": "C# project file."
+      },
+      {
+        "path": "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj",
+        "reason": "C# project file."
+      },
+      {
+        "path": "CloudWars.sln",
+        "reason": "C# solution file."
+      },
+      {
+        "path": "pilot-windows-smoke/dossier/README.md",
+        "reason": "Project documentation."
+      }
+    ],
+    "suggestedValidationCommands": [
+      "dotnet build",
+      "dotnet test"
+    ],
+    "summary": "Detected an existing project using C#, JavaScript; tools include .NET, .NET test.",
+    "notes": [
+      "This appears to be an existing project.",
+      "Follow existing project structure, languages, tools, dependencies, and patterns.",
+      "Do not introduce new dependencies unless clearly needed.",
+      "Use suggested validation commands when appropriate: dotnet build, dotnet test."
+    ]
+  },
+  "summary": "Detected an existing project using C#, JavaScript; tools include .NET, .NET test. ProjectLibrary indexed 181 files, 13 modules, and 500 relationships.",
+  "modules": [
+    {
+      "name": "CloudWars.Game",
+      "path": "CloudWars.Game",
+      "role": "source",
+      "fileCount": 84,
+      "summary": "CloudWars.Game contains 84 source files in C#, CSS, HTML, JavaScript, Markdown, XML."
+    },
+    {
+      "name": "pilot-windows-smoke",
+      "path": "pilot-windows-smoke",
+      "role": "docs",
+      "fileCount": 31,
+      "summary": "pilot-windows-smoke contains 31 docs files in JSON, Markdown."
+    },
+    {
+      "name": "CloudWars.Common",
+      "path": "CloudWars.Common",
+      "role": "source",
+      "fileCount": 11,
+      "summary": "CloudWars.Common contains 11 source files in C#, XML."
+    },
+    {
+      "name": "CloudWars.Entities",
+      "path": "CloudWars.Entities",
+      "role": "source",
+      "fileCount": 10,
+      "summary": "CloudWars.Entities contains 10 source files in C#, XML."
+    },
+    {
+      "name": "CloudWars.DataAccess",
+      "path": "CloudWars.DataAccess",
+      "role": "source",
+      "fileCount": 9,
+      "summary": "CloudWars.DataAccess contains 9 source files in C#, XML."
+    },
+    {
+      "name": "CloudWars.Characterization.Db",
+      "path": "CloudWars.Characterization.Db",
+      "role": "test",
+      "fileCount": 7,
+      "summary": "CloudWars.Characterization.Db contains 7 test files in C#, XML."
+    },
+    {
+      "name": "CloudWars.SpaceBattle",
+      "path": "CloudWars.SpaceBattle",
+      "role": "source",
+      "fileCount": 7,
+      "summary": "CloudWars.SpaceBattle contains 7 source files in C#, XML."
+    },
+    {
+      "name": "pilot-after",
+      "path": "pilot-after",
+      "role": "data",
+      "fileCount": 5,
+      "summary": "pilot-after contains 5 data files in JSON."
+    },
+    {
+      "name": "(root)",
+      "path": "(root)",
+      "role": "mixed",
+      "fileCount": 4,
+      "summary": "(root) contains 4 mixed files in C#, Markdown, XML."
+    },
+    {
+      "name": "pilot-before",
+      "path": "pilot-before",
+      "role": "data",
+      "fileCount": 4,
+      "summary": "pilot-before contains 4 data files in JSON."
+    },
+    {
+      "name": "CloudWars.Characterization",
+      "path": "CloudWars.Characterization",
+      "role": "test",
+      "fileCount": 3,
+      "summary": "CloudWars.Characterization contains 3 test files in C#, XML."
+    },
+    {
+      "name": "CloudWars.Engine",
+      "path": "CloudWars.Engine",
+      "role": "source",
+      "fileCount": 3,
+      "summary": "CloudWars.Engine contains 3 source files in C#, XML."
+    },
+    {
+      "name": "CloudWars.Glue",
+      "path": "CloudWars.Glue",
+      "role": "source",
+      "fileCount": 3,
+      "summary": "CloudWars.Glue contains 3 source files in C#, XML."
+    }
+  ],
+  "moduleEdges": [
+    {
+      "from": "CloudWars.Characterization.Db",
+      "to": "CloudWars.Common",
+      "count": 5,
+      "types": [
+        "project-reference",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Characterization.Db",
+      "to": "CloudWars.DataAccess",
+      "count": 6,
+      "types": [
+        "project-reference",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Characterization.Db",
+      "to": "CloudWars.Entities",
+      "count": 5,
+      "types": [
+        "project-reference",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Characterization.Db",
+      "to": "CloudWars.SpaceBattle",
+      "count": 16,
+      "types": [
+        "project-reference",
+        "test-target",
+        "same-name",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Characterization",
+      "to": "CloudWars.Common",
+      "count": 5,
+      "types": [
+        "project-reference",
+        "test-target",
+        "same-name",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Characterization",
+      "to": "CloudWars.Entities",
+      "count": 1,
+      "types": [
+        "project-reference"
+      ]
+    },
+    {
+      "from": "CloudWars.Characterization",
+      "to": "CloudWars.SpaceBattle",
+      "count": 4,
+      "types": [
+        "project-reference",
+        "test-target",
+        "same-name",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.DataAccess",
+      "to": "CloudWars.Entities",
+      "count": 5,
+      "types": [
+        "project-reference",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Engine",
+      "to": "CloudWars.Common",
+      "count": 1,
+      "types": [
+        "project-reference"
+      ]
+    },
+    {
+      "from": "CloudWars.Engine",
+      "to": "CloudWars.DataAccess",
+      "count": 3,
+      "types": [
+        "project-reference",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Entities",
+      "to": "CloudWars.Common",
+      "count": 1,
+      "types": [
+        "project-reference"
+      ]
+    },
+    {
+      "from": "CloudWars.Game",
+      "to": "CloudWars.Common",
+      "count": 1,
+      "types": [
+        "project-reference"
+      ]
+    },
+    {
+      "from": "CloudWars.Game",
+      "to": "CloudWars.DataAccess",
+      "count": 3,
+      "types": [
+        "project-reference",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Game",
+      "to": "CloudWars.Entities",
+      "count": 3,
+      "types": [
+        "project-reference",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Game",
+      "to": "CloudWars.SpaceBattle",
+      "count": 1,
+      "types": [
+        "project-reference"
+      ]
+    },
+    {
+      "from": "CloudWars.SpaceBattle",
+      "to": "CloudWars.Common",
+      "count": 5,
+      "types": [
+        "project-reference",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.SpaceBattle",
+      "to": "CloudWars.DataAccess",
+      "count": 4,
+      "types": [
+        "project-reference",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.SpaceBattle",
+      "to": "CloudWars.Entities",
+      "count": 2,
+      "types": [
+        "project-reference",
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Engine",
+      "to": "CloudWars.Entities",
+      "count": 1,
+      "types": [
+        "imports"
+      ]
+    },
+    {
+      "from": "(other)",
+      "to": "CloudWars.Common",
+      "count": 1,
+      "types": [
+        "imports"
+      ]
+    },
+    {
+      "from": "(other)",
+      "to": "CloudWars.Game",
+      "count": 4,
+      "types": [
+        "imports",
+        "same-directory"
+      ]
+    },
+    {
+      "from": "(other)",
+      "to": "CloudWars.SpaceBattle",
+      "count": 1,
+      "types": [
+        "imports"
+      ]
+    },
+    {
+      "from": "(other)",
+      "to": "CloudWars.Entities",
+      "count": 1,
+      "types": [
+        "imports"
+      ]
+    },
+    {
+      "from": "CloudWars.Game",
+      "to": "(other)",
+      "count": 2,
+      "types": [
+        "same-directory"
+      ]
+    }
+  ],
+  "fileRelationships": 500,
+  "files": 181
+}

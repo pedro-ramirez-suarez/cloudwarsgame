@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-09-23T00:58:14.818Z",
+  "repo": "pedro-ramirez-suarez-fluffy-system",
+  "filesScanned": 83,
+  "testFiles": 7,
+  "testDeserts": [
+    "CloudWars.Game",
+    "CloudWars.Engine",
+    "CloudWars.Glue"
+  ],
+  "areas": [
+    {
+      "area": "CloudWars.Game",
+      "sourceFiles": 38,
+      "testFiles": 0,
+      "reachingTests": 0,
+      "testDesert": true,
+      "ioTangling": 61,
+      "ioBreakdown": {
+        "database": 1,
+        "network": 11,
+        "filesystem": 0,
+        "time": 44,
+        "globals": 5
+      },
+      "pinnabilityHint": "pin at seams"
+    },
+    {
+      "area": "CloudWars.Engine",
+      "sourceFiles": 2,
+      "testFiles": 0,
+      "reachingTests": 0,
+      "testDesert": true,
+      "ioTangling": 2,
+      "ioBreakdown": {
+        "database": 0,
+        "network": 0,
+        "filesystem": 0,
+        "time": 2,
+        "globals": 0
+      },
+      "pinnabilityHint": "likely pinnable"
+    },
+    {
+      "area": "CloudWars.Glue",
+      "sourceFiles": 2,
+      "testFiles": 0,
+      "reachingTests": 0,
+      "testDesert": true,
+      "ioTangling": 0,
+      "ioBreakdown": {
+        "database": 0,
+        "network": 0,
+        "filesystem": 0,
+        "time": 0,
+        "globals": 0
+      },
+      "pinnabilityHint": "likely pinnable"
+    },
+    {
+      "area": "CloudWars.DataAccess",
+      "sourceFiles": 8,
+      "testFiles": 0,
+      "reachingTests": 5,
+      "testDesert": false,
+      "ioTangling": 3,
+      "ioBreakdown": {
+        "database": 2,
+        "network": 0,
+        "filesystem": 1,
+        "time": 0,
+        "globals": 0
+      },
+      "pinnabilityHint": "likely pinnable"
+    },
+    {
+      "area": "CloudWars.Characterization.Db",
+      "sourceFiles": 1,
+      "testFiles": 5,
+      "reachingTests": 5,
+      "testDesert": false,
+      "ioTangling": 1,
+      "ioBreakdown": {
+        "database": 0,
+        "network": 0,
+        "filesystem": 0,
+        "time": 0,
+        "globals": 1
+      },
+      "pinnabilityHint": "likely pinnable"
+    },
+    {
+      "area": "CloudWars.Common",
+      "sourceFiles": 10,
+      "testFiles": 0,
+      "reachingTests": 4,
+      "testDesert": false,
+      "ioTangling": 0,
+      "ioBreakdown": {
+        "database": 0,
+        "network": 0,
+        "filesystem": 0,
+        "time": 0,
+        "globals": 0
+      },
+      "pinnabilityHint": "likely pinnable"
+    },
+    {
+      "area": "CloudWars.SpaceBattle",
+      "sourceFiles": 6,
+      "testFiles": 0,
+      "reachingTests": 7,
+      "testDesert": false,
+      "ioTangling": 0,
+      "ioBreakdown": {
+        "database": 0,
+        "network": 0,
+        "filesystem": 0,
+        "time": 0,
+        "globals": 0
+      },
+      "pinnabilityHint": "likely pinnable"
+    },
+    {
+      "area": "CloudWars.Entities",
+      "sourceFiles": 9,
+      "testFiles": 0,
+      "reachingTests": 6,
+      "testDesert": false,
+      "ioTangling": 0,
+      "ioBreakdown": {
+        "database": 0,
+        "network": 0,
+        "filesystem": 0,
+        "time": 0,
+        "globals": 0
+      },
+      "pinnabilityHint": "likely pinnable"
+    }
+  ]
+}

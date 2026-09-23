@@ -1,0 +1,162 @@
+{
+  "generatedAt": "2026-09-23T00:58:23.028Z",
+  "repo": "pedro-ramirez-suarez-fluffy-system",
+  "indexSource": "rebuilt",
+  "clusters": [
+    {
+      "id": 1,
+      "modules": [
+        "pilot-windows-smoke"
+      ],
+      "internalEdges": 0,
+      "crossingEdges": 0,
+      "isolation": 1
+    },
+    {
+      "id": 2,
+      "modules": [
+        "pilot-after"
+      ],
+      "internalEdges": 0,
+      "crossingEdges": 0,
+      "isolation": 1
+    },
+    {
+      "id": 3,
+      "modules": [
+        "(root)"
+      ],
+      "internalEdges": 0,
+      "crossingEdges": 0,
+      "isolation": 1
+    },
+    {
+      "id": 4,
+      "modules": [
+        "pilot-before"
+      ],
+      "internalEdges": 0,
+      "crossingEdges": 0,
+      "isolation": 1
+    },
+    {
+      "id": 5,
+      "modules": [
+        "CloudWars.Glue"
+      ],
+      "internalEdges": 0,
+      "crossingEdges": 0,
+      "isolation": 1
+    },
+    {
+      "id": 0,
+      "modules": [
+        "CloudWars.Characterization",
+        "CloudWars.Characterization.Db",
+        "CloudWars.Common",
+        "CloudWars.DataAccess",
+        "CloudWars.Engine",
+        "CloudWars.Entities",
+        "CloudWars.Game",
+        "CloudWars.SpaceBattle"
+      ],
+      "internalEdges": 72,
+      "crossingEdges": 9,
+      "isolation": 0.89
+    }
+  ],
+  "waves": [
+    {
+      "module": "(root)",
+      "dependsOn": 0,
+      "dependedOnBy": 0,
+      "wave": 1,
+      "rationale": "nothing depends on it — safe to migrate in isolation"
+    },
+    {
+      "module": "CloudWars.Characterization",
+      "dependsOn": 3,
+      "dependedOnBy": 0,
+      "wave": 1,
+      "rationale": "nothing depends on it — safe to migrate in isolation"
+    },
+    {
+      "module": "CloudWars.Characterization.Db",
+      "dependsOn": 4,
+      "dependedOnBy": 0,
+      "wave": 1,
+      "rationale": "nothing depends on it — safe to migrate in isolation"
+    },
+    {
+      "module": "CloudWars.Engine",
+      "dependsOn": 3,
+      "dependedOnBy": 0,
+      "wave": 1,
+      "rationale": "nothing depends on it — safe to migrate in isolation"
+    },
+    {
+      "module": "CloudWars.Game",
+      "dependsOn": 4,
+      "dependedOnBy": 0,
+      "wave": 1,
+      "rationale": "nothing depends on it — safe to migrate in isolation"
+    },
+    {
+      "module": "CloudWars.Glue",
+      "dependsOn": 0,
+      "dependedOnBy": 0,
+      "wave": 1,
+      "rationale": "nothing depends on it — safe to migrate in isolation"
+    },
+    {
+      "module": "pilot-after",
+      "dependsOn": 0,
+      "dependedOnBy": 0,
+      "wave": 1,
+      "rationale": "nothing depends on it — safe to migrate in isolation"
+    },
+    {
+      "module": "pilot-before",
+      "dependsOn": 0,
+      "dependedOnBy": 0,
+      "wave": 1,
+      "rationale": "nothing depends on it — safe to migrate in isolation"
+    },
+    {
+      "module": "pilot-windows-smoke",
+      "dependsOn": 0,
+      "dependedOnBy": 0,
+      "wave": 1,
+      "rationale": "nothing depends on it — safe to migrate in isolation"
+    },
+    {
+      "module": "CloudWars.SpaceBattle",
+      "dependsOn": 3,
+      "dependedOnBy": 3,
+      "wave": 2,
+      "rationale": "its dependents are already migrated in earlier waves"
+    },
+    {
+      "module": "CloudWars.DataAccess",
+      "dependsOn": 1,
+      "dependedOnBy": 4,
+      "wave": 3,
+      "rationale": "its dependents are already migrated in earlier waves"
+    },
+    {
+      "module": "CloudWars.Entities",
+      "dependsOn": 1,
+      "dependedOnBy": 6,
+      "wave": 4,
+      "rationale": "its dependents are already migrated in earlier waves"
+    },
+    {
+      "module": "CloudWars.Common",
+      "dependsOn": 0,
+      "dependedOnBy": 6,
+      "wave": 5,
+      "rationale": "its dependents are already migrated in earlier waves"
+    }
+  ],
+  "note": "Clusters and wave order are a PROPOSAL derived from the dependency graph. The migration recommendation — what actually moves, in what order, at what risk — is a human judgment informed by this, the risk map (D6) and history (D4)."
+}

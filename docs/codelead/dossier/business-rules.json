@@ -1,0 +1,682 @@
+{
+  "generatedAt": "2026-09-23T00:58:15.268Z",
+  "repo": "pedro-ramirez-suarez-fluffy-system",
+  "filesScanned": 68,
+  "summary": {
+    "stateVocabularies": 3,
+    "validationLimits": 11,
+    "enforcedGuards": 0,
+    "thresholds": 3,
+    "markerComments": 4,
+    "conflicts": 0,
+    "divergences": 0
+  },
+  "rules": [
+    {
+      "kind": "marker_comment",
+      "statement": "NOTE: Turn does NOT switch on a hit (only on a miss).",
+      "file": "CloudWars.Characterization.Db/SpaceBattleGameDbTests.cs",
+      "line": 304,
+      "evidence": "// NOTE: Turn does NOT switch on a hit (only on a miss)."
+    },
+    {
+      "kind": "threshold",
+      "statement": "difference.TotalSeconds is compared against 30 (>)",
+      "file": "CloudWars.Engine/WorkerRole.cs",
+      "line": 135,
+      "evidence": "if (difference.TotalSeconds > 30)"
+    },
+    {
+      "kind": "marker_comment",
+      "statement": "TODO: instantiate the proper factory",
+      "file": "CloudWars.Engine/WorkerRole.cs",
+      "line": 34,
+      "evidence": "//TODO:instantiate the proper factory"
+    },
+    {
+      "kind": "marker_comment",
+      "statement": "NOTE: For instructions on enabling IIS6 or IIS7 classic mode,",
+      "file": "CloudWars.Game/Global.asax.cs",
+      "line": 12,
+      "evidence": "// Note: For instructions on enabling IIS6 or IIS7 classic mode,"
+    },
+    {
+      "kind": "state_vocabulary",
+      "statement": "Command is one of: NotYourTurn, ChallengePlayer, ChallengeAccepted, StartGame, EndGame, PlayerOnline, PlayerOffLine, GameAction",
+      "file": "CloudWars.Common/Other/Enums.cs",
+      "line": 8,
+      "evidence": "public enum Command"
+    },
+    {
+      "kind": "state_vocabulary",
+      "statement": "GameAction is one of: PlayerReady, UnitMoved, Attack, ShotMade, ShotMissed",
+      "file": "CloudWars.Common/Other/Enums.cs",
+      "line": 21,
+      "evidence": "public enum GameAction"
+    },
+    {
+      "kind": "state_vocabulary",
+      "statement": "ManageMessageId is one of: ChangePasswordSuccess, SetPasswordSuccess, RemoveLoginSuccess",
+      "file": "CloudWars.Game/Controllers/AccountController.cs",
+      "line": 342,
+      "evidence": "public enum ManageMessageId"
+    },
+    {
+      "kind": "marker_comment",
+      "statement": "TODO: tell the client that the other player is not online",
+      "file": "CloudWars.Game/Controllers/GameController.cs",
+      "line": 213,
+      "evidence": "else //TODO:tell the client that the other player is not online"
+    },
+    {
+      "kind": "threshold",
+      "statement": "Length is compared against 50 (>)",
+      "file": "CloudWars.Game/Controllers/PlayerController.cs",
+      "line": 39,
+      "evidence": "if(displayName .Length > 50)"
+    },
+    {
+      "kind": "threshold",
+      "statement": "displayName.Length is compared against 50 (>)",
+      "file": "CloudWars.Game/Controllers/PlayerController.cs",
+      "line": 65,
+      "evidence": "if (displayName.Length > 50)"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "UserName must satisfy Required",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 32,
+      "evidence": "[Required] → public string UserName { get; set; }"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "OldPassword must satisfy Required",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 41,
+      "evidence": "[Required] → public string OldPassword { get; set; }"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "NewPassword must satisfy Required",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 46,
+      "evidence": "[Required] → public string NewPassword { get; set; }"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "NewPassword must satisfy StringLength (100, ErrorMessage = \"The {0} must be at least {2} characters)",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 47,
+      "evidence": "[StringLength(100, ErrorMessage = \"The {0} must be at least {2} characters long.\", MinimumLength = 6)] → public string NewPassword { get; set; }"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "ConfirmPassword must satisfy Compare (\"NewPassword\", ErrorMessage = \"The new password and confirma)",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 54,
+      "evidence": "[Compare(\"NewPassword\", ErrorMessage = \"The new password and confirmation password do not match.\")] → public string ConfirmPassword { get; set; }"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "UserName must satisfy Required",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 60,
+      "evidence": "[Required] → public string UserName { get; set; }"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "Password must satisfy Required",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 64,
+      "evidence": "[Required] → public string Password { get; set; }"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "UserName must satisfy Required",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 75,
+      "evidence": "[Required] → public string UserName { get; set; }"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "Password must satisfy Required",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 79,
+      "evidence": "[Required] → public string Password { get; set; }"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "Password must satisfy StringLength (100, ErrorMessage = \"The {0} must be at least {2} characters)",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 80,
+      "evidence": "[StringLength(100, ErrorMessage = \"The {0} must be at least {2} characters long.\", MinimumLength = 6)] → public string Password { get; set; }"
+    },
+    {
+      "kind": "validation_limit",
+      "statement": "ConfirmPassword must satisfy Compare (\"Password\", ErrorMessage = \"The password and confirmation pa)",
+      "file": "CloudWars.Game/Models/AccountModels.cs",
+      "line": 87,
+      "evidence": "[Compare(\"Password\", ErrorMessage = \"The password and confirmation password do not match.\")] → public string ConfirmPassword { get; set; }"
+    }
+  ],
+  "conflicts": [],
+  "divergences": [],
+  "usage": [
+    {
+      "library": "CloudWars.Entities",
+      "kind": "internal",
+      "areas": [
+        "CloudWars.Characterization",
+        "CloudWars.Characterization.Db",
+        "CloudWars.Engine",
+        "CloudWars.SpaceBattle",
+        "CloudWars.DataAccess",
+        "CloudWars.Game",
+        "CloudWars.Entities"
+      ],
+      "importCount": 25,
+      "referenceCount": 8,
+      "evidence": [
+        {
+          "file": "CloudWars.Characterization/GameUnitTests.cs",
+          "line": 2,
+          "text": "using CloudWars.Entities.Game;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+          "line": 5,
+          "text": "using CloudWars.Entities.Player;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameChallengeDbTests.cs",
+          "line": 4,
+          "text": "using CloudWars.Entities.Game;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameChallengeDbTests.cs",
+          "line": 5,
+          "text": "using CloudWars.Entities.Player;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameDbTests.cs",
+          "line": 8,
+          "text": "using CloudWars.Entities.Game;"
+        }
+      ]
+    },
+    {
+      "library": "CloudWars.Common",
+      "kind": "internal",
+      "areas": [
+        "CloudWars.Characterization",
+        "CloudWars.Characterization.Db",
+        "CloudWars.Common",
+        "CloudWars.Engine",
+        "CloudWars.SpaceBattle",
+        "CloudWars.Game"
+      ],
+      "importCount": 22,
+      "referenceCount": 7,
+      "evidence": [
+        {
+          "file": "CloudWars.Characterization/SpaceBattleGameTests.cs",
+          "line": 2,
+          "text": "using CloudWars.Common;"
+        },
+        {
+          "file": "CloudWars.Characterization/SpaceBattleGameTests.cs",
+          "line": 3,
+          "text": "using CloudWars.Common.Other;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+          "line": 3,
+          "text": "using CloudWars.Common.Other;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameDbTests.cs",
+          "line": 4,
+          "text": "using CloudWars.Common;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameDbTests.cs",
+          "line": 5,
+          "text": "using CloudWars.Common.Other;"
+        }
+      ]
+    },
+    {
+      "library": "CloudWars.DataAccess",
+      "kind": "internal",
+      "areas": [
+        "CloudWars.Characterization.Db",
+        "CloudWars.Engine",
+        "CloudWars.SpaceBattle",
+        "CloudWars.Game",
+        "CloudWars.DataAccess"
+      ],
+      "importCount": 12,
+      "referenceCount": 7,
+      "evidence": [
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+          "line": 4,
+          "text": "using CloudWars.DataAccess.Sql;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameChallengeDbTests.cs",
+          "line": 3,
+          "text": "using CloudWars.DataAccess.Sql;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameDbTests.cs",
+          "line": 7,
+          "text": "using CloudWars.DataAccess.Sql;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameMatchFinishedDbTests.cs",
+          "line": 4,
+          "text": "using CloudWars.DataAccess.Sql;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattlePlayerPresenceDbTests.cs",
+          "line": 3,
+          "text": "using CloudWars.DataAccess.Sql;"
+        }
+      ]
+    },
+    {
+      "library": "Needletail.DataAccess",
+      "kind": "external",
+      "areas": [
+        "CloudWars.DataAccess",
+        "CloudWars.Entities",
+        "CloudWars.Game"
+      ],
+      "importCount": 8,
+      "referenceCount": 3,
+      "evidence": [
+        {
+          "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+          "line": 5,
+          "text": "using Needletail.DataAccess.Attributes;"
+        },
+        {
+          "file": "CloudWars.DataAccess/Sql/CloudWarsDB.cs",
+          "line": 8,
+          "text": "using Needletail.DataAccess;"
+        },
+        {
+          "file": "CloudWars.Entities/Game/Challenge.cs",
+          "line": 5,
+          "text": "using Needletail.DataAccess.Attributes;"
+        },
+        {
+          "file": "CloudWars.Entities/Game/Match.cs",
+          "line": 5,
+          "text": "using Needletail.DataAccess.Attributes;"
+        },
+        {
+          "file": "CloudWars.Entities/Game/MatchUnit.cs",
+          "line": 5,
+          "text": "using Needletail.DataAccess.Attributes;"
+        }
+      ]
+    },
+    {
+      "library": "ClourWars.Web",
+      "kind": "internal",
+      "areas": [
+        "CloudWars.Game"
+      ],
+      "importCount": 4,
+      "referenceCount": 7,
+      "evidence": [
+        {
+          "file": "CloudWars.Game/Code/GameHelper.cs",
+          "line": 7,
+          "text": "using ClourWars.Web.Models;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/GameController.cs",
+          "line": 6,
+          "text": "using ClourWars.Web.Code;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/GameController.cs",
+          "line": 10,
+          "text": "using ClourWars.Web.ServerClientEntities;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/PlayerController.cs",
+          "line": 6,
+          "text": "using ClourWars.Web.Code;"
+        },
+        {
+          "file": "CloudWars.Game/Code/GameHelper.cs",
+          "line": 9,
+          "text": "namespace ClourWars.Web.Code"
+        }
+      ]
+    },
+    {
+      "library": "CloudWars.SpaceBattle",
+      "kind": "internal",
+      "areas": [
+        "CloudWars.Characterization",
+        "CloudWars.Characterization.Db",
+        "CloudWars.SpaceBattle",
+        "CloudWars.Game"
+      ],
+      "importCount": 9,
+      "referenceCount": 1,
+      "evidence": [
+        {
+          "file": "CloudWars.Characterization/GameUnitTests.cs",
+          "line": 3,
+          "text": "using CloudWars.SpaceBattle.Units;"
+        },
+        {
+          "file": "CloudWars.Characterization/SpaceBattleGameTests.cs",
+          "line": 4,
+          "text": "using CloudWars.SpaceBattle;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+          "line": 6,
+          "text": "using CloudWars.SpaceBattle;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameChallengeDbTests.cs",
+          "line": 6,
+          "text": "using CloudWars.SpaceBattle;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameDbTests.cs",
+          "line": 9,
+          "text": "using CloudWars.SpaceBattle;"
+        }
+      ]
+    },
+    {
+      "library": "CloudWars.Game",
+      "kind": "internal",
+      "areas": [
+        "CloudWars.Game"
+      ],
+      "importCount": 4,
+      "referenceCount": 5,
+      "evidence": [
+        {
+          "file": "CloudWars.Game/App_Start/AuthConfig.cs",
+          "line": 6,
+          "text": "using CloudWars.Game.Models;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/AccountController.cs",
+          "line": 11,
+          "text": "using CloudWars.Game.Filters;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/AccountController.cs",
+          "line": 12,
+          "text": "using CloudWars.Game.Models;"
+        },
+        {
+          "file": "CloudWars.Game/Filters/InitializeSimpleMembershipAttribute.cs",
+          "line": 7,
+          "text": "using CloudWars.Game.Models;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/AccountController.cs",
+          "line": 14,
+          "text": "namespace CloudWars.Game.Controllers"
+        }
+      ]
+    },
+    {
+      "library": "Xunit",
+      "kind": "external",
+      "areas": [
+        "CloudWars.Characterization",
+        "CloudWars.Characterization.Db"
+      ],
+      "importCount": 7,
+      "referenceCount": 0,
+      "evidence": [
+        {
+          "file": "CloudWars.Characterization/GameUnitTests.cs",
+          "line": 4,
+          "text": "using Xunit;"
+        },
+        {
+          "file": "CloudWars.Characterization/SpaceBattleGameTests.cs",
+          "line": 5,
+          "text": "using Xunit;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleClientFeedbackDbTests.cs",
+          "line": 7,
+          "text": "using Xunit;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameChallengeDbTests.cs",
+          "line": 7,
+          "text": "using Xunit;"
+        },
+        {
+          "file": "CloudWars.Characterization.Db/SpaceBattleGameDbTests.cs",
+          "line": 10,
+          "text": "using Xunit;"
+        }
+      ]
+    },
+    {
+      "library": "Microsoft.WindowsAzure",
+      "kind": "external",
+      "areas": [
+        "CloudWars.Engine"
+      ],
+      "importCount": 4,
+      "referenceCount": 0,
+      "evidence": [
+        {
+          "file": "CloudWars.Engine/WorkerRole.cs",
+          "line": 7,
+          "text": "using Microsoft.WindowsAzure;"
+        },
+        {
+          "file": "CloudWars.Engine/WorkerRole.cs",
+          "line": 8,
+          "text": "using Microsoft.WindowsAzure.Diagnostics;"
+        },
+        {
+          "file": "CloudWars.Engine/WorkerRole.cs",
+          "line": 9,
+          "text": "using Microsoft.WindowsAzure.ServiceRuntime;"
+        },
+        {
+          "file": "CloudWars.Engine/WorkerRole.cs",
+          "line": 10,
+          "text": "using Microsoft.WindowsAzure.StorageClient;"
+        }
+      ]
+    },
+    {
+      "library": "Needletail.Mvc",
+      "kind": "external",
+      "areas": [
+        "CloudWars.Game"
+      ],
+      "importCount": 4,
+      "referenceCount": 0,
+      "evidence": [
+        {
+          "file": "CloudWars.Game/Controllers/GameController.cs",
+          "line": 13,
+          "text": "using Needletail.Mvc;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/GameController.cs",
+          "line": 14,
+          "text": "using Needletail.Mvc.Communications;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/RemoteController.cs",
+          "line": 7,
+          "text": "using Needletail.Mvc;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/RemoteController.cs",
+          "line": 8,
+          "text": "using Needletail.Mvc.Communications;"
+        }
+      ]
+    },
+    {
+      "library": "Impulso.Azure",
+      "kind": "external",
+      "areas": [
+        "CloudWars.DataAccess"
+      ],
+      "importCount": 2,
+      "referenceCount": 0,
+      "evidence": [
+        {
+          "file": "CloudWars.DataAccess/Queue/MessageRepositoryBase.cs",
+          "line": 5,
+          "text": "using Impulso.Azure.Storage.Repositories;"
+        },
+        {
+          "file": "CloudWars.DataAccess/Queue/ServerMessageRepository.cs",
+          "line": 5,
+          "text": "using Impulso.Azure.Storage.Repositories;"
+        }
+      ]
+    },
+    {
+      "library": "Microsoft.SqlServer",
+      "kind": "external",
+      "areas": [
+        "CloudWars.DataAccess",
+        "CloudWars.Entities"
+      ],
+      "importCount": 2,
+      "referenceCount": 0,
+      "evidence": [
+        {
+          "file": "CloudWars.DataAccess/Sql/CloudWarsData.cs",
+          "line": 7,
+          "text": "using Microsoft.SqlServer.Types;"
+        },
+        {
+          "file": "CloudWars.Entities/Player/Player.cs",
+          "line": 6,
+          "text": "using Microsoft.SqlServer.Types;"
+        }
+      ]
+    },
+    {
+      "library": "Microsoft.Web",
+      "kind": "external",
+      "areas": [
+        "CloudWars.Game"
+      ],
+      "importCount": 2,
+      "referenceCount": 0,
+      "evidence": [
+        {
+          "file": "CloudWars.Game/App_Start/AuthConfig.cs",
+          "line": 5,
+          "text": "using Microsoft.Web.WebPages.OAuth;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/AccountController.cs",
+          "line": 9,
+          "text": "using Microsoft.Web.WebPages.OAuth;"
+        }
+      ]
+    },
+    {
+      "library": "WebMatrix.WebData",
+      "kind": "external",
+      "areas": [
+        "CloudWars.Game"
+      ],
+      "importCount": 2,
+      "referenceCount": 0,
+      "evidence": [
+        {
+          "file": "CloudWars.Game/Controllers/AccountController.cs",
+          "line": 10,
+          "text": "using WebMatrix.WebData;"
+        },
+        {
+          "file": "CloudWars.Game/Filters/InitializeSimpleMembershipAttribute.cs",
+          "line": 6,
+          "text": "using WebMatrix.WebData;"
+        }
+      ]
+    },
+    {
+      "library": "Microsoft.Security",
+      "kind": "external",
+      "areas": [
+        "CloudWars.Game"
+      ],
+      "importCount": 2,
+      "referenceCount": 0,
+      "evidence": [
+        {
+          "file": "CloudWars.Game/Controllers/GameController.cs",
+          "line": 11,
+          "text": "using Microsoft.Security.Application;"
+        },
+        {
+          "file": "CloudWars.Game/Controllers/PlayerController.cs",
+          "line": 8,
+          "text": "using Microsoft.Security.Application;"
+        }
+      ]
+    },
+    {
+      "library": "CloudWars.Web",
+      "kind": "internal",
+      "areas": [
+        "CloudWars.Game"
+      ],
+      "importCount": 1,
+      "referenceCount": 1,
+      "evidence": [
+        {
+          "file": "CloudWars.Game/Controllers/GameController.cs",
+          "line": 12,
+          "text": "using CloudWars.Web.Code;"
+        },
+        {
+          "file": "CloudWars.Game/Code/Context.cs",
+          "line": 7,
+          "text": "namespace CloudWars.Web.Code"
+        }
+      ]
+    },
+    {
+      "library": "DotNetOpenAuth.AspNet",
+      "kind": "external",
+      "areas": [
+        "CloudWars.Game"
+      ],
+      "importCount": 1,
+      "referenceCount": 0,
+      "evidence": [
+        {
+          "file": "CloudWars.Game/Controllers/AccountController.cs",
+          "line": 8,
+          "text": "using DotNetOpenAuth.AspNet;"
+        }
+      ]
+    }
+  ],
+  "note": "Rules are lifted deterministically from the source and are labelled INFERRED: they state what the code does, not why. The 'why' — and any rule that lives only in someone's head — requires interviews (D5 manual half). Where a comment contradicts the code, the code is treated as authoritative."
+}

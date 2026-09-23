@@ -1,0 +1,681 @@
+{
+  "schema": "codelead.modernization-inventory/1",
+  "root": "C:\\Users\\pedro\\.copilot\\repos\\copilot-worktrees\\cloudwarsgame\\pedro-ramirez-suarez-fluffy-system",
+  "generatedAt": "2026-09-23T00:58:16.512Z",
+  "endOfLifeSource": "shipped snapshot 2026-09-18",
+  "git": {
+    "head": "62bde2e",
+    "firstCommitDate": "%as",
+    "commitCount": 47,
+    "lastCommitDate": "%as"
+  },
+  "projects": [
+    {
+      "path": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj",
+      "name": "CloudWars.Characterization.Db",
+      "stack": "dotnet",
+      "format": "sdk",
+      "targets": [
+        "net48",
+        "net8.0"
+      ],
+      "runtimes": [
+        {
+          "product": ".NET Framework",
+          "cycle": "4.8",
+          "status": {
+            "status": "supported",
+            "eol": null,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj: net48"
+        },
+        {
+          "product": ".NET",
+          "cycle": "8.0",
+          "status": {
+            "status": "ending",
+            "eol": "2026-11-10",
+            "monthsLeft": 2,
+            "lts": true,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj: net8.0"
+        }
+      ],
+      "packages": [
+        {
+          "name": "Microsoft.NET.Test.Sdk",
+          "version": "17.9.0"
+        },
+        {
+          "name": "xunit",
+          "version": "2.7.0"
+        },
+        {
+          "name": "xunit.runner.visualstudio",
+          "version": "2.5.7"
+        },
+        {
+          "name": "xunit.runner.console",
+          "version": "2.7.0"
+        },
+        {
+          "name": "Microsoft.NETFramework.ReferenceAssemblies",
+          "version": "1.0.3"
+        },
+        {
+          "name": "System.Configuration.ConfigurationManager",
+          "version": "8.0.0"
+        },
+        {
+          "name": "System.Data.SqlClient",
+          "version": "4.8.6"
+        }
+      ],
+      "sourceFiles": 6,
+      "lines": 1056,
+      "testFiles": 5,
+      "lastCommitDate": "%as",
+      "idioms": {},
+      "frameworks": [],
+      "units": {}
+    },
+    {
+      "path": "CloudWars.Characterization/CloudWars.Characterization.csproj",
+      "name": "CloudWars.Characterization",
+      "stack": "dotnet",
+      "format": "sdk",
+      "targets": [
+        "net8.0"
+      ],
+      "runtimes": [
+        {
+          "product": ".NET",
+          "cycle": "8.0",
+          "status": {
+            "status": "ending",
+            "eol": "2026-11-10",
+            "monthsLeft": 2,
+            "lts": true,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.Characterization/CloudWars.Characterization.csproj: net8.0"
+        }
+      ],
+      "packages": [
+        {
+          "name": "Microsoft.NET.Test.Sdk",
+          "version": "17.9.0"
+        },
+        {
+          "name": "xunit",
+          "version": "2.7.0"
+        },
+        {
+          "name": "xunit.runner.visualstudio",
+          "version": "2.5.7"
+        }
+      ],
+      "sourceFiles": 2,
+      "lines": 181,
+      "testFiles": 2,
+      "lastCommitDate": "%as",
+      "idioms": {},
+      "frameworks": [],
+      "units": {}
+    },
+    {
+      "path": "CloudWars.Common/CloudWars.Common.csproj",
+      "name": "CloudWars.Common",
+      "stack": "dotnet",
+      "format": "sdk",
+      "targets": [
+        "net45",
+        "net8.0"
+      ],
+      "runtimes": [
+        {
+          "product": ".NET Framework",
+          "cycle": "4.5",
+          "status": {
+            "status": "out_of_support",
+            "eol": "2016-01-12",
+            "yearsOut": 10.7,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.Common/CloudWars.Common.csproj: net45"
+        },
+        {
+          "product": ".NET",
+          "cycle": "8.0",
+          "status": {
+            "status": "ending",
+            "eol": "2026-11-10",
+            "monthsLeft": 2,
+            "lts": true,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.Common/CloudWars.Common.csproj: net8.0"
+        }
+      ],
+      "packages": [],
+      "sourceFiles": 10,
+      "lines": 242,
+      "testFiles": 0,
+      "lastCommitDate": "%as",
+      "idioms": {},
+      "frameworks": [],
+      "units": {}
+    },
+    {
+      "path": "CloudWars.DataAccess/CloudWars.DataAccess.csproj",
+      "name": "CloudWars.DataAccess",
+      "stack": "dotnet",
+      "format": "sdk",
+      "targets": [
+        "net45",
+        "net8.0"
+      ],
+      "runtimes": [
+        {
+          "product": ".NET Framework",
+          "cycle": "4.5",
+          "status": {
+            "status": "out_of_support",
+            "eol": "2016-01-12",
+            "yearsOut": 10.7,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.DataAccess/CloudWars.DataAccess.csproj: net45"
+        },
+        {
+          "product": ".NET",
+          "cycle": "8.0",
+          "status": {
+            "status": "ending",
+            "eol": "2026-11-10",
+            "monthsLeft": 2,
+            "lts": true,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.DataAccess/CloudWars.DataAccess.csproj: net8.0"
+        }
+      ],
+      "packages": [],
+      "sourceFiles": 8,
+      "lines": 611,
+      "testFiles": 0,
+      "lastCommitDate": "%as",
+      "idioms": {},
+      "frameworks": [],
+      "units": {}
+    },
+    {
+      "path": "CloudWars.Engine/CloudWars.Engine.csproj",
+      "name": "CloudWars.Engine",
+      "stack": "dotnet",
+      "format": "legacy",
+      "targets": [
+        "v4.0"
+      ],
+      "runtimes": [
+        {
+          "product": ".NET Framework",
+          "cycle": "4.0",
+          "status": {
+            "status": "out_of_support",
+            "eol": "2016-01-12",
+            "yearsOut": 10.7,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.Engine/CloudWars.Engine.csproj: v4.0"
+        }
+      ],
+      "packages": [],
+      "sourceFiles": 2,
+      "lines": 204,
+      "testFiles": 0,
+      "lastCommitDate": "%as",
+      "idioms": {},
+      "frameworks": [
+        "WCF (System.ServiceModel)"
+      ],
+      "units": {}
+    },
+    {
+      "path": "CloudWars.Entities/CloudWars.Entities.csproj",
+      "name": "CloudWars.Entities",
+      "stack": "dotnet",
+      "format": "sdk",
+      "targets": [
+        "net45",
+        "net8.0"
+      ],
+      "runtimes": [
+        {
+          "product": ".NET Framework",
+          "cycle": "4.5",
+          "status": {
+            "status": "out_of_support",
+            "eol": "2016-01-12",
+            "yearsOut": 10.7,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.Entities/CloudWars.Entities.csproj: net45"
+        },
+        {
+          "product": ".NET",
+          "cycle": "8.0",
+          "status": {
+            "status": "ending",
+            "eol": "2026-11-10",
+            "monthsLeft": 2,
+            "lts": true,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.Entities/CloudWars.Entities.csproj: net8.0"
+        }
+      ],
+      "packages": [],
+      "sourceFiles": 9,
+      "lines": 191,
+      "testFiles": 0,
+      "lastCommitDate": "%as",
+      "idioms": {},
+      "frameworks": [],
+      "units": {}
+    },
+    {
+      "path": "CloudWars.Game/CloudWars.Game.csproj",
+      "name": "CloudWars.Game",
+      "stack": "dotnet",
+      "format": "legacy",
+      "targets": [
+        "v4.5"
+      ],
+      "runtimes": [
+        {
+          "product": ".NET Framework",
+          "cycle": "4.5",
+          "status": {
+            "status": "out_of_support",
+            "eol": "2016-01-12",
+            "yearsOut": 10.7,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.Game/CloudWars.Game.csproj: v4.5"
+        }
+      ],
+      "packages": [
+        {
+          "name": "AntiXSS",
+          "version": "4.2.1"
+        },
+        {
+          "name": "DotNetOpenAuth.AspNet",
+          "version": "4.1.4.12333"
+        },
+        {
+          "name": "DotNetOpenAuth.Core",
+          "version": "4.1.4.12333"
+        },
+        {
+          "name": "DotNetOpenAuth.OAuth.Consumer",
+          "version": "4.1.4.12333"
+        },
+        {
+          "name": "DotNetOpenAuth.OAuth.Core",
+          "version": "4.1.4.12333"
+        },
+        {
+          "name": "DotNetOpenAuth.OpenId.Core",
+          "version": "4.1.4.12333"
+        },
+        {
+          "name": "DotNetOpenAuth.OpenId.RelyingParty",
+          "version": "4.1.4.12333"
+        },
+        {
+          "name": "EntityFramework",
+          "version": "5.0.0"
+        },
+        {
+          "name": "jQuery",
+          "version": "1.9.1"
+        },
+        {
+          "name": "jQuery.UI.Combined",
+          "version": "1.8.24"
+        },
+        {
+          "name": "jQuery.Validation",
+          "version": "1.10.0"
+        },
+        {
+          "name": "knockoutjs",
+          "version": "2.2.0"
+        },
+        {
+          "name": "Microsoft.AspNet.Mvc",
+          "version": "4.0.20710.0"
+        },
+        {
+          "name": "Microsoft.AspNet.Mvc.FixedDisplayModes",
+          "version": "1.0.0"
+        },
+        {
+          "name": "Microsoft.AspNet.Razor",
+          "version": "2.0.20715.0"
+        },
+        {
+          "name": "Microsoft.AspNet.Web.Optimization",
+          "version": "1.0.0"
+        },
+        {
+          "name": "Microsoft.AspNet.WebApi",
+          "version": "4.0.20710.0"
+        },
+        {
+          "name": "Microsoft.AspNet.WebApi.Client",
+          "version": "4.0.20710.0"
+        },
+        {
+          "name": "Microsoft.AspNet.WebApi.Core",
+          "version": "4.0.20710.0"
+        },
+        {
+          "name": "Microsoft.AspNet.WebApi.OData",
+          "version": "4.0.0"
+        },
+        {
+          "name": "Microsoft.AspNet.WebApi.WebHost",
+          "version": "4.0.20710.0"
+        },
+        {
+          "name": "Microsoft.AspNet.WebPages",
+          "version": "2.0.20710.0"
+        },
+        {
+          "name": "Microsoft.AspNet.WebPages.Data",
+          "version": "2.0.20710.0"
+        },
+        {
+          "name": "Microsoft.AspNet.WebPages.OAuth",
+          "version": "2.0.20710.0"
+        },
+        {
+          "name": "Microsoft.AspNet.WebPages.WebData",
+          "version": "2.0.20710.0"
+        },
+        {
+          "name": "Microsoft.Data.Edm",
+          "version": "5.2.0"
+        },
+        {
+          "name": "Microsoft.Data.OData",
+          "version": "5.2.0"
+        },
+        {
+          "name": "Microsoft.jQuery.Unobtrusive.Ajax",
+          "version": "2.0.30116.0"
+        },
+        {
+          "name": "Microsoft.jQuery.Unobtrusive.Validation",
+          "version": "2.0.30116.0"
+        },
+        {
+          "name": "Microsoft.Net.Http",
+          "version": "2.0.20710.0"
+        },
+        {
+          "name": "Microsoft.Web.Infrastructure",
+          "version": "1.0.0.0"
+        },
+        {
+          "name": "Modernizr",
+          "version": "2.6.2"
+        },
+        {
+          "name": "Needletail.DataAccess",
+          "version": "1.0.0.3"
+        },
+        {
+          "name": "Needletail.DataAccess.Migrations",
+          "version": "1.0.0.2"
+        },
+        {
+          "name": "Needletail.Mvc",
+          "version": "1.0.0.3"
+        },
+        {
+          "name": "Newtonsoft.Json",
+          "version": "4.5.11"
+        },
+        {
+          "name": "System.Spatial",
+          "version": "5.2.0"
+        },
+        {
+          "name": "Twitter.Bootstrap",
+          "version": "2.3.2"
+        },
+        {
+          "name": "WebGrease",
+          "version": "1.3.0"
+        }
+      ],
+      "sourceFiles": 52,
+      "lines": 2989,
+      "testFiles": 0,
+      "lastCommitDate": "%as",
+      "idioms": {
+        "system-web": 20,
+        "region-blocks": 2
+      },
+      "frameworks": [
+        "ASP.NET MVC 4.0.20710.0",
+        "ASP.NET Web API 4.0.20710.0",
+        "Entity Framework 5.0.0"
+      ],
+      "units": {
+        "actions": 31,
+        "ef-contexts": 1,
+        "mvc-controllers": 4,
+        "sql-tables": 11,
+        "views": 29
+      }
+    },
+    {
+      "path": "CloudWars.Glue/CloudWars.Glue.csproj",
+      "name": "CloudWars.Glue",
+      "stack": "dotnet",
+      "format": "legacy",
+      "targets": [
+        "v4.0"
+      ],
+      "runtimes": [
+        {
+          "product": ".NET Framework",
+          "cycle": "4.0",
+          "status": {
+            "status": "out_of_support",
+            "eol": "2016-01-12",
+            "yearsOut": 10.7,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.Glue/CloudWars.Glue.csproj: v4.0"
+        }
+      ],
+      "packages": [],
+      "sourceFiles": 2,
+      "lines": 47,
+      "testFiles": 0,
+      "lastCommitDate": "%as",
+      "idioms": {},
+      "frameworks": [],
+      "units": {}
+    },
+    {
+      "path": "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj",
+      "name": "CloudWars.SpaceBattle",
+      "stack": "dotnet",
+      "format": "sdk",
+      "targets": [
+        "net45",
+        "net8.0"
+      ],
+      "runtimes": [
+        {
+          "product": ".NET Framework",
+          "cycle": "4.5",
+          "status": {
+            "status": "out_of_support",
+            "eol": "2016-01-12",
+            "yearsOut": 10.7,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj: net45"
+        },
+        {
+          "product": ".NET",
+          "cycle": "8.0",
+          "status": {
+            "status": "ending",
+            "eol": "2026-11-10",
+            "monthsLeft": 2,
+            "lts": true,
+            "source": "endoflife.date, snapshot 2026-09-18"
+          },
+          "evidence": "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj: net8.0"
+        }
+      ],
+      "packages": [],
+      "sourceFiles": 6,
+      "lines": 501,
+      "testFiles": 0,
+      "lastCommitDate": "%as",
+      "idioms": {},
+      "frameworks": [],
+      "units": {}
+    }
+  ],
+  "runtimes": [
+    {
+      "product": ".NET Framework",
+      "cycle": "4.0",
+      "status": {
+        "status": "out_of_support",
+        "eol": "2016-01-12",
+        "yearsOut": 10.7,
+        "source": "endoflife.date, snapshot 2026-09-18"
+      },
+      "evidence": "CloudWars.Engine/CloudWars.Engine.csproj: v4.0"
+    },
+    {
+      "product": ".NET Framework",
+      "cycle": "4.5",
+      "status": {
+        "status": "out_of_support",
+        "eol": "2016-01-12",
+        "yearsOut": 10.7,
+        "source": "endoflife.date, snapshot 2026-09-18"
+      },
+      "evidence": "CloudWars.Common/CloudWars.Common.csproj: net45"
+    },
+    {
+      "product": ".NET",
+      "cycle": "8.0",
+      "status": {
+        "status": "ending",
+        "eol": "2026-11-10",
+        "monthsLeft": 2,
+        "lts": true,
+        "source": "endoflife.date, snapshot 2026-09-18"
+      },
+      "evidence": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj: net8.0"
+    },
+    {
+      "product": ".NET Framework",
+      "cycle": "4.8",
+      "status": {
+        "status": "supported",
+        "eol": null,
+        "source": "endoflife.date, snapshot 2026-09-18"
+      },
+      "evidence": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj: net48"
+    }
+  ],
+  "totals": {
+    "projects": 9,
+    "sourceFiles": 97,
+    "lines": 6022,
+    "testFiles": 7,
+    "units": {
+      "mvc-controllers": 4,
+      "actions": 31,
+      "views": 29,
+      "ef-contexts": 1,
+      "sql-tables": 11
+    }
+  },
+  "unitDefinitions": [
+    {
+      "id": "mvc-controllers",
+      "label": "MVC controllers",
+      "stacks": [
+        "dotnet"
+      ],
+      "how": "classes deriving from Controller",
+      "why": "one per screen group; the unit of an MVC-to-ASP.NET Core move"
+    },
+    {
+      "id": "actions",
+      "label": "Controller actions",
+      "stacks": [
+        "dotnet"
+      ],
+      "how": "public methods returning an action result in controller files",
+      "why": "the endpoint count; scenarios and HTTP pins are written per action"
+    },
+    {
+      "id": "views",
+      "label": "Views and Razor components",
+      "stacks": [
+        "dotnet"
+      ],
+      "how": "`.cshtml`, `.vbhtml`, `.razor`, and `.aspx` under a Views folder",
+      "why": "each view is re-rendered on the new host and compared"
+    },
+    {
+      "id": "ef-contexts",
+      "label": "Entity Framework contexts",
+      "stacks": [
+        "dotnet"
+      ],
+      "how": "classes deriving from DbContext, ObjectContext or IdentityDbContext",
+      "why": "each context is an EF6-to-EF Core boundary"
+    },
+    {
+      "id": "sql-tables",
+      "label": "Tables in SQL scripts",
+      "stacks": [
+        "dotnet",
+        "node",
+        "python",
+        "java",
+        "other"
+      ],
+      "how": "CREATE TABLE in `.sql` files",
+      "why": "the data-and-outputs layer of the inventory"
+    }
+  ],
+  "buildFloor": [
+    "3 legacy-format .NET projects: builds with MSBuild/Visual Studio on Windows (Mono reference assemblies elsewhere); `dotnet build` needs the SDK-style format",
+    "6 SDK-style .NET projects: Visual Studio 2017+ or the .NET SDK on any platform",
+    "targets .NET Framework: needs the matching targeting pack (or the reference-assemblies package on non-Windows)"
+  ],
+  "notes": [
+    "7 of 9 projects have no test files: characterization tests come first (pin before transform)."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "codelead.catalog/1",
+  "entries": [
+    {
+      "path": "docs/codelead/CATALOG.md",
+      "purpose": "Every document CodeLead created or maintains in this repository, with its purpose.",
+      "kind": "log",
+      "createdAt": "2026-09-23T00:55:17.924Z",
+      "updatedAt": "2026-09-23T00:58:47.832Z",
+      "status": "live"
+    },
+    {
+      "path": "docs/codelead/PINNED.md",
+      "purpose": "What waits on a person: decisions, answers, reviews, fixes by hand.",
+      "kind": "log",
+      "createdAt": "2026-09-23T00:55:17.924Z",
+      "updatedAt": "2026-09-23T00:58:47.832Z",
+      "status": "live"
+    },
+    {
+      "path": "docs/codelead/PROJECT-LOG.md",
+      "purpose": "What happened to the project through CodeLead, one entry per session.",
+      "kind": "log",
+      "createdAt": "2026-09-23T00:55:17.924Z",
+      "updatedAt": "2026-09-23T00:58:47.832Z",
+      "status": "live"
+    },
+    {
+      "path": "docs/codelead/dossier/README.md",
+      "purpose": "Modernization dossier bundle: survey D1–D14, intake, options and estimates; input to the writer's brief.",
+      "kind": "dossier",
+      "createdAt": "2026-09-23T00:58:54.428Z",
+      "updatedAt": "2026-09-23T00:58:54.428Z",
+      "createdBySession": "session-2026-09-23T00-57-58-213Z",
+      "updatedBySession": "session-2026-09-23T00-57-58-213Z",
+      "status": "live"
+    },
+    {
+      "path": "docs/codelead/dossier/DOSSIER.md",
+      "purpose": "Read-only survey of the repository (Dossier sections D1–D14) with provenance labels.",
+      "kind": "dossier",
+      "createdAt": "2026-09-23T00:58:54.435Z",
+      "updatedAt": "2026-09-23T00:58:54.435Z",
+      "createdBySession": "session-2026-09-23T00-57-58-213Z",
+      "updatedBySession": "session-2026-09-23T00-57-58-213Z",
+      "status": "live"
+    }
+  ]
+}

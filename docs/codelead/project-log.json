@@ -1,0 +1,67 @@
+{
+  "schema": "codelead.project-log/1",
+  "entries": [
+    {
+      "sessionId": "session-2026-09-23T00-57-58-213Z",
+      "startedAt": "2026-09-23T00:57:58.216Z",
+      "endedAt": "2026-09-23T00:58:47.776Z",
+      "commands": [
+        "/modernize",
+        "/quit"
+      ],
+      "requests": [],
+      "milestones": [],
+      "modelCalls": 0,
+      "tool": "0.1.0 (0.1.0+00f14e3+dirty 2026-09-23T00:52:05.124Z)"
+    },
+    {
+      "sessionId": "session-2026-09-23T00-57-34-418Z",
+      "startedAt": "2026-09-23T00:57:34.422Z",
+      "endedAt": "2026-09-23T00:57:48.648Z",
+      "commands": [
+        "/modernize",
+        "prompt"
+      ],
+      "requests": [
+        {
+          "request": "quit",
+          "command": "prompt",
+          "outcome": "in progress",
+          "filesChanged": [],
+          "evidenceIds": []
+        }
+      ],
+      "milestones": [],
+      "modelCalls": 0,
+      "tool": "0.1.0 (0.1.0+00f14e3+dirty 2026-09-23T00:52:05.124Z)"
+    },
+    {
+      "sessionId": "session-2026-09-23T00-55-24-583Z",
+      "startedAt": "2026-09-23T00:55:24.600Z",
+      "endedAt": "2026-09-23T00:57:24.814Z",
+      "commands": [
+        "/modernize",
+        "/quit"
+      ],
+      "requests": [],
+      "milestones": [],
+      "modelCalls": 0,
+      "tool": "0.1.0 (0.1.0+00f14e3+dirty 2026-09-23T00:52:05.124Z)"
+    },
+    {
+      "sessionId": "session-2026-09-23T00-48-43-528Z",
+      "startedAt": "2026-09-23T00:48:43.533Z",
+      "endedAt": "2026-09-23T00:55:17.914Z",
+      "commands": [
+        "/help",
+        "/modernize",
+        "/modernize",
+        "/quit"
+      ],
+      "requests": [],
+      "milestones": [],
+      "modelCalls": 0,
+      "tool": "0.1.0 (0.1.0+7f30109 2026-09-22T23:25:22.342Z)"
+    }
+  ]
+}

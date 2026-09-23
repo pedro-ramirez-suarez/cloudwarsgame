@@ -1,0 +1,4088 @@
+{
+  "schema": "codelead.structural-inventory/1",
+  "root": "C:\\Users\\pedro\\.copilot\\repos\\copilot-worktrees\\cloudwarsgame\\pedro-ramirez-suarez-fluffy-system",
+  "generatedAt": "2026-09-23T00:58:17.422Z",
+  "source": "assemblies",
+  "projects": [
+    {
+      "name": "CloudWars.Characterization.Db",
+      "projectPath": "CloudWars.Characterization.Db/CloudWars.Characterization.Db.csproj",
+      "types": [],
+      "missing": "no built assembly under CloudWars.Characterization.Db/bin (build the project first; the survey reads compiled metadata, not source)"
+    },
+    {
+      "name": "CloudWars.Characterization",
+      "projectPath": "CloudWars.Characterization/CloudWars.Characterization.csproj",
+      "types": [],
+      "missing": "no built assembly under CloudWars.Characterization/bin (build the project first; the survey reads compiled metadata, not source)"
+    },
+    {
+      "name": "CloudWars.Common",
+      "projectPath": "CloudWars.Common/CloudWars.Common.csproj",
+      "assembly": "CloudWars.Common/bin/Debug/net8.0/CloudWars.Common.dll",
+      "types": [
+        {
+          "name": "IClientFeedback",
+          "fullName": "CloudWars.Common.IClientFeedback",
+          "namespace": "CloudWars.Common",
+          "kind": "interface",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 7,
+          "members": [
+            {
+              "kind": "method",
+              "name": "ChallengeAccepted",
+              "signature": "void ChallengeAccepted(Guid matchId, Guid player1, Guid player2)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ChallengePlayer",
+              "signature": "void ChallengePlayer(Guid fromPlayer, Guid toPlayer)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerLost",
+              "signature": "void PlayerLost(Guid playerId, Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerWon",
+              "signature": "void PlayerWon(Guid playerId, Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ShotMade",
+              "signature": "void ShotMade(Guid matchId, Guid player1, Guid player2, int healthAfterAttack, Guid unitId, Position coordinates)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ShotMissed",
+              "signature": "void ShotMissed(Guid matchId, Guid player1, Guid player2, Position coordinates)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "StartMatch",
+              "signature": "void StartMatch(Guid matchId, Guid player1, Guid player2)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "IFactory",
+          "fullName": "CloudWars.Common.IFactory",
+          "namespace": "CloudWars.Common",
+          "kind": "interface",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 4,
+          "members": [
+            {
+              "kind": "method",
+              "name": "GetClientFeedback",
+              "signature": "IClientFeedback GetClientFeedback()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetGame",
+              "signature": "IGame GetGame()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetGame",
+              "signature": "IGame GetGame(Guid matchId, bool loadMatchData)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerPresence",
+              "signature": "IPlayerPresence GetPlayerPresence()",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "IGame",
+          "fullName": "CloudWars.Common.IGame",
+          "namespace": "CloudWars.Common",
+          "kind": "interface",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 18,
+          "members": [
+            {
+              "kind": "property",
+              "name": "MatchId",
+              "signature": "Guid MatchId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player1",
+              "signature": "Guid Player1",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player1Ready",
+              "signature": "bool Player1Ready",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player2",
+              "signature": "Guid Player2",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player2Ready",
+              "signature": "bool Player2Ready",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Turn",
+              "signature": "Guid Turn",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Units",
+              "signature": "List<IGameUnit> Units",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "AcceptChallenge",
+              "signature": "Tuple<Guid, Guid, Guid> AcceptChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ChallengePlayer",
+              "signature": "void ChallengePlayer(Guid fromId, Guid toId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "CreateMatch",
+              "signature": "void CreateMatch(Guid player1, Guid player2)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "Initialize",
+              "signature": "void Initialize(object initialState)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "MatchFinished",
+              "signature": "Message MatchFinished(Guid winner, Guid losser)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PauseMatch",
+              "signature": "void PauseMatch()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerAttack",
+              "signature": "Message PlayerAttack(Position coordinates, Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerMoveTo",
+              "signature": "void PlayerMoveTo(Position coordinates, Guid unitId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerReady",
+              "signature": "void PlayerReady(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "RejectChallenge",
+              "signature": "Tuple<string, string> RejectChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "RestartMatch",
+              "signature": "void RestartMatch()",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "IPlayerPresence",
+          "fullName": "CloudWars.Common.IPlayerPresence",
+          "namespace": "CloudWars.Common",
+          "kind": "interface",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 6,
+          "members": [
+            {
+              "kind": "method",
+              "name": "GetClientId",
+              "signature": "string GetClientId(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerId",
+              "signature": "Guid GetPlayerId(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerNameByClientId",
+              "signature": "string GetPlayerNameByClientId(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "IsPlayingMatch",
+              "signature": "Nullable<Guid> IsPlayingMatch(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerDisconnected",
+              "signature": "void PlayerDisconnected(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerIsOnLine",
+              "signature": "void PlayerIsOnLine(string liveId, string clientId, double latitude, double longitude)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "Command",
+          "fullName": "CloudWars.Common.Other.Command",
+          "namespace": "CloudWars.Common.Other",
+          "kind": "enum",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "Enum",
+            "ValueType"
+          ],
+          "interfaces": [
+            "IComparable",
+            "ISpanFormattable",
+            "IFormattable",
+            "IConvertible"
+          ],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 8,
+          "members": [
+            {
+              "kind": "value",
+              "name": "NotYourTurn",
+              "signature": "NotYourTurn"
+            },
+            {
+              "kind": "value",
+              "name": "ChallengePlayer",
+              "signature": "ChallengePlayer"
+            },
+            {
+              "kind": "value",
+              "name": "ChallengeAccepted",
+              "signature": "ChallengeAccepted"
+            },
+            {
+              "kind": "value",
+              "name": "StartGame",
+              "signature": "StartGame"
+            },
+            {
+              "kind": "value",
+              "name": "EndGame",
+              "signature": "EndGame"
+            },
+            {
+              "kind": "value",
+              "name": "PlayerOnline",
+              "signature": "PlayerOnline"
+            },
+            {
+              "kind": "value",
+              "name": "PlayerOffLine",
+              "signature": "PlayerOffLine"
+            },
+            {
+              "kind": "value",
+              "name": "GameAction",
+              "signature": "GameAction"
+            }
+          ]
+        },
+        {
+          "name": "GameAction",
+          "fullName": "CloudWars.Common.Other.GameAction",
+          "namespace": "CloudWars.Common.Other",
+          "kind": "enum",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "Enum",
+            "ValueType"
+          ],
+          "interfaces": [
+            "IComparable",
+            "ISpanFormattable",
+            "IFormattable",
+            "IConvertible"
+          ],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 5,
+          "members": [
+            {
+              "kind": "value",
+              "name": "PlayerReady",
+              "signature": "PlayerReady"
+            },
+            {
+              "kind": "value",
+              "name": "UnitMoved",
+              "signature": "UnitMoved"
+            },
+            {
+              "kind": "value",
+              "name": "Attack",
+              "signature": "Attack"
+            },
+            {
+              "kind": "value",
+              "name": "ShotMade",
+              "signature": "ShotMade"
+            },
+            {
+              "kind": "value",
+              "name": "ShotMissed",
+              "signature": "ShotMissed"
+            }
+          ]
+        },
+        {
+          "name": "Message",
+          "fullName": "CloudWars.Common.Other.Message",
+          "namespace": "CloudWars.Common.Other",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 12,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new Message()"
+            },
+            {
+              "kind": "property",
+              "name": "Action",
+              "signature": "GameAction Action",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Command",
+              "signature": "Command Command",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Coordinates",
+              "signature": "Position Coordinates",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "HealthAfterAttack",
+              "signature": "int HealthAfterAttack",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Losser",
+              "signature": "Guid Losser",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MatchId",
+              "signature": "Guid MatchId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player1",
+              "signature": "Guid Player1",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player2",
+              "signature": "Guid Player2",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "PlayerId",
+              "signature": "Guid PlayerId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "UnitId",
+              "signature": "Guid UnitId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Winner",
+              "signature": "Guid Winner",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "NotificationTypes",
+          "fullName": "CloudWars.Common.Other.NotificationTypes",
+          "namespace": "CloudWars.Common.Other",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 1,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new NotificationTypes()"
+            }
+          ]
+        },
+        {
+          "name": "Position",
+          "fullName": "CloudWars.Common.Other.Position",
+          "namespace": "CloudWars.Common.Other",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 3,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new Position()"
+            },
+            {
+              "kind": "property",
+              "name": "Column",
+              "signature": "int Column",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Row",
+              "signature": "int Row",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "IGameUnit",
+          "fullName": "CloudWars.Common.Units.IGameUnit",
+          "namespace": "CloudWars.Common.Units",
+          "kind": "interface",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 10,
+          "members": [
+            {
+              "kind": "property",
+              "name": "Column",
+              "signature": "int Column",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Health",
+              "signature": "int Health",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MatchId",
+              "signature": "Guid MatchId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MaxHealth",
+              "signature": "int MaxHealth",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Name",
+              "signature": "string Name",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "PlayerId",
+              "signature": "Guid PlayerId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Row",
+              "signature": "int Row",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "UnitId",
+              "signature": "Guid UnitId",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "MoveTo",
+              "signature": "void MoveTo(int row, int column)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "TakeDamage",
+              "signature": "void TakeDamage(int damage)",
+              "attributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CloudWars.DataAccess",
+      "projectPath": "CloudWars.DataAccess/CloudWars.DataAccess.csproj",
+      "assembly": "CloudWars.DataAccess/bin/Debug/net8.0/CloudWars.DataAccess.dll",
+      "types": [
+        {
+          "name": "CloudWarsDB",
+          "fullName": "CloudWars.DataAccess.Sql.CloudWarsDB",
+          "namespace": "CloudWars.DataAccess.Sql",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 7,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new CloudWarsDB()"
+            },
+            {
+              "kind": "property",
+              "name": "Challenges",
+              "signature": "DBTableDataSourceBase<Challenge, Guid> Challenges",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MatchUnits",
+              "signature": "DBTableDataSourceBase<MatchUnit, Guid> MatchUnits",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Matches",
+              "signature": "DBTableDataSourceBase<Match, Guid> Matches",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "PlayerNotifications",
+              "signature": "DBTableDataSourceBase<PlayerNotification, Guid> PlayerNotifications",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Players",
+              "signature": "DBTableDataSourceBase<Player, Guid> Players",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "VanillaUnits",
+              "signature": "IEnumerable<PlayerUnit> VanillaUnits",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "CloudWarsData",
+          "fullName": "CloudWars.DataAccess.Sql.CloudWarsData",
+          "namespace": "CloudWars.DataAccess.Sql",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 30,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new CloudWarsData()"
+            },
+            {
+              "kind": "method",
+              "name": "AcceptChallenge",
+              "signature": "static void AcceptChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ActiveMatches",
+              "signature": "static int ActiveMatches()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "AddNotification",
+              "signature": "static void AddNotification(PlayerNotification notification)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ChallengePlayer",
+              "signature": "static Guid ChallengePlayer(Guid fromId, Guid toId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "CreateMatch",
+              "signature": "static Guid CreateMatch(Guid player1, Guid player2)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "DeleteMatch",
+              "signature": "static void DeleteMatch(Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetChallenge",
+              "signature": "static Challenge GetChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetClientId",
+              "signature": "static string GetClientId(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetMatch",
+              "signature": "static Match GetMatch(Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetMatches",
+              "signature": "static IEnumerable<Match> GetMatches()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetOnlinePlayers",
+              "signature": "static IEnumerable<Player> GetOnlinePlayers()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetOnlinePlayers",
+              "signature": "static IEnumerable<Player> GetOnlinePlayers(string liveId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetOnlinePlayersNearBy",
+              "signature": "static IEnumerable<Player> GetOnlinePlayersNearBy(string liveId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayer",
+              "signature": "static Player GetPlayer(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerId",
+              "signature": "static Guid GetPlayerId(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerName",
+              "signature": "static string GetPlayerName(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayers",
+              "signature": "static IEnumerable<Player> GetPlayers()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetTop10Players",
+              "signature": "static IEnumerable<Player> GetTop10Players()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetUnits",
+              "signature": "static IEnumerable<MatchUnit> GetUnits(Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "IsPlayingMatch",
+              "signature": "static Nullable<Guid> IsPlayingMatch(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "OnlinePlayers",
+              "signature": "static int OnlinePlayers()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerIsOnline",
+              "signature": "static void PlayerIsOnline(string liveId, string clientId, double latitude, double longitude)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerLose",
+              "signature": "static void PlayerLose(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerWin",
+              "signature": "static void PlayerWin(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "RejectChallenge",
+              "signature": "static void RejectChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdateMatch",
+              "signature": "static void UpdateMatch(object values, object where)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdateMatchUnit",
+              "signature": "static void UpdateMatchUnit(object values, object where)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdatePlayer",
+              "signature": "static void UpdatePlayer(Player player)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdatePlayer",
+              "signature": "static void UpdatePlayer(object values, object where)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "ICloudWarsData",
+          "fullName": "CloudWars.DataAccess.Sql.ICloudWarsData",
+          "namespace": "CloudWars.DataAccess.Sql",
+          "kind": "interface",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 20,
+          "members": [
+            {
+              "kind": "method",
+              "name": "AcceptChallenge",
+              "signature": "void AcceptChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "AddNotification",
+              "signature": "void AddNotification(PlayerNotification notification)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ChallengePlayer",
+              "signature": "Guid ChallengePlayer(Guid fromId, Guid toId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "CreateMatch",
+              "signature": "Guid CreateMatch(Guid player1, Guid player2)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "DeleteMatch",
+              "signature": "void DeleteMatch(Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetChallenge",
+              "signature": "Challenge GetChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetClientId",
+              "signature": "string GetClientId(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetMatch",
+              "signature": "Match GetMatch(Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayer",
+              "signature": "Player GetPlayer(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerId",
+              "signature": "Guid GetPlayerId(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerName",
+              "signature": "string GetPlayerName(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetUnits",
+              "signature": "IEnumerable<MatchUnit> GetUnits(Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "IsPlayingMatch",
+              "signature": "Nullable<Guid> IsPlayingMatch(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerIsOnline",
+              "signature": "void PlayerIsOnline(string liveId, string clientId, double latitude, double longitude)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerLose",
+              "signature": "void PlayerLose(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerWin",
+              "signature": "void PlayerWin(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "RejectChallenge",
+              "signature": "void RejectChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdateMatch",
+              "signature": "void UpdateMatch(object values, object where)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdateMatchUnit",
+              "signature": "void UpdateMatchUnit(object values, object where)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdatePlayer",
+              "signature": "void UpdatePlayer(object values, object where)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "SqlCloudWarsData",
+          "fullName": "CloudWars.DataAccess.Sql.SqlCloudWarsData",
+          "namespace": "CloudWars.DataAccess.Sql",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [
+            "ICloudWarsData"
+          ],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 21,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new SqlCloudWarsData()"
+            },
+            {
+              "kind": "method",
+              "name": "AcceptChallenge",
+              "signature": "void AcceptChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "AddNotification",
+              "signature": "void AddNotification(PlayerNotification notification)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ChallengePlayer",
+              "signature": "Guid ChallengePlayer(Guid fromId, Guid toId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "CreateMatch",
+              "signature": "Guid CreateMatch(Guid player1, Guid player2)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "DeleteMatch",
+              "signature": "void DeleteMatch(Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetChallenge",
+              "signature": "Challenge GetChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetClientId",
+              "signature": "string GetClientId(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetMatch",
+              "signature": "Match GetMatch(Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayer",
+              "signature": "Player GetPlayer(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerId",
+              "signature": "Guid GetPlayerId(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerName",
+              "signature": "string GetPlayerName(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetUnits",
+              "signature": "IEnumerable<MatchUnit> GetUnits(Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "IsPlayingMatch",
+              "signature": "Nullable<Guid> IsPlayingMatch(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerIsOnline",
+              "signature": "void PlayerIsOnline(string liveId, string clientId, double latitude, double longitude)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerLose",
+              "signature": "void PlayerLose(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerWin",
+              "signature": "void PlayerWin(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "RejectChallenge",
+              "signature": "void RejectChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdateMatch",
+              "signature": "void UpdateMatch(object values, object where)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdateMatchUnit",
+              "signature": "void UpdateMatchUnit(object values, object where)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdatePlayer",
+              "signature": "void UpdatePlayer(object values, object where)",
+              "attributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CloudWars.Engine",
+      "projectPath": "CloudWars.Engine/CloudWars.Engine.csproj",
+      "types": [],
+      "missing": "no built assembly under CloudWars.Engine/bin (build the project first; the survey reads compiled metadata, not source)"
+    },
+    {
+      "name": "CloudWars.Entities",
+      "projectPath": "CloudWars.Entities/CloudWars.Entities.csproj",
+      "assembly": "CloudWars.Entities/bin/Debug/net8.0/CloudWars.Entities.dll",
+      "types": [
+        {
+          "name": "Challenge",
+          "fullName": "CloudWars.Entities.Game.Challenge",
+          "namespace": "CloudWars.Entities.Game",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 5,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new Challenge()"
+            },
+            {
+              "kind": "property",
+              "name": "Accepted",
+              "signature": "bool Accepted",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Id",
+              "signature": "Guid Id",
+              "attributes": [
+                "TableKey"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "Player1",
+              "signature": "Guid Player1",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player2",
+              "signature": "Guid Player2",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "Match",
+          "fullName": "CloudWars.Entities.Game.Match",
+          "namespace": "CloudWars.Entities.Game",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 11,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new Match()"
+            },
+            {
+              "kind": "property",
+              "name": "Id",
+              "signature": "Guid Id",
+              "attributes": [
+                "TableKey"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "Initialized",
+              "signature": "bool Initialized",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MatchEnded",
+              "signature": "bool MatchEnded",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player1",
+              "signature": "Guid Player1",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player1Ready",
+              "signature": "bool Player1Ready",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player2",
+              "signature": "Guid Player2",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player2Ready",
+              "signature": "bool Player2Ready",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "PlayingNow",
+              "signature": "bool PlayingNow",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Turn",
+              "signature": "Guid Turn",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Winner",
+              "signature": "Guid Winner",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "MatchUnit",
+          "fullName": "CloudWars.Entities.Game.MatchUnit",
+          "namespace": "CloudWars.Entities.Game",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 10,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new MatchUnit()"
+            },
+            {
+              "kind": "property",
+              "name": "Col",
+              "signature": "int Col",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Health",
+              "signature": "int Health",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Id",
+              "signature": "Guid Id",
+              "attributes": [
+                "TableKey"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "MatchId",
+              "signature": "Guid MatchId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MaxHealth",
+              "signature": "int MaxHealth",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Name",
+              "signature": "string Name",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "PlayerId",
+              "signature": "Guid PlayerId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Row",
+              "signature": "int Row",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "UnitId",
+              "signature": "Guid UnitId",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "PlayerNotification",
+          "fullName": "CloudWars.Entities.Game.PlayerNotification",
+          "namespace": "CloudWars.Entities.Game",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 8,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new PlayerNotification()"
+            },
+            {
+              "kind": "property",
+              "name": "Col",
+              "signature": "Nullable<int> Col",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Id",
+              "signature": "Guid Id",
+              "attributes": [
+                "TableKey"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "MatchId",
+              "signature": "Guid MatchId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "NotificationType",
+              "signature": "string NotificationType",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "OtherPlayer",
+              "signature": "Nullable<Guid> OtherPlayer",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "PlayerId",
+              "signature": "Guid PlayerId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Row",
+              "signature": "Nullable<int> Row",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "PlayerUnit",
+          "fullName": "CloudWars.Entities.Game.PlayerUnit",
+          "namespace": "CloudWars.Entities.Game",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 6,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new PlayerUnit()"
+            },
+            {
+              "kind": "property",
+              "name": "Icon",
+              "signature": "string Icon",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Id",
+              "signature": "Guid Id",
+              "attributes": [
+                "TableKey"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "IsRebel",
+              "signature": "bool IsRebel",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MaxHealth",
+              "signature": "int MaxHealth",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Name",
+              "signature": "string Name",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "Player",
+          "fullName": "CloudWars.Entities.Player.Player",
+          "namespace": "CloudWars.Entities.Player",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 12,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new Player()"
+            },
+            {
+              "kind": "property",
+              "name": "Avatar",
+              "signature": "string Avatar",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ClientId",
+              "signature": "string ClientId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "DisplayName",
+              "signature": "string DisplayName",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Id",
+              "signature": "Guid Id",
+              "attributes": [
+                "TableKey"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "IsOnline",
+              "signature": "bool IsOnline",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "LastActivity",
+              "signature": "DateTime LastActivity",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "LiveId",
+              "signature": "string LiveId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Location",
+              "signature": "SqlGeography Location",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Losses",
+              "signature": "int Losses",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Status",
+              "signature": "string Status",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Wins",
+              "signature": "int Wins",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "PlayerRank",
+          "fullName": "CloudWars.Entities.Player.PlayerRank",
+          "namespace": "CloudWars.Entities.Player",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "Player"
+          ],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 2,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new PlayerRank()"
+            },
+            {
+              "kind": "property",
+              "name": "Rank",
+              "signature": "decimal Rank",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "PlayerStatus",
+          "fullName": "CloudWars.Entities.Player.PlayerStatus",
+          "namespace": "CloudWars.Entities.Player",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 1,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new PlayerStatus()"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CloudWars.Game",
+      "projectPath": "CloudWars.Game/CloudWars.Game.csproj",
+      "assembly": "CloudWars.Game/bin/CloudWars.Game.dll",
+      "types": [
+        {
+          "name": "CDNHelper",
+          "fullName": "CDNHelper",
+          "namespace": null,
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 6,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new CDNHelper()"
+            },
+            {
+              "kind": "property",
+              "name": "CssUrl",
+              "signature": "string CssUrl",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ImagesUrl",
+              "signature": "string ImagesUrl",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ScriptsUrl",
+              "signature": "string ScriptsUrl",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "SoundsUrl",
+              "signature": "string SoundsUrl",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "StaticContentUrl",
+              "signature": "string StaticContentUrl",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "AuthConfig",
+          "fullName": "CloudWars.Game.AuthConfig",
+          "namespace": "CloudWars.Game",
+          "kind": "class",
+          "isAbstract": true,
+          "isStatic": true,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 1,
+          "members": [
+            {
+              "kind": "method",
+              "name": "RegisterAuth",
+              "signature": "static void RegisterAuth()",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "BundleConfig",
+          "fullName": "CloudWars.Game.BundleConfig",
+          "namespace": "CloudWars.Game",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 2,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new BundleConfig()"
+            },
+            {
+              "kind": "method",
+              "name": "RegisterBundles",
+              "signature": "static void RegisterBundles(BundleCollection bundles)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "AccountController",
+          "fullName": "CloudWars.Game.Controllers.AccountController",
+          "namespace": "CloudWars.Game.Controllers",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "Controller",
+            "ControllerBase"
+          ],
+          "interfaces": [
+            "IController",
+            "IActionFilter",
+            "IAuthorizationFilter",
+            "IDisposable",
+            "IExceptionFilter",
+            "IResultFilter",
+            "IAsyncController",
+            "IAsyncManagerContainer"
+          ],
+          "attributes": [
+            "Authorize",
+            "InitializeSimpleMembership"
+          ],
+          "roles": [
+            "mvc-controller"
+          ],
+          "actions": [
+            {
+              "name": "Disassociate",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "string provider",
+                "string providerUserId"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "ExternalLogin",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "string provider",
+                "string returnUrl"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "ExternalLoginCallback",
+              "verbs": [],
+              "route": null,
+              "parameters": [
+                "string returnUrl"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "ExternalLoginConfirmation",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "RegisterExternalLoginModel model",
+                "string returnUrl"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "ExternalLoginFailure",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "ExternalLoginsList",
+              "verbs": [],
+              "route": null,
+              "parameters": [
+                "string returnUrl"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "LogOff",
+              "verbs": [
+                "GET"
+              ],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Login",
+              "verbs": [],
+              "route": null,
+              "parameters": [
+                "string returnUrl"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Login",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "LoginModel model",
+                "string returnUrl"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Manage",
+              "verbs": [],
+              "route": null,
+              "parameters": [
+                "Nullable<ManageMessageId> message"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Manage",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "LocalPasswordModel model"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Register",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Register",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "RegisterModel model"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "RemoveExternalLogins",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            }
+          ],
+          "entitySets": [],
+          "memberCount": 15,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new AccountController()"
+            },
+            {
+              "kind": "method",
+              "name": "Disassociate",
+              "signature": "ActionResult Disassociate(string provider, string providerUserId)",
+              "attributes": [
+                "HttpPost",
+                "ValidateAntiForgeryToken"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "ExternalLogin",
+              "signature": "ActionResult ExternalLogin(string provider, string returnUrl)",
+              "attributes": [
+                "HttpPost",
+                "AllowAnonymous",
+                "ValidateAntiForgeryToken"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "ExternalLoginCallback",
+              "signature": "ActionResult ExternalLoginCallback(string returnUrl)",
+              "attributes": [
+                "AllowAnonymous"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "ExternalLoginConfirmation",
+              "signature": "ActionResult ExternalLoginConfirmation(RegisterExternalLoginModel model, string returnUrl)",
+              "attributes": [
+                "HttpPost",
+                "AllowAnonymous",
+                "ValidateAntiForgeryToken"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "ExternalLoginFailure",
+              "signature": "ActionResult ExternalLoginFailure()",
+              "attributes": [
+                "AllowAnonymous"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "ExternalLoginsList",
+              "signature": "ActionResult ExternalLoginsList(string returnUrl)",
+              "attributes": [
+                "AllowAnonymous",
+                "ChildActionOnly"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "LogOff",
+              "signature": "ActionResult LogOff()",
+              "attributes": [
+                "HttpGet"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "Login",
+              "signature": "ActionResult Login(string returnUrl)",
+              "attributes": [
+                "AllowAnonymous"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "Login",
+              "signature": "ActionResult Login(LoginModel model, string returnUrl)",
+              "attributes": [
+                "HttpPost",
+                "AllowAnonymous",
+                "ValidateAntiForgeryToken"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "Manage",
+              "signature": "ActionResult Manage(Nullable<ManageMessageId> message)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "Manage",
+              "signature": "ActionResult Manage(LocalPasswordModel model)",
+              "attributes": [
+                "HttpPost",
+                "ValidateAntiForgeryToken"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "Register",
+              "signature": "ActionResult Register()",
+              "attributes": [
+                "AllowAnonymous"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "Register",
+              "signature": "ActionResult Register(RegisterModel model)",
+              "attributes": [
+                "HttpPost",
+                "AllowAnonymous",
+                "ValidateAntiForgeryToken"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "RemoveExternalLogins",
+              "signature": "ActionResult RemoveExternalLogins()",
+              "attributes": [
+                "ChildActionOnly"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "ManageMessageId",
+          "fullName": "CloudWars.Game.Controllers.AccountController+ManageMessageId",
+          "namespace": "CloudWars.Game.Controllers",
+          "kind": "enum",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "Enum",
+            "ValueType"
+          ],
+          "interfaces": [
+            "IComparable",
+            "ISpanFormattable",
+            "IFormattable",
+            "IConvertible"
+          ],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 3,
+          "members": [
+            {
+              "kind": "value",
+              "name": "ChangePasswordSuccess",
+              "signature": "ChangePasswordSuccess"
+            },
+            {
+              "kind": "value",
+              "name": "SetPasswordSuccess",
+              "signature": "SetPasswordSuccess"
+            },
+            {
+              "kind": "value",
+              "name": "RemoveLoginSuccess",
+              "signature": "RemoveLoginSuccess"
+            }
+          ]
+        },
+        {
+          "name": "HomeController",
+          "fullName": "CloudWars.Game.Controllers.HomeController",
+          "namespace": "CloudWars.Game.Controllers",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "Controller",
+            "ControllerBase"
+          ],
+          "interfaces": [
+            "IController",
+            "IActionFilter",
+            "IAuthorizationFilter",
+            "IDisposable",
+            "IExceptionFilter",
+            "IResultFilter",
+            "IAsyncController",
+            "IAsyncManagerContainer"
+          ],
+          "attributes": [],
+          "roles": [
+            "mvc-controller"
+          ],
+          "actions": [
+            {
+              "name": "About",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Bitacora",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "ComoJugar",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Index",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Inicio",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Tecnologia",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            }
+          ],
+          "entitySets": [],
+          "memberCount": 7,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new HomeController()"
+            },
+            {
+              "kind": "method",
+              "name": "About",
+              "signature": "ActionResult About()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "Bitacora",
+              "signature": "ActionResult Bitacora()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ComoJugar",
+              "signature": "ActionResult ComoJugar()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "Index",
+              "signature": "ActionResult Index()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "Inicio",
+              "signature": "ActionResult Inicio()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "Tecnologia",
+              "signature": "ActionResult Tecnologia()",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "RemoteController",
+          "fullName": "CloudWars.Game.Controllers.RemoteController",
+          "namespace": "CloudWars.Game.Controllers",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "RemoteExecutionController",
+            "ApiController"
+          ],
+          "interfaces": [
+            "IHttpController",
+            "IDisposable"
+          ],
+          "attributes": [],
+          "roles": [
+            "api-controller"
+          ],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 1,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new RemoteController()"
+            }
+          ]
+        },
+        {
+          "name": "FilterConfig",
+          "fullName": "CloudWars.Game.FilterConfig",
+          "namespace": "CloudWars.Game",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 2,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new FilterConfig()"
+            },
+            {
+              "kind": "method",
+              "name": "RegisterGlobalFilters",
+              "signature": "static void RegisterGlobalFilters(GlobalFilterCollection filters)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "InitializeSimpleMembershipAttribute",
+          "fullName": "CloudWars.Game.Filters.InitializeSimpleMembershipAttribute",
+          "namespace": "CloudWars.Game.Filters",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "ActionFilterAttribute",
+            "FilterAttribute",
+            "Attribute"
+          ],
+          "interfaces": [
+            "IMvcFilter",
+            "IActionFilter",
+            "IResultFilter"
+          ],
+          "attributes": [
+            "Usage"
+          ],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 2,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new InitializeSimpleMembershipAttribute()"
+            },
+            {
+              "kind": "method",
+              "name": "OnActionExecuting",
+              "signature": "void OnActionExecuting(ActionExecutingContext filterContext)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "ExternalLogin",
+          "fullName": "CloudWars.Game.Models.ExternalLogin",
+          "namespace": "CloudWars.Game.Models",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 4,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new ExternalLogin()"
+            },
+            {
+              "kind": "property",
+              "name": "Provider",
+              "signature": "string Provider",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ProviderDisplayName",
+              "signature": "string ProviderDisplayName",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ProviderUserId",
+              "signature": "string ProviderUserId",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "LocalPasswordModel",
+          "fullName": "CloudWars.Game.Models.LocalPasswordModel",
+          "namespace": "CloudWars.Game.Models",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 4,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new LocalPasswordModel()"
+            },
+            {
+              "kind": "property",
+              "name": "ConfirmPassword",
+              "signature": "string ConfirmPassword",
+              "attributes": [
+                "DataType",
+                "Display",
+                "Compare"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "NewPassword",
+              "signature": "string NewPassword",
+              "attributes": [
+                "Required",
+                "StringLength",
+                "DataType",
+                "Display"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "OldPassword",
+              "signature": "string OldPassword",
+              "attributes": [
+                "Required",
+                "DataType",
+                "Display"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "LoginModel",
+          "fullName": "CloudWars.Game.Models.LoginModel",
+          "namespace": "CloudWars.Game.Models",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 4,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new LoginModel()"
+            },
+            {
+              "kind": "property",
+              "name": "Password",
+              "signature": "string Password",
+              "attributes": [
+                "Required",
+                "DataType",
+                "Display"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "RememberMe",
+              "signature": "bool RememberMe",
+              "attributes": [
+                "Display"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "UserName",
+              "signature": "string UserName",
+              "attributes": [
+                "Required",
+                "Display"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RegisterExternalLoginModel",
+          "fullName": "CloudWars.Game.Models.RegisterExternalLoginModel",
+          "namespace": "CloudWars.Game.Models",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 3,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new RegisterExternalLoginModel()"
+            },
+            {
+              "kind": "property",
+              "name": "ExternalLoginData",
+              "signature": "string ExternalLoginData",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "UserName",
+              "signature": "string UserName",
+              "attributes": [
+                "Required",
+                "Display"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RegisterModel",
+          "fullName": "CloudWars.Game.Models.RegisterModel",
+          "namespace": "CloudWars.Game.Models",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 4,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new RegisterModel()"
+            },
+            {
+              "kind": "property",
+              "name": "ConfirmPassword",
+              "signature": "string ConfirmPassword",
+              "attributes": [
+                "DataType",
+                "Display",
+                "Compare"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "Password",
+              "signature": "string Password",
+              "attributes": [
+                "Required",
+                "StringLength",
+                "DataType",
+                "Display"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "UserName",
+              "signature": "string UserName",
+              "attributes": [
+                "Required",
+                "Display"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "UserProfile",
+          "fullName": "CloudWars.Game.Models.UserProfile",
+          "namespace": "CloudWars.Game.Models",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [
+            "Table"
+          ],
+          "roles": [
+            "entity"
+          ],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 3,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new UserProfile()"
+            },
+            {
+              "kind": "property",
+              "name": "UserId",
+              "signature": "int UserId",
+              "attributes": [
+                "Key",
+                "DatabaseGenerated"
+              ]
+            },
+            {
+              "kind": "property",
+              "name": "UserName",
+              "signature": "string UserName",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "UsersContext",
+          "fullName": "CloudWars.Game.Models.UsersContext",
+          "namespace": "CloudWars.Game.Models",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "DbContext"
+          ],
+          "interfaces": [
+            "IDisposable",
+            "IObjectContextAdapter"
+          ],
+          "attributes": [],
+          "roles": [
+            "db-context"
+          ],
+          "actions": [],
+          "entitySets": [
+            {
+              "name": "UserProfiles",
+              "entity": "UserProfile"
+            }
+          ],
+          "memberCount": 2,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new UsersContext()"
+            },
+            {
+              "kind": "property",
+              "name": "UserProfiles",
+              "signature": "DbSet<UserProfile> UserProfiles",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "RouteConfig",
+          "fullName": "CloudWars.Game.RouteConfig",
+          "namespace": "CloudWars.Game",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 1,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new RouteConfig()"
+            }
+          ]
+        },
+        {
+          "name": "WebApiConfig",
+          "fullName": "CloudWars.Game.WebApiConfig",
+          "namespace": "CloudWars.Game",
+          "kind": "class",
+          "isAbstract": true,
+          "isStatic": true,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 1,
+          "members": [
+            {
+              "kind": "method",
+              "name": "Register",
+              "signature": "static void Register(HttpConfiguration config)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "Context",
+          "fullName": "CloudWars.Web.Code.Context",
+          "namespace": "CloudWars.Web.Code",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 2,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new Context()"
+            },
+            {
+              "kind": "property",
+              "name": "ConnectionId",
+              "signature": "string ConnectionId",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "GameController",
+          "fullName": "ClourWars.Game.Controllers.GameController",
+          "namespace": "ClourWars.Game.Controllers",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "Controller",
+            "ControllerBase"
+          ],
+          "interfaces": [
+            "IController",
+            "IActionFilter",
+            "IAuthorizationFilter",
+            "IDisposable",
+            "IExceptionFilter",
+            "IResultFilter",
+            "IAsyncController",
+            "IAsyncManagerContainer"
+          ],
+          "attributes": [],
+          "roles": [
+            "mvc-controller"
+          ],
+          "actions": [
+            {
+              "name": "AcceptChallenge",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "Guid challengeId"
+              ],
+              "returns": "TwoWayResult"
+            },
+            {
+              "name": "ChallengePlayer",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "Guid playerId"
+              ],
+              "returns": "TwoWayResult"
+            },
+            {
+              "name": "GetAllPlayers",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "GetNearByPlayers",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Initialize",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "string liveId",
+                "string latitude",
+                "string longitude"
+              ],
+              "returns": "void"
+            },
+            {
+              "name": "InvitePlayer",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "Guid matchId",
+                "string clientId"
+              ],
+              "returns": "TwoWayResult"
+            },
+            {
+              "name": "MyChallenges",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "MyMatches",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "OnlinePlayers",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Play",
+              "verbs": [],
+              "route": null,
+              "parameters": [
+                "Guid matchId"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "PlayMatch",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "Guid matchId"
+              ],
+              "returns": "TwoWayResult"
+            },
+            {
+              "name": "PlayerAttack",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "Guid matchId",
+                "Guid playerId",
+                "int row",
+                "int col"
+              ],
+              "returns": "void"
+            },
+            {
+              "name": "PlayerChat",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "string message",
+                "string clientId"
+              ],
+              "returns": "TwoWayResult"
+            },
+            {
+              "name": "PlayerMoveTo",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "Guid matchId",
+                "string unitId",
+                "int row",
+                "int col"
+              ],
+              "returns": "void"
+            },
+            {
+              "name": "PlayerReady",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "Guid matchId",
+                "Guid playerId"
+              ],
+              "returns": "void"
+            },
+            {
+              "name": "RejectChallenge",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "Guid challengeId"
+              ],
+              "returns": "TwoWayResult"
+            }
+          ],
+          "entitySets": [],
+          "memberCount": 17,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new GameController()"
+            },
+            {
+              "kind": "method",
+              "name": "AcceptChallenge",
+              "signature": "TwoWayResult AcceptChallenge(Guid challengeId)",
+              "attributes": [
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "ChallengePlayer",
+              "signature": "TwoWayResult ChallengePlayer(Guid playerId)",
+              "attributes": [
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "GetAllPlayers",
+              "signature": "ActionResult GetAllPlayers()",
+              "attributes": [
+                "Authorize"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "GetNearByPlayers",
+              "signature": "ActionResult GetNearByPlayers()",
+              "attributes": [
+                "Authorize"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "Initialize",
+              "signature": "void Initialize(string liveId, string latitude, string longitude)",
+              "attributes": [
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "InvitePlayer",
+              "signature": "TwoWayResult InvitePlayer(Guid matchId, string clientId)",
+              "attributes": [
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "MyChallenges",
+              "signature": "ActionResult MyChallenges()",
+              "attributes": [
+                "Authorize",
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "MyMatches",
+              "signature": "ActionResult MyMatches()",
+              "attributes": [
+                "Authorize",
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "OnlinePlayers",
+              "signature": "ActionResult OnlinePlayers()",
+              "attributes": [
+                "Authorize"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "Play",
+              "signature": "ActionResult Play(Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayMatch",
+              "signature": "TwoWayResult PlayMatch(Guid matchId)",
+              "attributes": [
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "PlayerAttack",
+              "signature": "void PlayerAttack(Guid matchId, Guid playerId, int row, int col)",
+              "attributes": [
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "PlayerChat",
+              "signature": "TwoWayResult PlayerChat(string message, string clientId)",
+              "attributes": [
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "PlayerMoveTo",
+              "signature": "void PlayerMoveTo(Guid matchId, string unitId, int row, int col)",
+              "attributes": [
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "PlayerReady",
+              "signature": "void PlayerReady(Guid matchId, Guid playerId)",
+              "attributes": [
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "RejectChallenge",
+              "signature": "TwoWayResult RejectChallenge(Guid challengeId)",
+              "attributes": [
+                "HttpPost"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "PlayerController",
+          "fullName": "ClourWars.Game.Controllers.PlayerController",
+          "namespace": "ClourWars.Game.Controllers",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [
+            "Controller",
+            "ControllerBase"
+          ],
+          "interfaces": [
+            "IController",
+            "IActionFilter",
+            "IAuthorizationFilter",
+            "IDisposable",
+            "IExceptionFilter",
+            "IResultFilter",
+            "IAsyncController",
+            "IAsyncManagerContainer"
+          ],
+          "attributes": [],
+          "roles": [
+            "mvc-controller"
+          ],
+          "actions": [
+            {
+              "name": "CreateProfile",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "CreateProfile",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "Guid id",
+                "string displayName",
+                "string avatar"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "EditProfile",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "EditProfile",
+              "verbs": [
+                "POST"
+              ],
+              "route": null,
+              "parameters": [
+                "Guid id",
+                "string displayName",
+                "string avatar"
+              ],
+              "returns": "ActionResult"
+            },
+            {
+              "name": "Index",
+              "verbs": [],
+              "route": null,
+              "parameters": [],
+              "returns": "ActionResult"
+            }
+          ],
+          "entitySets": [],
+          "memberCount": 6,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new PlayerController()"
+            },
+            {
+              "kind": "method",
+              "name": "CreateProfile",
+              "signature": "ActionResult CreateProfile()",
+              "attributes": [
+                "Authorize"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "CreateProfile",
+              "signature": "ActionResult CreateProfile(Guid id, string displayName, string avatar)",
+              "attributes": [
+                "Authorize",
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "EditProfile",
+              "signature": "ActionResult EditProfile()",
+              "attributes": [
+                "Authorize"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "EditProfile",
+              "signature": "ActionResult EditProfile(Guid id, string displayName, string avatar)",
+              "attributes": [
+                "Authorize",
+                "HttpPost"
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "Index",
+              "signature": "ActionResult Index()",
+              "attributes": [
+                "Authorize"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "GameHelper",
+          "fullName": "ClourWars.Web.Code.GameHelper",
+          "namespace": "ClourWars.Web.Code",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 6,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new GameHelper()"
+            },
+            {
+              "kind": "method",
+              "name": "GetMyChallenges",
+              "signature": "static IEnumerable<MyChallenge> GetMyChallenges(string liveId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetMyMatches",
+              "signature": "static IEnumerable<MyMatches> GetMyMatches(string liveId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetNearbyPlayers",
+              "signature": "static IEnumerable<Player> GetNearbyPlayers(string liveId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetOnlinePlayers",
+              "signature": "static IEnumerable<Player> GetOnlinePlayers()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetOnlinePlayers",
+              "signature": "static IEnumerable<Player> GetOnlinePlayers(string liveId)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "ProfileHelper",
+          "fullName": "ClourWars.Web.Code.ProfileHelper",
+          "namespace": "ClourWars.Web.Code",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 5,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new ProfileHelper()"
+            },
+            {
+              "kind": "property",
+              "name": "GetIdentity",
+              "signature": "string GetIdentity",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerProfile",
+              "signature": "static Player GetPlayerProfile(string user)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UpdateProfile",
+              "signature": "static void UpdateProfile(Guid id, string displayName, string avatar, string user)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "UserHasProfile",
+              "signature": "static bool UserHasProfile(string user)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "MyChallenge",
+          "fullName": "ClourWars.Web.Models.MyChallenge",
+          "namespace": "ClourWars.Web.Models",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 12,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new MyChallenge()"
+            },
+            {
+              "kind": "property",
+              "name": "ChallengeId",
+              "signature": "Guid ChallengeId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayer",
+              "signature": "Guid FromPlayer",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayerAvatar",
+              "signature": "string FromPlayerAvatar",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayerLosses",
+              "signature": "int FromPlayerLosses",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayerName",
+              "signature": "string FromPlayerName",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayerWins",
+              "signature": "int FromPlayerWins",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayer",
+              "signature": "Guid ToPlayer",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayerAvatar",
+              "signature": "string ToPlayerAvatar",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayerLosses",
+              "signature": "int ToPlayerLosses",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayerName",
+              "signature": "string ToPlayerName",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayerWins",
+              "signature": "int ToPlayerWins",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "MyMatches",
+          "fullName": "ClourWars.Web.Models.MyMatches",
+          "namespace": "ClourWars.Web.Models",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 14,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new MyMatches()"
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayer",
+              "signature": "Guid FromPlayer",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayerAvatar",
+              "signature": "string FromPlayerAvatar",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayerLiveId",
+              "signature": "string FromPlayerLiveId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayerLosses",
+              "signature": "int FromPlayerLosses",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayerName",
+              "signature": "string FromPlayerName",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "FromPlayerWins",
+              "signature": "int FromPlayerWins",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MatchId",
+              "signature": "Guid MatchId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayer",
+              "signature": "Guid ToPlayer",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayerAvatar",
+              "signature": "string ToPlayerAvatar",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayerLiveId",
+              "signature": "string ToPlayerLiveId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayerLosses",
+              "signature": "int ToPlayerLosses",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayerName",
+              "signature": "string ToPlayerName",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "ToPlayerWins",
+              "signature": "int ToPlayerWins",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "Damage",
+          "fullName": "ClourWars.Web.ServerClientEntities.Damage",
+          "namespace": "ClourWars.Web.ServerClientEntities",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 3,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new Damage()"
+            },
+            {
+              "kind": "property",
+              "name": "HealthAfterAttack",
+              "signature": "int HealthAfterAttack",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "UnitId",
+              "signature": "Guid UnitId",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "MatchInfo",
+          "fullName": "ClourWars.Web.ServerClientEntities.MatchInfo",
+          "namespace": "ClourWars.Web.ServerClientEntities",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 12,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new MatchInfo()"
+            },
+            {
+              "kind": "property",
+              "name": "MatchId",
+              "signature": "Guid MatchId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MyPlayerName",
+              "signature": "string MyPlayerName",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "OponentClientId",
+              "signature": "string OponentClientId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "OtherPlayerName",
+              "signature": "string OtherPlayerName",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player1",
+              "signature": "Guid Player1",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player1ClientId",
+              "signature": "string Player1ClientId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player2",
+              "signature": "Guid Player2",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player2ClientId",
+              "signature": "string Player2ClientId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "PlayerId",
+              "signature": "Guid PlayerId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Turn",
+              "signature": "Guid Turn",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Units",
+              "signature": "UnitInfo[] Units",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "UnitInfo",
+          "fullName": "ClourWars.Web.ServerClientEntities.UnitInfo",
+          "namespace": "ClourWars.Web.ServerClientEntities",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 8,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new UnitInfo()"
+            },
+            {
+              "kind": "property",
+              "name": "Col",
+              "signature": "int Col",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Health",
+              "signature": "int Health",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MaxHealth",
+              "signature": "int MaxHealth",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Name",
+              "signature": "string Name",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "PlayerId",
+              "signature": "Guid PlayerId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Row",
+              "signature": "int Row",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "UnitId",
+              "signature": "Guid UnitId",
+              "attributes": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CloudWars.Glue",
+      "projectPath": "CloudWars.Glue/CloudWars.Glue.csproj",
+      "types": [],
+      "missing": "no built assembly under CloudWars.Glue/bin (build the project first; the survey reads compiled metadata, not source)"
+    },
+    {
+      "name": "CloudWars.SpaceBattle",
+      "projectPath": "CloudWars.SpaceBattle/CloudWars.SpaceBattle.csproj",
+      "assembly": "CloudWars.SpaceBattle/bin/Debug/net8.0/CloudWars.SpaceBattle.dll",
+      "types": [
+        {
+          "name": "SpaceBattleClientFeedback",
+          "fullName": "CloudWars.SpaceBattle.SpaceBattleClientFeedback",
+          "namespace": "CloudWars.SpaceBattle",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [
+            "IClientFeedback"
+          ],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 9,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new SpaceBattleClientFeedback(ICloudWarsData data)"
+            },
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new SpaceBattleClientFeedback()"
+            },
+            {
+              "kind": "method",
+              "name": "ChallengeAccepted",
+              "signature": "void ChallengeAccepted(Guid matchId, Guid fromPlayer, Guid toPlayer)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ChallengePlayer",
+              "signature": "void ChallengePlayer(Guid fromPlayer, Guid toPlayer)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerLost",
+              "signature": "void PlayerLost(Guid playerId, Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerWon",
+              "signature": "void PlayerWon(Guid playerId, Guid matchId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ShotMade",
+              "signature": "void ShotMade(Guid matchId, Guid player1, Guid player2, int healthAfterAttack, Guid unitId, Position coordinates)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ShotMissed",
+              "signature": "void ShotMissed(Guid matchId, Guid player1, Guid player2, Position coordinates)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "StartMatch",
+              "signature": "void StartMatch(Guid matchId, Guid player1, Guid player2)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "SpaceBattleFactory",
+          "fullName": "CloudWars.SpaceBattle.SpaceBattleFactory",
+          "namespace": "CloudWars.SpaceBattle",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [
+            "IFactory"
+          ],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 5,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new SpaceBattleFactory()"
+            },
+            {
+              "kind": "method",
+              "name": "GetClientFeedback",
+              "signature": "IClientFeedback GetClientFeedback()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetGame",
+              "signature": "IGame GetGame()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetGame",
+              "signature": "IGame GetGame(Guid matchId, bool loadMatchData)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerPresence",
+              "signature": "IPlayerPresence GetPlayerPresence()",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "SpaceBattleGame",
+          "fullName": "CloudWars.SpaceBattle.SpaceBattleGame",
+          "namespace": "CloudWars.SpaceBattle",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [
+            "IGame"
+          ],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 21,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new SpaceBattleGame(ICloudWarsData data)"
+            },
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new SpaceBattleGame(Guid matchId, bool loadMatchData)"
+            },
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new SpaceBattleGame()"
+            },
+            {
+              "kind": "property",
+              "name": "MatchId",
+              "signature": "Guid MatchId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player1",
+              "signature": "Guid Player1",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player1Ready",
+              "signature": "bool Player1Ready",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player2",
+              "signature": "Guid Player2",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Player2Ready",
+              "signature": "bool Player2Ready",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Turn",
+              "signature": "Guid Turn",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Units",
+              "signature": "List<IGameUnit> Units",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "AcceptChallenge",
+              "signature": "Tuple<Guid, Guid, Guid> AcceptChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ChallengePlayer",
+              "signature": "void ChallengePlayer(Guid fromId, Guid toId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "CreateMatch",
+              "signature": "void CreateMatch(Guid player1, Guid player2)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "Initialize",
+              "signature": "void Initialize(object initialState)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "MatchFinished",
+              "signature": "Message MatchFinished(Guid winner, Guid losser)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PauseMatch",
+              "signature": "void PauseMatch()",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerAttack",
+              "signature": "Message PlayerAttack(Position coordinates, Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerMoveTo",
+              "signature": "void PlayerMoveTo(Position coordinates, Guid unitId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerReady",
+              "signature": "void PlayerReady(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "RejectChallenge",
+              "signature": "Tuple<string, string> RejectChallenge(Guid challengeId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "RestartMatch",
+              "signature": "void RestartMatch()",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "SpaceBattlePlayerPresence",
+          "fullName": "CloudWars.SpaceBattle.SpaceBattlePlayerPresence",
+          "namespace": "CloudWars.SpaceBattle",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [
+            "IPlayerPresence"
+          ],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 8,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new SpaceBattlePlayerPresence(ICloudWarsData data)"
+            },
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new SpaceBattlePlayerPresence()"
+            },
+            {
+              "kind": "method",
+              "name": "GetClientId",
+              "signature": "string GetClientId(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerId",
+              "signature": "Guid GetPlayerId(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "GetPlayerNameByClientId",
+              "signature": "string GetPlayerNameByClientId(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "IsPlayingMatch",
+              "signature": "Nullable<Guid> IsPlayingMatch(Guid playerId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerDisconnected",
+              "signature": "void PlayerDisconnected(string clientId)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "PlayerIsOnLine",
+              "signature": "void PlayerIsOnLine(string liveId, string clientId, double latitude, double longitude)",
+              "attributes": []
+            }
+          ]
+        },
+        {
+          "name": "GameUnit",
+          "fullName": "CloudWars.SpaceBattle.Units.GameUnit",
+          "namespace": "CloudWars.SpaceBattle.Units",
+          "kind": "class",
+          "isAbstract": false,
+          "isStatic": false,
+          "baseTypes": [],
+          "interfaces": [
+            "IGameUnit"
+          ],
+          "attributes": [],
+          "roles": [],
+          "actions": [],
+          "entitySets": [],
+          "memberCount": 12,
+          "members": [
+            {
+              "kind": "constructor",
+              "name": ".ctor",
+              "signature": "new GameUnit(MatchUnit matchUnit)"
+            },
+            {
+              "kind": "property",
+              "name": "Column",
+              "signature": "int Column",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Health",
+              "signature": "int Health",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MatchId",
+              "signature": "Guid MatchId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "MaxHealth",
+              "signature": "int MaxHealth",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Name",
+              "signature": "string Name",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "PlayerId",
+              "signature": "Guid PlayerId",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "Row",
+              "signature": "int Row",
+              "attributes": []
+            },
+            {
+              "kind": "property",
+              "name": "UnitId",
+              "signature": "Guid UnitId",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "MoveTo",
+              "signature": "void MoveTo(int row, int column)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "TakeDamage",
+              "signature": "void TakeDamage(int damage)",
+              "attributes": []
+            },
+            {
+              "kind": "method",
+              "name": "ToEntity",
+              "signature": "MatchUnit ToEntity()",
+              "attributes": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "projects": 9,
+    "projectsWithAssembly": 5,
+    "types": 55,
+    "roles": {
+      "api-controller": 1,
+      "db-context": 1,
+      "entity": 1,
+      "mvc-controller": 4
+    },
+    "actions": 41,
+    "entitySets": 1
+  },
+  "problems": [
+    "CloudWars.Game.MvcApplication: TypeLoadException: Could not find type 'System.Web.HttpApplication' in assembly 'C:\\Program Files\\dotnet\\shared\\Microsoft.NETCore.App\\10.0.12\\System.Web.dll'."
+  ]
+}

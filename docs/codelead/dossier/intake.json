@@ -1,0 +1,19 @@
+{
+  "schema": "codelead.modernization-intake/1",
+  "answeredAt": "2026-09-23T00:58:54.417Z",
+  "answers": {
+    "goals": "Keep the system supportable and changeable: supported runtimes, a test safety net, and a build any developer can run.",
+    "targetStack": "Latest long-term-support release of the current stack",
+    "hosting": "undecided",
+    "orchestration": "undecided",
+    "timelineBand": "one quarter",
+    "budgetBand": "undecided",
+    "rewriteAppetite": "upgrade in place where possible, rewrite only what blocks it",
+    "mustNotChange": "Observable behaviour, public APIs and stored data; the dossier assumes all three are contracts",
+    "compliance": "none stated",
+    "maintainers": "the current team",
+    "modulesOfInterest": "no preference; the dossier proposes by dependency order and risk",
+    "interfacesToKeep": "none beyond those in 'must not change'"
+  },
+  "provided": []
+}
